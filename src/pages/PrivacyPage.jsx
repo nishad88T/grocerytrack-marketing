@@ -1,35 +1,16 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from '../components/Card'; // Import your custom Card
-import { ShieldCheck, Lock, Database, Eye, FileWarning, Mail } from 'lucide-react';
+import { Shield, Eye, Lock, Users, FileText, Mail, ShoppingCart } from 'lucide-react';
 
-const Section = ({ icon: Icon, title, children }) => (
-  <div className="mb-8">
-    <div className="flex items-center gap-3 mb-4">
-      <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-        <Icon className="w-5 h-5 text-white" />
-      </div>
-      <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
-    </div>
-    <div className="text-slate-700 leading-relaxed space-y-4">
-      {children}
-    </div>
-  </div>
-);
-
-export default function PrivacyPage() {
+const PrivacyPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
+        
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-12"
-        >
+        <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
-              <ShieldCheck className="w-6 h-6 text-white" />
+            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+              <Shield className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Privacy Policy</h1>
@@ -37,120 +18,247 @@ export default function PrivacyPage() {
             </div>
           </div>
           <div className="text-slate-600 space-y-1">
-            <p><strong>Operated by:</strong> GroceryTrack Analytics, United Kingdom</p>
-            <p><strong>Contact:</strong> <a href__="mailto:support@grocerytrack.co.uk" className="text-emerald-600 hover:underline">support@grocerytrack.co.uk</a></p>
+            <p><strong>Operated by:</strong> GroceryIntel Ltd</p>
+            <p><strong>Company No.:</strong> 16838153 (England and Wales)</p>
+            <p><strong>Contact:</strong> <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></p>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          <Card className="mb-8">
-            <CardContent className="p-6 md:p-8 space-y-8">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8 space-y-8">
+          
+          {/* Introduction */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Introduction</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                At GroceryIntel™, we take your privacy seriously. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use our service.
+              </p>
+              <p>
+                We are committed to complying with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+              </p>
+            </div>
+          </div>
 
-              {/* Overview */}
-              <Section icon={Eye} title="1. Overview">
-                <p>
-                  This Privacy Policy explains how we collect, use, and protect your information when you use GroceryTrack Analytics (the "Service"). We comply with the UK General Data Protection Regulation (UK GDPR).
-                </p>
-              </Section>
+          {/* What Data We Collect */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Eye className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">What Data We Collect</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>We collect the following types of information:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Account Information:</strong> Name, email address, password (encrypted), and subscription tier.</li>
+                <li><strong>Receipt Data:</strong> Store names, purchase dates, item names, quantities, prices, and receipt images you upload.</li>
+                <li><strong>Usage Data:</strong> How you interact with our app, including features used and preferences set.</li>
+                <li><strong>Payment Information:</strong> Processed securely through Stripe (we do not store your full card details).</li>
+                <li><strong>Household Data:</strong> If you use household sharing, we store information about household members and their permissions.</li>
+              </ul>
+            </div>
+          </div>
 
-              {/* Information We Collect */}
-              <Section icon={Database} title="2. Information We Collect">
-                <p>We collect:</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Account information:</strong> email address, password, and subscription status.</li>
-                  <li><strong>Receipt data:</strong> items, prices, and store details entered or scanned. Users are advised to obscure payment information.</li>
-                  <li><strong>Usage data:</strong> number of scans, preferences, and app interactions.</li>
-                  <li><strong>Payment data:</strong> processed by third-party providers (e.g., Stripe). We do not store card details.</li>
-                  <li><strong>Anonymous crowd data:</strong> store name, item, and price (without personal identifiers), stored on a rolling 10-day basis for price analysis.</li>
-                </ul>
-              </Section>
+          {/* How We Use Your Data */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">How We Use Your Data</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>We use your information to:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Provide and improve our grocery tracking and analytics services</li>
+                <li>Process receipt scans and generate insights</li>
+                <li>Manage your account and subscription</li>
+                <li>Send you important service updates and notifications</li>
+                <li>Provide customer support</li>
+                <li>Analyze app usage to improve features and user experience</li>
+                <li>Detect and prevent fraud or abuse</li>
+              </ul>
+              <p className="mt-4">
+                <strong>We do not sell your data to third parties or use it for advertising purposes.</strong>
+              </p>
+            </div>
+          </div>
 
-              {/* How We Use Your Data */}
-              <Section icon={Lock} title="3. How We Use Your Data">
-                <p>We use your data to:</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Operate the receipt scanning and analytics features.</li>
-                  <li>Provide insights such as spending trends, inflation comparison, and nutritional summaries.</li>
-                  <li>Manage subscriptions and payments.</li>
-                  <li>Maintain and improve the Service.</li>
-                  <li>Communicate updates or support messages.</li>
-                </ul>
-                <p className="font-semibold mt-4">We do not sell, trade, or rent user data.</p>
-              </Section>
+          {/* Legal Basis for Processing */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Lock className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Legal Basis for Processing</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>We process your data under the following legal bases:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Contract:</strong> To fulfill our service agreement with you</li>
+                <li><strong>Legitimate Interest:</strong> To improve our service and prevent fraud</li>
+                <li><strong>Consent:</strong> Where you have explicitly agreed (e.g., marketing emails)</li>
+                <li><strong>Legal Obligation:</strong> To comply with applicable laws and regulations</li>
+              </ul>
+            </div>
+          </div>
 
-              {/* Data Sharing and Processors */}
-              <Section icon={FileWarning} title="4. Data Sharing and Processors">
-                <p>Your data may be processed by:</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Base44</strong> – for hosting and core app functionality.</li>
-                  <li><strong>Vercel</strong> – for web hosting and landing pages.</li>
-                  <li><strong>Stripe</strong> – for secure payment processing.</li>
-                </ul>
-                <p className="mt-4">All processors are bound by confidentiality and data protection agreements.</p>
-              </Section>
+          {/* Data Sharing */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Users className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Who We Share Data With</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>We only share your data with trusted third parties who help us provide our service:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Hosting Providers:</strong> AWS (data storage), Vercel (app hosting)</li>
+                <li><strong>Payment Processors:</strong> Stripe (for subscription payments)</li>
+                <li><strong>Email Services:</strong> For sending transactional emails and notifications</li>
+                <li><strong>Analytics Tools:</strong> To understand how users interact with our app (anonymized data only)</li>
+              </ul>
+              <p className="mt-4">
+                All third-party providers are carefully vetted and bound by strict data protection agreements.
+              </p>
+            </div>
+          </div>
 
-              {/* Data Transfers */}
-              <Section icon={Mail} title="5. Data Transfers">
-                <p>
-                  Base44's servers are currently located in the United States. Data transfers follow approved UK GDPR mechanisms (e.g., Standard Contractual Clauses). We will update this section once Base44 confirms its transfer framework.
-                </p>
-              </Section>
+          {/* Data Security */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Lock className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">How We Protect Your Data</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>We implement industry-standard security measures:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>End-to-end encryption for data transmission (HTTPS/TLS)</li>
+                <li>Encrypted data storage</li>
+                <li>Secure authentication and password hashing</li>
+                <li>Regular security audits and updates</li>
+                <li>Access controls and monitoring</li>
+              </ul>
+            </div>
+          </div>
 
-              {/* Data Retention */}
-              <Section icon={Database} title="6. Data Retention">
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>User-level data is stored for up to <strong>one year</strong>, unless you request earlier deletion.</li>
-                  <li>Anonymous crowd-sourced data is retained for up to <strong>10 days</strong>.</li>
-                  <li>Trial user data is deleted automatically after inactivity beyond the retention period.</li>
-                </ul>
-              </Section>
+          {/* Data Retention */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">How Long We Keep Your Data</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                We retain your data for as long as your account is active and as necessary to provide our services. If you delete your account, we will delete your personal data within 30 days, except where we are required by law to retain certain information (e.g., for tax or accounting purposes).
+              </p>
+            </div>
+          </div>
 
-              {/* Security */}
-              <Section icon={Lock} title="7. Security">
-                <p>
-                  We use encryption, secure storage, and access controls to protect your data. However, no online system is completely secure; you use the Service at your own risk.
-                </p>
-              </Section>
+          {/* Your Rights */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Your Rights</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>Under UK GDPR, you have the following rights:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Right to Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete data</li>
+                <li><strong>Right to Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+                <li><strong>Right to Restrict Processing:</strong> Limit how we use your data</li>
+                <li><strong>Right to Data Portability:</strong> Receive your data in a portable format</li>
+                <li><strong>Right to Object:</strong> Object to certain types of processing</li>
+                <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent</li>
+              </ul>
+              <p className="mt-4">
+                To exercise any of these rights, contact us at <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline font-semibold">support@groceryintel.com</a>.
+              </p>
+            </div>
+          </div>
 
-              {/* Your Rights */}
-              <Section icon={ShieldCheck} title="8. Your Rights">
-                <p>You may:</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Request access to your data via the dashboard or by contacting support.</li>
-                  <li>Request correction or deletion.</li>
-                  <li>Withdraw consent at any time.</li>
-                  <li>File a complaint with the Information Commissioner's Office (ICO) in the UK.</li>
-                </ul>
-              </Section>
+          {/* Changes to This Policy */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <FileText className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Changes to This Policy</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. We will notify you of significant changes via email or in-app notification.
+              </p>
+            </div>
+          </div>
 
-              {/* Children's Privacy */}
-              <Section icon={ShieldCheck} title="9. Children's Privacy">
-                <p>
-                  The Service is not intended for children under 16. We do not knowingly collect their data.
-                </p>
-              </Section>
+          {/* Contact Us */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <Mail className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">Contact Us</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:
+              </p>
+              <ul className="list-none space-y-2">
+                <li><strong>Email:</strong> <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></li>
+                <li><strong>Company:</strong> GroceryIntel Ltd</li>
+                <li><strong>Registration:</strong> England and Wales, Company No. 16838153</li>
+              </ul>
+            </div>
+          </div>
 
-              {/* Changes to This Policy */}
-              <Section icon={FileWarning} title="10. Changes to This Policy">
-                <p>
-                  We may update this Policy periodically. We will notify users of significant changes via email or in-app notice.
-                </p>
-              </Section>
+        </div>
 
-              {/* Contact */}
-              <Section icon={Mail} title="11. Contact">
-                <p>
-                  Questions? Contact us at <a href__="mailto:support@grocerytrack.co.uk" className="text-emerald-600 hover:underline font-semibold">support@grocerytrack.co.uk</a>.
-                </p>
-              </Section>
-            </CardContent>
-          </Card>
-        </motion.div>
+        {/* Footer */}
+        <footer className="mt-16 pt-8 border-t border-slate-200">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+                <ShoppingCart className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-slate-700 font-semibold">GroceryIntel™</span>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
+              <a href__="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                Terms of Use
+              </a>
+              <a href__="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                Privacy Policy
+              </a>
+              <a href__="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                Cookie Policy
+              </a>
+              <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                Contact Support
+              </a>
+            </div>
+          </div>
+          
+          <div className="text-center text-xs text-slate-500 mt-6">
+            <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
+            <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
+          </div>
+        </footer>
       </div>
     </div>
   );
-}
+};
