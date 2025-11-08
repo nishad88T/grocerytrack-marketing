@@ -247,3 +247,4 @@ const FeaturesPage = () => {
     </div>
   );
 };
+export default FeaturesPage;
