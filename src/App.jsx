@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import Footer from './components/Footer';
-import { HomePage } from './pages/HomePage';
-import { AboutPage } from './pages/AboutPage';
-import { FeaturesPage } from './pages/FeaturesPage';
-import { PricingPage } from './pages/PricingPage';
-import { FAQsPage } from './pages/FAQsPage';
-import { TermsPage } from './pages/TermsPage';
-import { PrivacyPage } from './pages/PrivacyPage';
-import { CookiePage } from './pages/CookiePage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import FeaturesPage from './pages/FeaturesPage';
+import PricingPage from './pages/PricingPage';
+import FAQsPage from './pages/FAQsPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiePage from './pages/CookiePage';
 
 function App() {
   return (
@@ -33,4 +33,5 @@ function App() {
     </Router>
   );
 }
+
 
