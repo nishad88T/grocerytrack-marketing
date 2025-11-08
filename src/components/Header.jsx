@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
 
-const Header = () => {
+export const Header = () => { // <--- CHANGE IS HERE: Added 'export' keyword
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
