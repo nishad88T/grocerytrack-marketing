@@ -10,10 +10,12 @@ import FAQsPage from './pages/FAQsPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiePage from './pages/CookiePage';
+import ScrollToTop from './components/shared/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">
@@ -33,10 +35,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;
-
-
-
-
-
-
