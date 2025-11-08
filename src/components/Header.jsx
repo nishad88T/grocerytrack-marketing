@@ -1,100 +1,113 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Features', path: '/features' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'FAQs', path: '/faqs' },
-    { name: 'About', path: '/about' },
-  ];
-
-  const handleGetStarted = () => {
-    window.location.href = 'https://app.grocerytrack.co.uk';
-  };
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="p-4 md:p-6 flex justify-between items-center bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
-      <Link to="/" className="flex items-center gap-2">
-        <div className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-md">
-          <ShoppingCart className="w-5 h-5 md:w-6 md:h-6 text-white" />
-        </div>
-        <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryTrack™</h1>
-      </Link>
-
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-6">
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            to={item.path}
-            className="text-slate-700 hover:text-emerald-600 transition-colors duration-200 text-base font-medium"
-          >
-            {item.name}
-          </Link>
-        ))}
-        <button
-          onClick={handleGetStarted}
-          className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg transition-all duration-300 px-5 py-2.5 rounded-lg text-base font-semibold"
+    <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <a href__="/" className="flex items-center gap-2">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+            <ShoppingCart className="w-4 h-4 md:w-6 md:h-6 text-white" />
+          </div>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
+        </a>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          <a href__="/" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Home
+          </a>
+          <a href__="/features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Features
+          </a>
+          <a href__="/pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Pricing
+          </a>
+          <a href__="/faqs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            FAQs
+          </a>
+          <a href__="/about" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            About
+          </a>
+          <a href__="https://app.groceryintel.com" className="inline-block">
+            <button className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-6 py-2 rounded-lg font-semibold transition-all">
+              Get Started
+            </button>
+          </a>
+        </nav>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-slate-900 hover:text-emerald-600 transition-colors z-50 relative"
+          aria-label="Toggle menu"
         >
-          Get Started
-        </button>
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <div className="md:hidden">
-        <button onClick={() => setMobileMenuOpen(true)} className="p-2 text-slate-600 hover:text-emerald-600">
-          <Menu className="w-6 h-6" />
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-            className="fixed top-0 right-0 w-full h-full bg-white/95 backdrop-blur-lg z-50 flex flex-col p-6 md:hidden"
-          >
-            <div className="flex justify-between items-center mb-8">
-              <Link to="/" className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-md">
-                  <ShoppingCart className="w-6 h-6 text-white" />
-                </div>
-                <h1 className="text-2xl font-bold text-slate-900">GroceryTrack™</h1>
-              </Link>
-              <button onClick={() => setMobileMenuOpen(false)} className="p-2 text-slate-600 hover:text-emerald-600">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <nav className="flex flex-col gap-6 text-center">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-2xl font-semibold text-slate-800 hover:text-emerald-600 transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <button
-                onClick={handleGetStarted}
-                className="mt-8 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-lg transition-all duration-300 px-6 py-4 rounded-lg text-xl font-semibold"
+      {/* Mobile Menu Overlay - FIXED VERSION */}
+      {isMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 md:hidden">
+            <nav className="flex flex-col gap-4 p-6 pt-20">
+              <a 
+                href__="/" 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Get Started
-              </button>
+                Home
+              </a>
+              <a 
+                href__="/features" 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Features
+              </a>
+              <a 
+                href__="/pricing" 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pricing
+              </a>
+              <a 
+                href__="/faqs" 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                FAQs
+              </a>
+              <a 
+                href__="/about" 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </a>
+              <a 
+                href__="https://app.groceryintel.com"
+                className="inline-block mt-4"
+              >
+                <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                  Get Started
+                </button>
+              </a>
             </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </>
+      )}
     </header>
   );
-}
+};
