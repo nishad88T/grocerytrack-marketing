@@ -1,13 +1,75 @@
 import React from 'react';
-import { CreditCard, Check, ShoppingCart } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Check, CreditCard } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { base44 } from '@/api/base44Client';
+import { createPageUrl } from '@/utils';
+import LegalFooter from '@/components/shared/LegalFooter';
 
-const PricingPage = () => {
+export default function PricingPage() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = async () => {
+    try {
+      const isAuthenticated = await base44.auth.isAuthenticated();
+      if (isAuthenticated) {
+        navigate(createPageUrl('Dashboard'));
+      } else {
+        await base44.auth.redirectToLogin();
+      }
+    } catch (error) {
+      console.error("Navigation failed:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      {/* Header */}
+      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+              <CreditCard className="w-4 h-4 md:w-6 md:h-6 text-white" />
+            </div>
+            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link to="/features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              Features
+            </Link>
+            <Link to="/about" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              About
+            </Link>
+            <Link to="/pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              Pricing
+            </Link>
+            <Link to="/faqs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              FAQs
+            </Link>
+            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+              Get Started
+            </Button>
+          </nav>
+          
+          {/* Mobile Login Button */}
+          <Button onClick={handleGetStarted} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
+            Login
+          </Button>
+        </div>
+      </header>
+
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
           <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
             <CreditCard className="w-8 h-8 text-white" />
           </div>
@@ -20,175 +82,179 @@ const PricingPage = () => {
           <p className="text-xl text-slate-700">
             just sized for your scanning needs.
           </p>
-          <p className="text-slate-600 mt-4 italic max-w-3xl mx-auto">
+          <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the <strong>exact same powerful analytics and insights</strong>. The only difference? Your monthly scan allowance and household sharing capabilities.
           </p>
-        </div>
+        </motion.div>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
           {/* Standard Tier */}
-          <div className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative rounded-lg p-6 bg-white">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="text-3xl">☕</div>
-              <h2 className="text-2xl font-bold">Standard</h2>
-            </div>
-            <p className="text-slate-600 mb-4 text-base">
-              Individuals / small households
-            </p>
-            
-            <div className="space-y-2 mb-6">
-              <p className="text-3xl font-bold text-slate-900">
-                £35.99<span className="text-lg font-normal text-slate-600">/year</span>
-              </p>
-              <p className="text-slate-600">or £3.59/month</p>
-              <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
-                Save 16% annually
-              </div>
-              <p className="text-sm text-slate-500 italic">
-                Less than the cost of a coffee — for smarter shopping.
-              </p>
-            </div>
-            
-            <div className="pt-4 border-t">
-              <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Full analytics & insights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Full nutrition diagnostics</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Shopping List Generator</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Recipes & Meal Planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700"><strong>12 scans/month</strong></span>
-                </li>
-              </ul>
-              <p className="text-xs text-slate-500 mt-4 italic">
-                Perfect for smaller households with less frequent shopping trips.
-              </p>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative">
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-3xl">☕</div>
+                  <CardTitle className="text-2xl">Standard</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  Individuals / small households
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-3xl font-bold text-slate-900">
+                    £35.99<span className="text-lg font-normal text-slate-600">/year</span>
+                  </p>
+                  <p className="text-slate-600">or £3.59/month</p>
+                  <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
+                    Save 16% annually
+                  </div>
+                  <p className="text-sm text-slate-500 italic">
+                    Less than the cost of a coffee — for smarter shopping.
+                  </p>
+                </div>
+                <div className="pt-4 border-t">
+                  <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Full analytics & insights</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Full nutrition diagnostics</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Recipes & Meal Planning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700"><strong>12 scans/month</strong></span>
+                    </li>
+                  </ul>
+                  <p className="text-xs text-slate-500 mt-4 italic">
+                    Perfect for smaller households with less frequent shopping trips.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
 
           {/* Plus Tier */}
-          <div className="border-2 border-emerald-500 shadow-lg relative rounded-lg p-6 bg-white">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-              Most Popular
-            </div>
-            <div className="flex items-center gap-2 mb-2">
-              <div className="text-3xl">👨👩👧👦</div>
-              <h2 className="text-2xl font-bold">Plus</h2>
-            </div>
-            <p className="text-slate-600 mb-4 text-base">
-              Shared or growing households
-            </p>
-            
-            <div className="space-y-2 mb-6">
-              <p className="text-3xl font-bold text-slate-900">
-                £59.99<span className="text-lg font-normal text-slate-600">/year</span>
-              </p>
-              <p className="text-slate-600">or £5.99/month</p>
-              <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
-                Save 17% annually
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <Card className="border-2 border-emerald-500 shadow-lg relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                Most Popular
               </div>
-            </div>
-            
-            <div className="pt-4 border-t">
-              <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Full analytics & insights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Full nutrition diagnostics</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Shopping List Generator</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700">Recipes & Meal Planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700"><strong>30 scans/month</strong></span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-700"><strong>Household sharing</strong></span>
-                </li>
-              </ul>
-              <p className="text-xs text-slate-500 mt-4 italic">
-                Ideal for bigger households with more frequent shopping and more receipts.
-              </p>
-            </div>
-          </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-3xl">👨👩👧👦</div>
+                  <CardTitle className="text-2xl">Plus</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  Shared or growing households
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <p className="text-3xl font-bold text-slate-900">
+                    £59.99<span className="text-lg font-normal text-slate-600">/year</span>
+                  </p>
+                  <p className="text-slate-600">or £5.99/month</p>
+                  <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
+                    Save 17% annually
+                  </div>
+                </div>
+                <div className="pt-4 border-t">
+                  <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Full analytics & insights</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Full nutrition diagnostics</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Recipes & Meal Planning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700"><strong>30 scans/month</strong></span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700"><strong>Household sharing</strong></span>
+                    </li>
+                  </ul>
+                  <p className="text-xs text-slate-500 mt-4 italic">
+                    Ideal for bigger households with more frequent shopping and more receipts.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
 
         {/* No Tier Bias Statement */}
-        <div className="text-center space-y-4 mb-12">
-          <div className="border-none shadow-lg bg-white/80 backdrop-blur-sm rounded-xl p-6">
-            <p className="text-slate-700 text-lg leading-relaxed">
-              🎯 <strong>No locked features. No confusing tiers.</strong> Just the same mission, sized for your household usage. The difference between Standard and Plus is driven by how often you shop—<strong>smaller households with less monthly receipts versus bigger households with more frequent shops and more receipts.</strong>
-            </p>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center space-y-4 mb-12"
+        >
+          <Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6">
+              <p className="text-slate-700 text-lg leading-relaxed">
+                🎯 <strong>No locked features. No confusing tiers.</strong> Just the same mission, sized for your household usage. The difference between Standard and Plus is driven by how often you shop—<strong>smaller households with less monthly receipts versus bigger households with more frequent shops and more receipts.</strong>
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* CTA */}
-        <div className="text-center mb-16">
-          <a href__="https://app.groceryintel.com" className="inline-block">
-            <button className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700">
-              Get Started Today →
-            </button>
-          </a>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Button
+            onClick={handleGetStarted}
+            size="lg"
+            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+          >
+            Get Started Today →
+          </Button>
+        </motion.div>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-slate-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <ShoppingCart className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-slate-700 font-semibold">GroceryIntel™</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href__="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Terms of Use
-              </a>
-              <a href__="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Privacy Policy
-              </a>
-              <a href__="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Cookie Policy
-              </a>
-              <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Contact Support
-              </a>
-            </div>
-          </div>
-          
-          <div className="text-center text-xs text-slate-500 mt-6">
-            <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-            <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
-          </div>
-        </footer>
+        <div className="mt-16">
+          <LegalFooter />
+        </div>
       </div>
     </div>
   );
-};
-export default PricingPage;
+}
