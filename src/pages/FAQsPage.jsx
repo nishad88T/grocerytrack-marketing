@@ -191,3 +191,4 @@ const FAQsPage = () => {
     </div>
   );
 };
+export default FAQsPage;
