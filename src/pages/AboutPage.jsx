@@ -1,166 +1,192 @@
 import React from 'react';
-import { BookOpen, Heart, Target, Users, Lightbulb, ShoppingCart } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ShoppingCart, CheckCircle, Users, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import { base44 } from '@/api/base44Client';
+import LegalFooter from '@/components/shared/LegalFooter';
 
-const AboutPage = () => {
+const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+    className="mb-8"
+  >
+    <Card className={`border-none shadow-lg ${bgColor}/80 backdrop-blur-sm`}>
+      <CardContent className="p-6 md:p-8">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Icon className="w-6 h-6 text-white" />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">{title}</h2>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              {children}
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  </motion.div>
+);
+
+export default function AboutPage() {
+  const navigate = useNavigate();
+
+  const handleGetStarted = async () => {
+    try {
+      const isAuthenticated = await base44.auth.isAuthenticated();
+      if (isAuthenticated) {
+        navigate(createPageUrl('Dashboard'));
+      } else {
+        await base44.auth.redirectToLogin();
+      }
+    } catch (error) {
+      console.error("Navigation failed:", error);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      {/* Header */}
+      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+              <ShoppingCart className="w-4 h-4 md:w-6 md:h-6 text-white" />
+            </div>
+            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
+          </Link>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link to="/features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              Features
+            </Link>
+            <Link to="/about" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              About
+            </Link>
+            <Link to="/pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              Pricing
+            </Link>
+            <Link to="/faqs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+              FAQs
+            </Link>
+            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+              Get Started
+            </Button>
+          </nav>
+          
+          {/* Mobile Login Button */}
+          <Button onClick={handleGetStarted} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
+            Login
+          </Button>
+        </div>
+      </header>
+
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
-              <BookOpen className="w-6 h-6 text-white" />
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900">About GroceryIntel™</h1>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
+            <ShoppingCart className="w-8 h-8 text-white" />
           </div>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Your partner in smarter grocery spending and healthier living.
-          </p>
-        </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About GroceryIntel™</h1>
+          <p className="text-lg text-slate-600">Empowering smarter grocery decisions, one receipt at a time.</p>
+        </motion.div>
 
-        {/* Our Story */}
-        <div className="mb-12 bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-              <Heart className="w-5 h-5 text-white" />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900">Our Story</h2>
-          </div>
-          <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>
-              GroceryIntel™ was born from a simple frustration: grocery shopping felt like a financial black hole. 
-              You'd load up the trolley, scan the receipt, and wonder where all that money went.
-            </p>
-            <p>
-              Traditional budgeting apps would tell you "You spent £400 on groceries this month" — but they couldn't 
-              tell you <strong>why</strong>, <strong>what</strong> you bought, or <strong>how</strong> to improve. 
-              That's where we come in.
-            </p>
-            <p>
-              Built by an accountant who got tired of spreadsheets, GroceryIntel™ transforms every receipt into 
-              actionable insights. We help families understand their grocery spending at the item level, track 
-              personal inflation, and make smarter choices — all without the hassle.
+        {/* From Spreadsheets to Smarter Grocery Habits */}
+        <Section icon={ShoppingCart} title="From Spreadsheets to Smarter Grocery Habits">
+          <p>
+            As a qualified accountant, I spent years helping businesses understand their finances.
+          </p>
+          <p>
+            But tracking my own grocery spending? Tedious spreadsheets and hours of manual entry.
+          </p>
+          <p>
+            That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
+          </p>
+          <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
+            <p className="text-emerald-900 font-medium">
+              GroceryIntel™ was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
             </p>
           </div>
-        </div>
+        </Section>
 
         {/* Our Mission */}
-        <div className="mb-12 bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-              <Target className="w-5 h-5 text-white" />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900">Our Mission</h2>
-          </div>
-          <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>
-              To empower households to take control of their grocery spending through transparency, insights, 
-              and smarter decision-making.
-            </p>
-            <p>
-              Groceries make up 12–15% of the average household budget — one of the few expenses you can actually 
-              control. We believe every family deserves to know where that money goes, how prices change over time, 
-              and what small adjustments can lead to big savings.
-            </p>
-          </div>
-        </div>
+        <Section icon={Target} title="Our Mission" bgColor="bg-teal-50">
+          <p className="text-lg font-medium text-slate-800">
+            Our mission is to empower households to make data-driven grocery decisions by combining smart planning, intelligent tracking, and predictive insights—turning everyday shopping into a strategy for savings and better living.
+          </p>
+        </Section>
 
         {/* Our Philosophy */}
-        <div className="mb-12 bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
-              <Lightbulb className="w-5 h-5 text-white" />
+        <Section icon={Users} title="Our Philosophy" bgColor="bg-blue-50">
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-slate-900">Full access for all users:</p>
+                <p className="text-slate-700">No "Premium" tiers. Both Standard and Plus plans offer the exact same powerful analytics and insights.</p>
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">Our Philosophy</h2>
-          </div>
-          <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>
-              <strong>Honesty first.</strong> We don't hide behind complex pricing or locked features. 
-              Standard and Plus users get the same powerful insights — just sized for different household needs.
-            </p>
-            <p>
-              <strong>Privacy matters.</strong> Your data is yours. We use it only to give you better insights, 
-              never to sell ads or share with third parties.
-            </p>
-            <p>
-              <strong>Simplicity wins.</strong> We believe good tools should make life easier, not harder. 
-              That's why we automate the tedious parts (scanning, categorizing, analyzing) so you can focus 
-              on what matters: making better choices.
-            </p>
-          </div>
-        </div>
-
-        {/* Who We Serve */}
-        <div className="mb-12 bg-white/80 backdrop-blur-sm rounded-xl shadow-xl p-6 md:p-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-              <Users className="w-5 h-5 text-white" />
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-slate-900">Household sharing:</p>
+                <p className="text-slate-700">Standard for individuals, Plus for shared households.</p>
+              </div>
             </div>
-            <h2 className="text-2xl font-bold text-slate-900">Who We Serve</h2>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-slate-900">Transparent & simple:</p>
+                <p className="text-slate-700">Clear pricing, data you own.</p>
+              </div>
+            </div>
           </div>
-          <div className="text-slate-700 leading-relaxed space-y-4">
-            <p>
-              GroceryIntel™ is for anyone who wants to be more intentional about their grocery spending:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Families</strong> trying to stretch their budget further without sacrificing quality</li>
-              <li><strong>Individuals</strong> wanting to understand where their money goes each month</li>
-              <li><strong>Health-conscious shoppers</strong> looking to balance nutrition with cost</li>
-              <li><strong>Households</strong> dealing with rising food prices and inflation</li>
-              <li><strong>Anyone</strong> tired of guesswork and ready for data-driven grocery decisions</li>
-            </ul>
-          </div>
-        </div>
+        </Section>
 
-        {/* Get Started CTA */}
-        <div className="text-center bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-xl p-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Ready to Take Control?
-          </h3>
-          <p className="text-white text-lg mb-6">
-            Join thousands of households making smarter grocery decisions.
+        {/* Why It Matters */}
+        <Section icon={Target} title="Why It Matters" bgColor="bg-purple-50">
+          <p>
+            Understanding grocery habits gives households control — over spending, waste, and nutrition.
           </p>
-          <a href__="https://app.groceryintel.com" className="inline-block">
-            <button className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
-              Get Started Today →
-            </button>
-          </a>
-        </div>
+          <p className="font-medium text-slate-800 mt-4">
+            GroceryIntel™ isn't just an app; it's a movement to help families spend smarter, save more, and live healthier.
+          </p>
+        </Section>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Button
+            onClick={handleGetStarted}
+            size="lg"
+            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+          >
+            Get Started →
+          </Button>
+        </motion.div>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-slate-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <ShoppingCart className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-slate-700 font-semibold">GroceryIntel™</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href__="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Terms of Use
-              </a>
-              <a href__="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Privacy Policy
-              </a>
-              <a href__="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Cookie Policy
-              </a>
-              <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Contact Support
-              </a>
-            </div>
-          </div>
-          
-          <div className="text-center text-xs text-slate-500 mt-6">
-            <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-            <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
-          </div>
-        </footer>
+        <div className="mt-16">
+          <LegalFooter />
+        </div>
       </div>
     </div>
   );
-};
-export default AboutPage;
+}
