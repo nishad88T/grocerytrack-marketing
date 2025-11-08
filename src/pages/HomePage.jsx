@@ -1,7 +1,7 @@
 import React from 'react';
 import { Eye, DollarSign, Sprout, Camera, BarChart3, Lightbulb, ShoppingCart, Check } from 'lucide-react';
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Hero Section */}
@@ -255,4 +255,5 @@ export const HomePage = () => {
 };
 
 export default HomePage;
+
 
