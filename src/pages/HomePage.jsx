@@ -1,7 +1,7 @@
 import React from 'react';
 import { Eye, DollarSign, Sprout, Camera, BarChart3, Lightbulb, ShoppingCart, Check } from 'lucide-react';
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Hero Section */}
@@ -19,7 +19,7 @@ const HomePage = () => {
         <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed">
           GroceryIntel™ helps you take back control — not with spreadsheets, but with simple, automated insights that make smarter grocery decisions second nature.
         </p>
-        <a href__="https://app.groceryintel.com" className="inline-block">
+        <a href="https://app.groceryintel.com" className="inline-block">
           <button className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg">
             Get Started →
           </button>
@@ -134,7 +134,7 @@ const HomePage = () => {
             GroceryIntel™ goes beyond budgeting apps. Instead of just telling you <strong>"You spent £400 on groceries,"</strong> it shows what's driving those costs — item by item, store by store, over time.
           </p>
           <div className="text-center">
-            <a href__="/features">
+            <a href="/features">
               <button className="border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-6 py-3 rounded-lg font-semibold transition-colors">
                 Learn More →
               </button>
@@ -243,7 +243,7 @@ const HomePage = () => {
           <p className="text-xl text-white mb-8">
             Start tracking, learning, and saving — one receipt at a time.
           </p>
-          <a href__="https://app.groceryintel.com" className="inline-block">
+          <a href="https://app.groceryintel.com" className="inline-block">
             <button className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold rounded-lg">
               Get Started →
             </button>
@@ -253,7 +253,5 @@ const HomePage = () => {
     </div>
   );
 };
+
 export default HomePage;
-
-
-
