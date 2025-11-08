@@ -157,3 +157,4 @@ const CookiePage = () => {
     </div>
   );
 };
+export default CookiePage;
