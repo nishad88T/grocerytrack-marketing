@@ -2,18 +2,14 @@ import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { createPageUrl } from "@/utils";
 import {
     ShoppingCart,
-    ScanLine,
-    TrendingUp,
     Eye,
     DollarSign,
     Sprout,
     Camera,
     BarChart3,
     Lightbulb,
-    Users,
     Check
 } from "lucide-react";
 import { useLocation } from 'react-router-dom';
@@ -33,7 +29,7 @@ const Feature = ({ icon: Icon, title, description }) => (
     </div>
 );
 
-export default function LandingPage() {
+export default function HomePage() {
     const location = useLocation();
 
     useEffect(() => {
@@ -67,16 +63,16 @@ export default function LandingPage() {
                     
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-6">
-                        <Link to="/features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             Features
                         </Link>
-                        <Link to="/about" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             About
                         </Link>
-                        <Link to="/pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             Pricing
                         </Link>
-                        <Link to="/faqs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             FAQs
                         </Link>
                         <Button onClick={handleLogin} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
@@ -84,10 +80,12 @@ export default function LandingPage() {
                         </Button>
                     </nav>
                     
-                    {/* Mobile Login Button */}
-                    <Button onClick={handleLogin} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-                        Login
-                    </Button>
+                    {/* Mobile Menu */}
+                    <div className="md:hidden">
+                        <Button onClick={handleLogin} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
+                            Login
+                        </Button>
+                    </div>
                 </div>
             </header>
 
@@ -209,7 +207,7 @@ export default function LandingPage() {
                             GroceryIntel™ goes beyond budgeting apps. Instead of just telling you <strong>"You spent £400 on groceries,"</strong> it shows what's driving those costs — item by item, store by store, over time.
                         </p>
                         <div className="text-center">
-                            <Link to="/features">
+                            <Link to="/Features">
                                 <Button
                                     variant="outline"
                                     className="border-emerald-600 text-emerald-700 hover:bg-emerald-50"
@@ -317,7 +315,7 @@ export default function LandingPage() {
                                                 <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                                                 <span className="text-slate-700">Household sharing</span>
                                             </li>
-                        </ul>
+                                        </ul>
                                     </div>
                                 </CardContent>
                             </Card>
