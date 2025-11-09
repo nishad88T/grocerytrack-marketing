@@ -162,15 +162,6 @@ export default function PricingPage() {
           </motion.div>
         </div>
 
-        useEffect(() => {
-    console.log('VITE_BASE44_APP_ID from Vercel deployment:', import.meta.env.VITE_BASE44_APP_ID);
-    // You can also inspect the entire env object:
-    console.log('Full Vercel environment:', import.meta.env);
-  }, []);
-
-  // ... rest of your component's JSX and other code ...
-}
-
         {/* No Tier Bias Statement */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -213,4 +204,5 @@ export default function PricingPage() {
     </div>
   );
 }
+
 
