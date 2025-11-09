@@ -38,16 +38,16 @@ export default function PricingPage() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link to="/features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
               Features
             </Link>
-            <Link to="/about" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
               About
             </Link>
-            <Link to="/pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
               Pricing
             </Link>
-            <Link to="/faqs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
               FAQs
             </Link>
             <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
