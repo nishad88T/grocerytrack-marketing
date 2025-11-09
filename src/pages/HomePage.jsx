@@ -2,18 +2,21 @@ import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { createPageUrl } from "@/utils";
 import {
     ShoppingCart,
+    ScanLine,
+    TrendingUp,
     Eye,
     DollarSign,
     Sprout,
     Camera,
     BarChart3,
     Lightbulb,
+    Users,
     Check
 } from "lucide-react";
 import { useLocation } from 'react-router-dom';
-import { base44 } from "@/api/base44Client";
 import { motion } from "framer-motion";
 import LegalFooter from '@/components/shared/LegalFooter';
 
@@ -29,7 +32,7 @@ const Feature = ({ icon: Icon, title, description }) => (
     </div>
 );
 
-export default function HomePage() {
+export default function LandingPage() {
     const location = useLocation();
 
     useEffect(() => {
@@ -41,20 +44,12 @@ export default function HomePage() {
         }
     }, [location]);
 
-     const handleLogin = async () => {
-    try {
-        // Redirect to the Base44 app dashboard after login
-        await base44.auth.redirectToLogin('https://app.groceryintel.com');
-    } catch (error) {
-        console.error("Login failed:", error);
-    }
-};
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
             {/* Header */}
             <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-2">
+                    <Link to={createPageUrl('/')} className="flex items-center gap-2">
                         <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
                             <ShoppingCart className="w-4 h-4 md:w-6 md:h-6 text-white" />
                         </div>
@@ -63,29 +58,27 @@ export default function HomePage() {
                     
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-6">
-                        <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to={createPageUrl('Features')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             Features
                         </Link>
-                        <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to={createPageUrl('About')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             About
                         </Link>
-                        <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to={createPageUrl('Pricing')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             Pricing
                         </Link>
-                        <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+                        <Link to={createPageUrl('FAQs')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
                             FAQs
                         </Link>
-                        <Button onClick={handleLogin} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
-                            Get Started
+                        <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+                            <a href__="https://app.groceryintel.com">Get Started</a>
                         </Button>
                     </nav>
                     
-                    {/* Mobile Menu Button & Login */}
-                    <div className="md:hidden">
-                        <Button onClick={handleLogin} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-                            Login
-                        </Button>
-                    </div>
+                    {/* Mobile Login Button */}
+                    <Button asChild className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
+                        <a href__="https://app.groceryintel.com">Login</a>
+                    </Button>
                 </div>
             </header>
 
@@ -110,11 +103,11 @@ export default function HomePage() {
                         GroceryIntel™ helps you take back control — not with spreadsheets, but with simple, automated insights that make smarter grocery decisions second nature.
                     </p>
                     <Button
-                        onClick={handleLogin}
+                        asChild
                         size="lg"
                         className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
                     >
-                        Get Started →
+                        <a href__="https://app.groceryintel.com">Get Started →</a>
                     </Button>
                 </motion.div>
             </section>
@@ -204,10 +197,10 @@ export default function HomePage() {
                             What Makes GroceryIntel™ Different
                         </h3>
                         <p className="text-lg text-center text-slate-700 max-w-3xl mx-auto mb-8 leading-relaxed">
-                            GroceryIntel™ goes beyond budgeting apps. Instead of just telling you <strong>"You spent £400 on groceries,"</strong> it shows what's driving those costs — item by item, store by store, over time.
+                            GroceryIntel™ goes beyond budgeting apps. Instead of just telling you **"You spent £400 on groceries,"** it shows what's driving those costs — item by item, store by store, over time.
                         </p>
                         <div className="text-center">
-                            <Link to="/Features">
+                            <Link to={createPageUrl('Features')}>
                                 <Button
                                     variant="outline"
                                     className="border-emerald-600 text-emerald-700 hover:bg-emerald-50"
@@ -285,7 +278,7 @@ export default function HomePage() {
                                 </div>
                                 <CardHeader>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <div className="text-3xl">👨‍👩‍👧‍👦</div>
+                                        <div className="text-3xl">👨👩👧👦</div>
                                         <CardTitle className="text-2xl">Plus</CardTitle>
                                     </div>
                                     <CardDescription className="text-base">
@@ -346,11 +339,11 @@ export default function HomePage() {
                             Start tracking, learning, and saving — one receipt at a time.
                         </p>
                         <Button
-                            onClick={handleLogin}
+                            asChild
                             size="lg"
                             className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-6 text-lg font-semibold"
                         >
-                            Get Started →
+                            <a href__="https://app.groceryintel.com">Get Started →</a>
                         </Button>
                     </motion.div>
                 </div>
@@ -365,7 +358,3 @@ export default function HomePage() {
         </div>
     );
 }
-
-
-
-
