@@ -80,7 +80,7 @@ export default function HomePage() {
                         </Button>
                     </nav>
                     
-                    {/* Mobile Menu */}
+                    {/* Mobile Menu Button & Login */}
                     <div className="md:hidden">
                         <Button onClick={handleLogin} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
                             Login
@@ -285,7 +285,7 @@ export default function HomePage() {
                                 </div>
                                 <CardHeader>
                                     <div className="flex items-center gap-2 mb-2">
-                                        <div className="text-3xl">👨👩👧👦</div>
+                                        <div className="text-3xl">👨‍👩‍👧‍👦</div>
                                         <CardTitle className="text-2xl">Plus</CardTitle>
                                     </div>
                                     <CardDescription className="text-base">
