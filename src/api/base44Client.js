@@ -1,3 +1,3 @@
-import { createClient } from 'npm:@base44/sdk@0.7.1';
+import { createClient } from '@base44/sdk';
 
 export const base44 = createClient();
