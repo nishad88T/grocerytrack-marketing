@@ -23,7 +23,7 @@ export default function LegalFooter() {
           <Link to="/CookiePolicy" className="text-slate-600 hover:text-emerald-600 transition-colors">
             Cookie Policy
           </Link>
-          <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
             Contact Support
           </a>
         </div>

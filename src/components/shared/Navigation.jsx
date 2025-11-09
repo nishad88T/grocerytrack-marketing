@@ -1,0 +1,47 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { ShoppingCart } from 'lucide-react';
+import { createPageUrl } from '@/utils';
+
+export default function Navigation() {
+  return (
+    <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to={createPageUrl('/')} className="flex items-center gap-2">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+            <ShoppingCart className="w-4 h-4 md:w-6 md:h-6 text-white" />
+          </div>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          <Link to={createPageUrl('/')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Home
+          </Link>
+          <Link to={createPageUrl('Features')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Features
+          </Link>
+          <Link to={createPageUrl('Pricing')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            Pricing
+          </Link>
+          <Link to={createPageUrl('FAQs')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            FAQs
+          </Link>
+          <Link to={createPageUrl('About')} className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
+            About
+          </Link>
+          <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+            <a href="https://app.groceryintel.com">Get Started</a>
+          </Button>
+        </nav>
+        
+        {/* Mobile Login Button */}
+        <Button asChild className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
+          <a href="https://app.groceryintel.com">Login</a>
+        </Button>
+      </div>
+    </header>
+  );
+}

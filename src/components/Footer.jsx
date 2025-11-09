@@ -35,9 +35,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><Link to="/privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-emerald-400 transition-colors">Terms of Use</Link></li>
-              <li><Link to="/cookies" className="hover:text-emerald-400 transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/Privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/TermsOfUse" className="hover:text-emerald-400 transition-colors">Terms of Use</Link></li>
+              <li><Link to="/CookiePolicy" className="hover:text-emerald-400 transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <p className="text-slate-400 text-sm">
-              Email: <a href__="mailto:support@groceryintel.com" className="hover:text-emerald-400 transition-colors">support@groceryintel.com</a>
+              Email: <a href="mailto:support@groceryintel.com" className="hover:text-emerald-400 transition-colors">support@groceryintel.com</a>
             </p>
           </div>
         </div>

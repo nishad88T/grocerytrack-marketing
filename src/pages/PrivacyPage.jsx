@@ -1,9 +1,11 @@
 import React from 'react';
 import { Shield, Eye, Lock, Users, FileText, Mail, ShoppingCart } from 'lucide-react';
+import Navigation from '@/components/shared/Navigation';
 
 const PrivacyPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <Navigation />
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -20,7 +22,7 @@ const PrivacyPage = () => {
           <div className="text-slate-600 space-y-1">
             <p><strong>Operated by:</strong> GroceryIntel Ltd</p>
             <p><strong>Company No.:</strong> 16838153 (England and Wales)</p>
-            <p><strong>Contact:</strong> <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></p>
           </div>
         </div>
 
@@ -185,7 +187,7 @@ const PrivacyPage = () => {
                 <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent</li>
               </ul>
               <p className="mt-4">
-                To exercise any of these rights, contact us at <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline font-semibold">support@groceryintel.com</a>.
+                To exercise any of these rights, contact us at <a href="mailto:support@groceryintel.com" className="text-blue-600 hover:underline font-semibold">support@groceryintel.com</a>.
               </p>
             </div>
           </div>
@@ -218,7 +220,7 @@ const PrivacyPage = () => {
                 If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:
               </p>
               <ul className="list-none space-y-2">
-                <li><strong>Email:</strong> <a href__="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></li>
+                <li><strong>Email:</strong> <a href="mailto:support@groceryintel.com" className="text-blue-600 hover:underline">support@groceryintel.com</a></li>
                 <li><strong>Company:</strong> GroceryIntel Ltd</li>
                 <li><strong>Registration:</strong> England and Wales, Company No. 16838153</li>
               </ul>
@@ -238,16 +240,16 @@ const PrivacyPage = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href__="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Terms of Use
               </a>
-              <a href__="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Privacy Policy
               </a>
-              <a href__="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Cookie Policy
               </a>
-              <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Contact Support
               </a>
             </div>

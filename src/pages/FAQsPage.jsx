@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, ChevronUp, ShoppingCart } from 'lucide-react';
+import Navigation from '@/components/shared/Navigation';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,6 +105,7 @@ const FAQsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <Navigation />
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -134,7 +136,7 @@ const FAQsPage = () => {
           <p className="text-white text-lg mb-6">
             Our team is here to help. Get in touch and we'll respond within 24 hours.
           </p>
-          <a href__="mailto:support@groceryintel.com" className="inline-block">
+          <a href="mailto:support@groceryintel.com" className="inline-block">
             <button className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
               Contact Support
             </button>
@@ -149,7 +151,7 @@ const FAQsPage = () => {
           <p className="text-slate-600 mb-6">
             Join thousands of households making smarter grocery decisions.
           </p>
-          <a href__="https://app.groceryintel.com" className="inline-block">
+          <a href="https://app.groceryintel.com" className="inline-block">
             <button className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700">
               Get Started Today →
             </button>
@@ -167,16 +169,16 @@ const FAQsPage = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href__="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Terms of Use
               </a>
-              <a href__="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Privacy Policy
               </a>
-              <a href__="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Cookie Policy
               </a>
-              <a href__="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Contact Support
               </a>
             </div>

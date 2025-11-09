@@ -3,11 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Check, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <Navigation />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -192,7 +194,7 @@ export default function PricingPage() {
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            <a href__="https://app.groceryintel.com">Get Started Today →</a>
+            <a href="https://app.groceryintel.com">Get Started Today →</a>
           </Button>
         </motion.div>
 

@@ -13,6 +13,7 @@ import {
     ChefHat,
     Sparkles
 } from 'lucide-react';
+import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 const Feature = ({ icon: Icon, title, description }) => (
@@ -30,6 +31,7 @@ const Feature = ({ icon: Icon, title, description }) => (
 export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <Navigation />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -227,7 +229,7 @@ export default function FeaturesPage() {
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            <a href__="https://app.groceryintel.com">Get Started Today →</a>
+            <a href="https://app.groceryintel.com">Get Started Today →</a>
           </Button>
         </motion.div>
 

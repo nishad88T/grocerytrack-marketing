@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, CheckCircle, Users, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => (
@@ -34,6 +35,7 @@ const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+      <Navigation />
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -124,7 +126,7 @@ export default function AboutPage() {
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            <a href__="https://app.groceryintel.com">Get Started →</a>
+            <a href="https://app.groceryintel.com">Get Started →</a>
           </Button>
         </motion.div>
 
