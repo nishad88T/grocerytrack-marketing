@@ -2,9 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link, useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
-import { createPageUrl } from '@/utils';
 import {
     ShoppingCart,
     ScanLine,
@@ -31,59 +28,8 @@ const Feature = ({ icon: Icon, title, description }) => (
 );
 
 export default function FeaturesPage() {
-  const navigate = useNavigate();
-
-  const handleGetStarted = async () => {
-    try {
-      const isAuthenticated = await base44.auth.isAuthenticated();
-      if (isAuthenticated) {
-        navigate(createPageUrl('Dashboard'));
-      } else {
-        await base44.auth.redirectToLogin();
-      }
-    } catch (error) {
-      console.error("Navigation failed:", error);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-      {/* Header */}
-      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-              <Sparkles className="w-4 h-4 md:w-6 md:h-6 text-white" />
-            </div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Features
-            </Link>
-            <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              About
-            </Link>
-            <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Pricing
-            </Link>
-            <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              FAQs
-            </Link>
-            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
-              Get Started
-            </Button>
-          </nav>
-          
-          {/* Mobile Login Button */}
-          <Button onClick={handleGetStarted} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-            Login
-          </Button>
-        </div>
-      </header>
-
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -103,7 +49,7 @@ export default function FeaturesPage() {
           </p>
         </motion.div>
 
-        {/* What You Get */}
+        {/* What You Get - NOW FIRST */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,6 +59,7 @@ export default function FeaturesPage() {
           <h2 className="text-3xl font-bold text-center text-slate-900 mb-8">What You Get</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Planning */}
             <Feature
               icon={ChefHat}
               title="Recipes & Meal Planning"
@@ -123,6 +70,8 @@ export default function FeaturesPage() {
               title="Shopping List Generator"
               description="Auto-create smart shopping lists with estimated costs based on your past receipts."
             />
+            
+            {/* Shopping/Tracking */}
             <Feature
               icon={ScanLine}
               title="Effortless Receipt Scanning"
@@ -133,6 +82,8 @@ export default function FeaturesPage() {
               title="Flexible Budget Tracking"
               description="Set budgets that align with your actual pay schedule and track spending effortlessly."
             />
+            
+            {/* Insights */}
             <Feature
               icon={TrendingUp}
               title="Personal Inflation Tracking"
@@ -156,7 +107,7 @@ export default function FeaturesPage() {
           </div>
         </motion.div>
 
-        {/* Why It Matters */}
+        {/* Why It Matters - NOW SECOND */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -168,16 +119,16 @@ export default function FeaturesPage() {
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Why It Matters</h2>
               <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                Groceries make up roughly <strong>12–15% of household budgets</strong> — one of the few expenses you can truly control.
+                Groceries make up roughly **12–15% of household budgets** — one of the few expenses you can truly control.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto mt-4">
-                Small, consistent changes (<strong>10–15% improvement</strong>) can save hundreds each year, reduce waste, and promote healthier eating habits.
+                Small, consistent changes (**10–15% improvement**) can save hundreds each year, reduce waste, and promote healthier eating habits.
               </p>
             </CardContent>
           </Card>
         </motion.div>
 
-        {/* Comparison */}
+        {/* Reframed Comparison - NOW THIRD */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -247,7 +198,7 @@ export default function FeaturesPage() {
                         Helps manage a monthly budget overall
                       </td>
                       <td className="py-4 px-4 text-slate-800">
-                        <strong>Adds the full grocery improvement cycle:</strong> plan meals, choose recipes, auto-create shopping lists with estimated costs, then track actual spend with receipt uploads
+                        **Adds the full grocery improvement cycle:** plan meals, choose recipes, auto-create shopping lists with estimated costs, then track actual spend with receipt uploads
                       </td>
                     </tr>
                   </tbody>
@@ -256,7 +207,7 @@ export default function FeaturesPage() {
               
               <div className="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="text-slate-700 text-center leading-relaxed">
-                  <strong>In short:</strong> Traditional budgeting apps help you understand your money. GroceryIntel™ helps you <em>improve</em> it — turning everyday grocery shopping into smarter financial and lifestyle decisions.
+                  **In short:** Traditional budgeting apps help you understand your money. GroceryIntel™ helps you *improve* it — turning everyday grocery shopping into smarter financial and lifestyle decisions.
                 </p>
               </div>
             </CardContent>
@@ -272,11 +223,11 @@ export default function FeaturesPage() {
           className="text-center"
         >
           <Button
-            onClick={handleGetStarted}
+            asChild
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            Get Started Today →
+            <a href__="https://app.groceryintel.com">Get Started Today →</a>
           </Button>
         </motion.div>
 
