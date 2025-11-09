@@ -42,12 +42,12 @@ export default function HomePage() {
     }, [location]);
 
      const handleLogin = async () => {
-        try {
-            // Explicitly redirect to the main app's dashboard after login
-            await base44.auth.redirectToLogin('https://app.groceryintel.com' + createPageUrl('Dashboard'));
-        } catch (error) {
-            console.error("Login failed:", error);
-        }
+    try {
+        // Redirect to the Base44 app dashboard after login
+        await base44.auth.redirectToLogin('https://app.groceryintel.com');
+    } catch (error) {
+        console.error("Login failed:", error);
+    }
     };
     return (
         <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
@@ -365,5 +365,6 @@ export default function HomePage() {
         </div>
     );
 }
+
 
 
