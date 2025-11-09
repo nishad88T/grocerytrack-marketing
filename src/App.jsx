@@ -1,37 +1,38 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
-import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
 import FeaturesPage from './pages/FeaturesPage';
+import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
 import FAQsPage from './pages/FAQsPage';
-import TermsPage from './pages/TermsPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
 import PrivacyPage from './pages/PrivacyPage';
-import CookiePage from './pages/CookiePage';
-import ScrollToTop from './components/shared/ScrollToTop';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+
+// ScrollToTop component to ensure pages load at the top
+function ScrollToTop() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return null;
+}
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/features" element={<FeaturesPage />} />
-            <Route path="/pricing" element={<PricingPage />} />
-            <Route path="/faqs" element={<FAQsPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
-            <Route path="/cookies" element={<CookiePage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Features" element={<FeaturesPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/Pricing" element={<PricingPage />} />
+        <Route path="/FAQs" element={<FAQsPage />} />
+        <Route path="/TermsOfUse" element={<TermsOfUsePage />} />
+        <Route path="/Privacy" element={<PrivacyPage />} />
+        <Route path="/CookiePolicy" element={<CookiePolicyPage />} />
+        {/* Fallback route */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
     </Router>
   );
 }
