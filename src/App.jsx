@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header } from './components/Header';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import FeaturesPage from './pages/FeaturesPage';
@@ -15,6 +17,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
+        <Header />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -27,6 +30,7 @@ function App() {
             <Route path="/cookies" element={<CookiePage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );
