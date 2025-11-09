@@ -3,65 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Check, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
-import { createPageUrl } from '@/utils';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 export default function PricingPage() {
-  const navigate = useNavigate();
-
-  const handleGetStarted = async () => {
-    try {
-      const isAuthenticated = await base44.auth.isAuthenticated();
-      if (isAuthenticated) {
-        navigate(createPageUrl('Dashboard'));
-      } else {
-        await base44.auth.redirectToLogin();
-      }
-    } catch (error) {
-      console.error("Navigation failed:", error);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-      {/* Header */}
-      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-              <CreditCard className="w-4 h-4 md:w-6 md:h-6 text-white" />
-            </div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Features
-            </Link>
-            <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              About
-            </Link>
-            <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Pricing
-            </Link>
-            <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              FAQs
-            </Link>
-            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
-              Get Started
-            </Button>
-          </nav>
-          
-          {/* Mobile Login Button */}
-          <Button onClick={handleGetStarted} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-            Login
-          </Button>
-        </div>
-      </header>
-
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -83,7 +29,7 @@ export default function PricingPage() {
             just sized for your scanning needs.
           </p>
           <p className="text-slate-600 mt-4 italic">
-            At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the <strong>exact same powerful analytics and insights</strong>. The only difference? Your monthly scan allowance and household sharing capabilities.
+            At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
           </p>
         </motion.div>
 
@@ -139,7 +85,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700"><strong>12 scans/month</strong></span>
+                      <span className="text-slate-700">**12 scans/month**</span>
                     </li>
                   </ul>
                   <p className="text-xs text-slate-500 mt-4 italic">
@@ -200,11 +146,11 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700"><strong>30 scans/month</strong></span>
+                      <span className="text-slate-700">**30 scans/month**</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700"><strong>Household sharing</strong></span>
+                      <span className="text-slate-700">**Household sharing**</span>
                     </li>
                   </ul>
                   <p className="text-xs text-slate-500 mt-4 italic">
@@ -227,7 +173,7 @@ export default function PricingPage() {
           <Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
             <CardContent className="p-6">
               <p className="text-slate-700 text-lg leading-relaxed">
-                🎯 <strong>No locked features. No confusing tiers.</strong> Just the same mission, sized for your household usage. The difference between Standard and Plus is driven by how often you shop—<strong>smaller households with less monthly receipts versus bigger households with more frequent shops and more receipts.</strong>
+                🎯 **No locked features. No confusing tiers.** Just the same mission, sized for your household usage. The difference between Standard and Plus is driven by how often you shop—**smaller households with less monthly receipts versus bigger households with more frequent shops and more receipts.**
               </p>
             </CardContent>
           </Card>
@@ -242,11 +188,11 @@ export default function PricingPage() {
           className="text-center"
         >
           <Button
-            onClick={handleGetStarted}
+            asChild
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            Get Started Today →
+            <a href__="https://app.groceryintel.com">Get Started Today →</a>
           </Button>
         </motion.div>
 
