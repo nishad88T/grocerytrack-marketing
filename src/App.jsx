@@ -5,9 +5,9 @@ import FeaturesPage from './pages/FeaturesPage';
 import AboutPage from './pages/AboutPage';
 import PricingPage from './pages/PricingPage';
 import FAQsPage from './pages/FAQsPage';
-import TermsOfUsePage from './pages/TermsOfUsePage';
+import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
-import CookiePolicyPage from './pages/CookiePolicyPage';
+import CookiePage from './pages/CookiePage';
 
 // ScrollToTop component to ensure pages load at the top
 function ScrollToTop() {
@@ -27,9 +27,9 @@ function App() {
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Pricing" element={<PricingPage />} />
         <Route path="/FAQs" element={<FAQsPage />} />
-        <Route path="/TermsOfUse" element={<TermsOfUsePage />} />
+        <Route path="/TermsOfUse" element={<TermsPage />} />
         <Route path="/Privacy" element={<PrivacyPage />} />
-        <Route path="/CookiePolicy" element={<CookiePolicyPage />} />
+        <Route path="/CookiePolicy" element={<CookiePage />} />
         {/* Fallback route */}
         <Route path="*" element={<HomePage />} />
       </Routes>
