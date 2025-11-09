@@ -3,9 +3,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, CheckCircle, Users, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { base44 } from '@/api/base44Client';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => (
@@ -35,59 +32,8 @@ const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => 
 );
 
 export default function AboutPage() {
-  const navigate = useNavigate();
-
-  const handleGetStarted = async () => {
-    try {
-      const isAuthenticated = await base44.auth.isAuthenticated();
-      if (isAuthenticated) {
-        navigate(createPageUrl('Dashboard'));
-      } else {
-        await base44.auth.redirectToLogin();
-      }
-    } catch (error) {
-      console.error("Navigation failed:", error);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-      {/* Header */}
-      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
-              <ShoppingCart className="w-4 h-4 md:w-6 md:h-6 text-white" />
-            </div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/Features" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Features
-            </Link>
-            <Link to="/About" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              About
-            </Link>
-            <Link to="/Pricing" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              Pricing
-            </Link>
-            <Link to="/FAQs" className="text-slate-700 hover:text-emerald-600 font-medium transition-colors">
-              FAQs
-            </Link>
-            <Button onClick={handleGetStarted} className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
-              Get Started
-            </Button>
-          </nav>
-          
-          {/* Mobile Login Button */}
-          <Button onClick={handleGetStarted} className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-            Login
-          </Button>
-        </div>
-      </header>
-
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -112,7 +58,7 @@ export default function AboutPage() {
             But tracking my own grocery spending? Tedious spreadsheets and hours of manual entry.
           </p>
           <p>
-            That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
+            That's when I realized: **groceries are 12–15% of household budgets** — one of the few expenses you can truly control.
           </p>
           <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
             <p className="text-emerald-900 font-medium">
@@ -174,11 +120,11 @@ export default function AboutPage() {
           className="text-center mt-12"
         >
           <Button
-            onClick={handleGetStarted}
+            asChild
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           >
-            Get Started →
+            <a href__="https://app.groceryintel.com">Get Started →</a>
           </Button>
         </motion.div>
 
