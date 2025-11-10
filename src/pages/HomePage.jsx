@@ -71,13 +71,13 @@ export default function LandingPage() {
                             FAQs
                         </Link>
                         <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
-                            <a href__="https://app.groceryintel.com">Get Started</a>
+                            <a href="https://app.groceryintel.com">Get Started</a>
                         </Button>
                     </nav>
                     
                     {/* Mobile Login Button */}
                     <Button asChild className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-                        <a href__="https://app.groceryintel.com">Login</a>
+                        <a href="https://app.groceryintel.com">Login</a>
                     </Button>
                 </div>
             </header>
@@ -107,7 +107,7 @@ export default function LandingPage() {
                         size="lg"
                         className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
                     >
-                        <a href__="https://app.groceryintel.com">Get Started →</a>
+                        <a href="https://app.groceryintel.com">Get Started →</a>
                     </Button>
                 </motion.div>
             </section>
@@ -343,7 +343,7 @@ export default function LandingPage() {
                             size="lg"
                             className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-6 text-lg font-semibold"
                         >
-                            <a href__="https://app.groceryintel.com">Get Started →</a>
+                            <a href="https://app.groceryintel.com">Get Started →</a>
                         </Button>
                     </motion.div>
                 </div>

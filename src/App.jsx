@@ -8,14 +8,7 @@ import FAQsPage from './pages/FAQsPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiePage from './pages/CookiePage';
-
-// ScrollToTop component to ensure pages load at the top
-function ScrollToTop() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  return null;
-}
+import ScrollToTop from './components/shared/ScrollToTop';
 
 function App() {
   return (

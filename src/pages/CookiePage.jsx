@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Cookie, Settings, Shield, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 
 const Section = ({ icon: Icon, title, children }) => (
@@ -22,41 +23,7 @@ const Section = ({ icon: Icon, title, children }) => (
 export default function CookiePolicyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
-      {/* Header */}
-      <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-purple-100/50 sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center">
-              <Cookie className="w-4 h-4 md:w-6 md:h-6 text-white" />
-            </div>
-            <h1 className="text-xl md:text-2xl font-bold text-slate-900">GroceryIntel™</h1>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/features" className="text-slate-700 hover:text-purple-600 font-medium transition-colors">
-              Features
-            </Link>
-            <Link to="/about" className="text-slate-700 hover:text-purple-600 font-medium transition-colors">
-              About
-            </Link>
-            <Link to="/pricing" className="text-slate-700 hover:text-purple-600 font-medium transition-colors">
-              Pricing
-            </Link>
-            <Link to="/faqs" className="text-slate-700 hover:text-purple-600 font-medium transition-colors">
-              FAQs
-            </Link>
-            <Link to="/" className="text-slate-700 hover:text-purple-600 font-medium transition-colors">
-              Home
-            </Link>
-          </nav>
-          
-          {/* Mobile Home Button */}
-          <Link to="/" className="md:hidden text-slate-700 hover:text-purple-600 font-medium text-sm px-4">
-            Home
-          </Link>
-        </div>
-      </header>
+      <Navigation />
 
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
@@ -77,7 +44,7 @@ export default function CookiePolicyPage() {
           </div>
           <div className="text-slate-600 space-y-1">
             <p><strong>Operated by:</strong> GroceryIntel Ltd</p>
-            <p><strong>Contact:</strong> <a href__="mailto:support@groceryintel.com" className="text-purple-600 hover:underline">support@groceryintel.com</a></p>
+            <p><strong>Contact:</strong> <a href="mailto:support@groceryintel.com" className="text-purple-600 hover:underline">support@groceryintel.com</a></p>
           </div>
         </motion.div>
 
@@ -123,10 +90,10 @@ export default function CookiePolicyPage() {
                   For more information on managing cookies, visit your browser's help section:
                 </p>
                 <ul className="list-disc pl-6 space-y-1 mt-2">
-                  <li><a href__="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Google Chrome</a></li>
-                  <li><a href__="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Mozilla Firefox</a></li>
-                  <li><a href__="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Safari</a></li>
-                  <li><a href__="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Microsoft Edge</a></li>
+                  <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Google Chrome</a></li>
+                  <li><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Mozilla Firefox</a></li>
+                  <li><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Safari</a></li>
+                  <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">Microsoft Edge</a></li>
                 </ul>
               </Section>
 
@@ -140,7 +107,7 @@ export default function CookiePolicyPage() {
               {/* Contact */}
               <Section icon={Mail} title="Contact Us">
                 <p>
-                  If you have questions about our use of cookies, please contact us at <a href__="mailto:support@groceryintel.com" className="text-purple-600 hover:underline font-semibold">support@groceryintel.com</a>.
+                  If you have questions about our use of cookies, please contact us at <a href="mailto:support@groceryintel.com" className="text-purple-600 hover:underline font-semibold">support@groceryintel.com</a>.
                 </p>
               </Section>
 
