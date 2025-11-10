@@ -6,7 +6,19 @@ import { createPageUrl } from '@/utils';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Optional: close menu when Escape is pressed
+  // Lock page scroll when menu open, restore when closed
+  useEffect(() => {
+    if (isOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = prev || '';
+      };
+    }
+    return;
+  }, [isOpen]);
+
+  // Close on Escape
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') setIsOpen(false);
@@ -27,11 +39,10 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="p-4 md:p-6 bg-white/95 backdrop-blur-sm border-b border-emerald-100 sticky top-0 z-50">
+    <header className="p-4 md:p-6 bg-white/95 border-b border-emerald-100 sticky top-0 z-[1000]">
       <div className="container mx-auto flex items-center justify-between">
         <Link to={createPageUrl('/')} onClick={closeMenu} className="flex items-center gap-3">
           <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-sm">
-            {/* lightweight placeholder logo (replace with actual svg if you have one) */}
             <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
               <circle cx="12" cy="12" r="8" stroke="rgba(255,255,255,0.95)" strokeWidth="1.2" />
             </svg>
@@ -79,17 +90,22 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile menu + backdrop */}
+      {/* Full-screen mobile overlay */}
       <div
-        className={`fixed inset-0 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-[1200] ${isOpen ? 'block' : 'pointer-events-none'} transition-opacity duration-200`}
         aria-hidden={!isOpen}
       >
-        {/* Backdrop (semi-opaque to dim page content) */}
-        <div onClick={closeMenu} className="absolute inset-0 bg-black/50" />
+        {/* Stronger semi-opaque backdrop that covers the whole viewport */}
+        <div
+          onClick={closeMenu}
+          className={`absolute inset-0 bg-black/60 ${isOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
+        />
 
-        {/* Slide-in panel from right */}
+        {/* Opaque slide-in panel that fills small screens — full width on phones */}
         <aside
-          className={`absolute top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-2xl p-6 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`fixed top-0 right-0 h-full bg-white shadow-2xl p-6 transform transition-transform duration-250 ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          } w-full sm:w-3/4 md:w-80`}
           role="dialog"
           aria-modal="true"
         >
@@ -106,28 +122,29 @@ const Navigation = () => {
           </div>
 
           <nav aria-label="Mobile">
-            <ul className="flex flex-col gap-4">
+            <ul className="flex flex-col gap-6 mt-2">
               {links.map((l) => (
                 <li key={l.to}>
                   <Link
                     to={createPageUrl(l.to)}
                     onClick={closeMenu}
-                    className="block text-slate-800 text-lg font-medium"
+                    className="block text-slate-900 text-lg font-semibold"
                   >
                     {l.label}
                   </Link>
                 </li>
               ))}
-              <li className="mt-4">
-                <a
-                  href="https://app.groceryintel.com"
-                  onClick={closeMenu}
-                  className="block text-center px-4 py-2 bg-emerald-500 text-white rounded-lg"
-                >
-                  Get Started
-                </a>
-              </li>
             </ul>
+
+            <div className="mt-8">
+              <a
+                href="https://app.groceryintel.com"
+                onClick={closeMenu}
+                className="block text-center px-4 py-3 bg-emerald-500 text-white rounded-lg font-semibold"
+              >
+                Get Started
+              </a>
+            </div>
           </nav>
         </aside>
       </div>
