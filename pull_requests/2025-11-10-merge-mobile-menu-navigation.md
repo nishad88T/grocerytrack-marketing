@@ -1,0 +1,1 @@
+This PR merges the mobile menu functionality from PR #3 into the main branch. The mobile menu includes hamburger icon, slide-out panel, and all navigation links for mobile users.
