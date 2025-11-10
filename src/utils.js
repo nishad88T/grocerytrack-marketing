@@ -1,12 +1,17 @@
+// Utility to build internal page URLs used by <Link to={createPageUrl(...)} />
+// This version avoids adding duplicate slashes and preserves the path (no protocol-relative URLs).
 export const createPageUrl = (pageName) => {
-  // Logic to create URL for a given page name
-  // This is a placeholder, you might have specific routing logic here
-  // For now, it will just return the page name as a path
-  let url = `/${pageName.toLowerCase()}`;
-  // Handle potential query parameters if pageName includes them
-  if (pageName.includes('?')) {
-      const [baseName, params] = pageName.split('?');
-      url = `/${baseName.toLowerCase()}?${params}`;
-  }
-  return url;
+  if (!pageName) return '/';
+
+  // If the whole pageName is just '/', return it
+  if (pageName === '/') return '/';
+
+  // Split query string if present
+  const [rawPath, query] = pageName.split('?');
+
+  // Ensure path starts with a single leading slash
+  let path = rawPath.startsWith('/') ? rawPath : `/${rawPath}`;
+
+  // Return with query if present (don't lowercase or remove casing)
+  return query ? `${path}?${query}` : path;
 };
