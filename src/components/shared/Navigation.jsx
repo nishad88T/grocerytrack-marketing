@@ -59,7 +59,7 @@ export default function Navigation() {
             />
             
             {/* Mobile menu */}
-            <div className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-50 shadow-xl md:hidden transform transition-transform duration-300 ease-in-out">
+            <div className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-2xl z-50 md:hidden transform transition-transform duration-300 ease-in-out">
               {/* Close button */}
               <div className="flex justify-end p-4">
                 <button 
