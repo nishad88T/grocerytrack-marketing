@@ -53,13 +53,13 @@ export default function Navigation() {
           <>
             {/* Backdrop overlay */}
             <div 
-              className="fixed inset-0 bg-black/50 z-40 md:hidden backdrop-blur-sm transition-opacity"
+              className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity"
               onClick={() => setIsMenuOpen(false)}
               aria-hidden="true"
             />
             
             {/* Mobile menu */}
-            <div className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-50 shadow-xl md:hidden transform transition-transform duration-300 ease-in-out">
+            <div className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white z-50 shadow-xl md:hidden transform transition-transform duration-300 ease-in-out isolate">
               {/* Close button */}
               <div className="flex justify-end p-4">
                 <button 
