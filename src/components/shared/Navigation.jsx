@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 
 export default function Navigation() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="p-4 md:p-6 bg-white/90 backdrop-blur-sm border-b border-emerald-100/50 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
@@ -37,11 +39,89 @@ export default function Navigation() {
           </Button>
         </nav>
         
-        {/* Mobile Login Button */}
-        <Button asChild className="md:hidden bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-sm px-4">
-          <a href="https://app.groceryintel.com">Login</a>
-        </Button>
+        {/* Mobile Hamburger Menu Button */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden p-2 text-slate-700 hover:text-emerald-600 transition-colors"
+          aria-label="Toggle menu"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
       </div>
+
+      {/* Mobile Menu Overlay & Panel */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Mobile Menu Panel */}
+          <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-xl z-50 md:hidden animate-slide-in">
+            {/* Close Button */}
+            <div className="flex justify-end p-4 border-b border-emerald-100">
+              <button 
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-slate-700 hover:text-emerald-600 transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Links */}
+            <nav className="flex flex-col p-6 gap-1">
+              <Link 
+                to={createPageUrl('/')} 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-3 px-3 rounded-lg hover:bg-emerald-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                to={createPageUrl('Features')} 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-3 px-3 rounded-lg hover:bg-emerald-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Features
+              </Link>
+              <Link 
+                to={createPageUrl('Pricing')} 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-3 px-3 rounded-lg hover:bg-emerald-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
+                to={createPageUrl('FAQs')} 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-3 px-3 rounded-lg hover:bg-emerald-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                FAQs
+              </Link>
+              <Link 
+                to={createPageUrl('About')} 
+                className="text-slate-700 hover:text-emerald-600 font-medium transition-colors py-3 px-3 rounded-lg hover:bg-emerald-50"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              
+              {/* Get Started Button */}
+              <div className="mt-6">
+                <Button 
+                  asChild 
+                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                >
+                  <a href="https://app.groceryintel.com">Get Started</a>
+                </Button>
+              </div>
+            </nav>
+          </div>
+        </>
+      )}
     </header>
   );
 }
