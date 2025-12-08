@@ -65,7 +65,7 @@ export default function FeaturesPage() {
             <Feature
               icon={ChefHat}
               title="Recipes & Meal Planning"
-              description="Plan meals with curated recipes and organize your week."
+              description="Import recipes from any website, access curated collections, plan meals, and organize your week. AI extracts ingredients, instructions, and nutritional info automatically."
             />
             <Feature
               icon={Calendar}
@@ -76,8 +76,8 @@ export default function FeaturesPage() {
             {/* Shopping/Tracking */}
             <Feature
               icon={ScanLine}
-              title="Effortless Receipt Scanning"
-              description="Snap any grocery receipt, get an instant, itemised breakdown."
+              title="Email Receipt Processing"
+              description="Track spending by forwarding receipts to our AI system. No apps to open, no manual uploads—just email and go. Supports physical receipt photos and online order emails from all major UK supermarkets."
             />
             <Feature
               icon={PiggyBank}
