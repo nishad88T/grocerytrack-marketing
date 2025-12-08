@@ -31,27 +31,43 @@ const FAQsPage = () => {
   const faqs = [
     {
       question: "What is GroceryIntel™?",
-      answer: "GroceryIntel™ is a smart grocery tracking app that helps households understand and optimize their grocery spending. By scanning receipts, you get item-level insights, track personal inflation, monitor budgets, and make data-driven shopping decisions."
+      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, shop, and track your grocery spending. We provide detailed insights into price changes, spending patterns, and nutritional information—empowering you to make wiser financial and food choices week after week."
     },
     {
-      question: "How does receipt scanning work?",
-      answer: "Simply snap a photo of your grocery receipt (paper or digital) using your phone camera or upload an image. Our AI automatically extracts all items, prices, quantities, and store details. You can review and edit the data if needed before saving."
-    },
-    {
-      question: "What's the difference between Standard and Plus plans?",
-      answer: "Both plans offer the exact same powerful analytics, insights, nutrition tracking, recipes, and meal planning features. The only differences are: Standard includes 12 scans/month (perfect for individuals or small households), while Plus includes 30 scans/month and household sharing (ideal for bigger households with more frequent shopping)."
-    },
-    {
-      question: "Can I share my account with family members?",
-      answer: "Yes! The Plus plan includes household sharing, allowing multiple family members to scan receipts and view shared insights. Everyone in the household sees the same data and analytics."
-    },
-    {
-      question: "What stores do you support?",
-      answer: "GroceryIntel™ works with receipts from any grocery store or supermarket in the UK (Tesco, Sainsbury's, Asda, Aldi, Lidl, Morrisons, Waitrose, Co-op, etc.). Our AI is trained to handle various receipt formats."
+      question: "How does GroceryIntel™ work?",
+      answer: (
+        <>
+          <p>GroceryIntel™ follows a continuous improvement cycle to help you manage your grocery spending:</p>
+          <ul className="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Plan:</strong> Browse curated recipes or import your own from websites. Create meal plans for the week.</li>
+            <li><strong>Shop:</strong> Generate AI-powered shopping lists with estimated costs based on your past purchases.</li>
+            <li><strong>Track:</strong> Snap photos of receipts in-app, or forward receipt photos and online grocery order emails to receipts@groceryintel.com from your registered email address.</li>
+            <li><strong>Analyze:</strong> Our system extracts all item details automatically in the background—no waiting. Once processing completes, review and correct any data, then instantly access analytics on spending, personal inflation, nutrition, and more.</li>
+          </ul>
+          <p className="mt-3"><strong>Important:</strong> Send one receipt per email for best results. Processing happens in the background, and you'll receive an in-app notification when your receipt is ready for review.</p>
+        </>
+      )
     },
     {
       question: "How accurate is the receipt scanning?",
-      answer: "Our AI-powered OCR technology is highly accurate, typically achieving 95%+ accuracy on clear receipt images. You always have the opportunity to review and correct any extracted data before it's saved to your account."
+      answer: "Our advanced OCR technology is highly accurate. However, receipt quality can vary. We allow you to easily review and correct any scanned data to ensure your insights are always precise."
+    },
+    {
+      question: "How do I import recipes from websites?",
+      answer: (
+        <>
+          <p>Go to Parse Recipe in the menu, paste any recipe URL from your browser, and our AI will extract ingredients, instructions, cooking times, and nutritional info automatically.</p>
+          <p className="mt-3"><strong>Legal note:</strong> Imported recipes are stored privately in your account for personal use only. You're responsible for ensuring any recipe you import complies with copyright laws. GroceryIntel does not claim ownership of imported recipes and they are never made publicly visible. See our Terms of Use (Section 8) for full details on recipe usage and copyright responsibilities.</p>
+        </>
+      )
+    },
+    {
+      question: "How do budgets work?",
+      answer: "You can set flexible budgets that align with your actual pay schedule (weekly, monthly, or custom). GroceryIntel™ tracks your spending against these budgets in real-time and provides alerts when you're approaching your limit."
+    },
+    {
+      question: "What kind of insights will I get?",
+      answer: "You'll see breakdowns of spending by category and store, personal inflation rates for items you buy regularly, price volatility alerts, budget projections, and nutritional summaries of your purchases. We go beyond just total spending to show you what's really driving your costs."
     },
     {
       question: "What is 'personal inflation tracking'?",
@@ -62,44 +78,55 @@ const FAQsPage = () => {
       answer: "Yes! GroceryIntel™ links your spending to nutritional data, showing you how much you spend on protein, carbs, healthy vs. processed foods, and more. This helps you balance cost with nutrition quality."
     },
     {
-      question: "Is my data private and secure?",
-      answer: "Absolutely. Your data is stored securely and is only used to provide you with insights. We never sell your data to third parties or use it for advertising. You own your data and can export or delete it at any time."
-    },
-    {
-      question: "Can I cancel my subscription anytime?",
-      answer: "Yes, you can cancel your subscription at any time through your account settings. If you cancel, you'll retain access until the end of your current billing period."
-    },
-    {
       question: "Do you offer a free trial?",
-      answer: "Currently, we don't offer a free trial, but both plans are very affordable (Standard costs less than a cup of coffee!). We believe in transparent pricing and delivering value from day one."
+      answer: "Yes! New users receive a one-month free trial with 4 scans and access to all features. After your trial, both our plans are very affordable—Standard costs less than a cup of coffee! We believe in transparent pricing and delivering value from day one."
     },
     {
-      question: "What if I exceed my monthly scan limit?",
-      answer: "If you reach your monthly scan limit (12 for Standard, 30 for Plus), you'll be notified. You can either wait until the next month when your limit resets, or upgrade to the Plus plan for a higher limit."
-    },
-    {
-      question: "How do budgets work?",
-      answer: "You can set flexible budgets that align with your actual pay schedule (weekly, monthly, or custom). GroceryIntel™ tracks your spending against these budgets in real-time and provides alerts when you're approaching your limit."
-    },
-    {
-      question: "What are 'meal plans' and 'shopping lists'?",
-      answer: "GroceryIntel™ includes curated recipes and meal planning tools. You can plan your weekly meals, and the app will automatically generate a smart shopping list with estimated costs based on your historical receipt data."
-    },
-    {
-      question: "Can I export my data?",
-      answer: "Yes! You can export your receipt data, spending history, and insights at any time from your account settings in CSV or JSON format."
-    },
-    {
-      question: "Do you have a mobile app?",
-      answer: "GroceryIntel™ is a progressive web app (PWA), which means you can access it from any device's web browser. On mobile devices, you can 'Add to Home Screen' for an app-like experience without needing to download anything from app stores."
+      question: "What are the subscription plans?",
+      answer: "We offer two plans: Standard (12 scans/month, £35.99/year or £3.59/month) with full analytics and insights, and Plus (30 scans/month, £59.99/year or £5.99/month) with extra capacity. Both plans give you access to all analytics, nutrition insights, recipes, and meal planning. Visit our Pricing page for full details."
     },
     {
       question: "What payment methods do you accept?",
       answer: "We accept all major credit and debit cards (Visa, Mastercard, Amex) as well as digital wallets. All payments are processed securely through Stripe."
     },
     {
-      question: "How do I get support?",
-      answer: "You can contact our support team at support@groceryintel.com. We typically respond within 24 hours. There's also a feedback button in the app for quick questions or feature requests."
+      question: "What if I exceed my monthly scan limit?",
+      answer: "If you reach your monthly scan limit (12 for Standard, 30 for Plus), you'll be notified. You can either wait until the next month when your limit resets, or upgrade to the Plus plan for a higher limit."
+    },
+    {
+      question: "Can I cancel my subscription anytime?",
+      answer: "Yes, you can cancel your subscription at any time through your account settings. If you cancel, you'll retain access until the end of your current billing period."
+    },
+    {
+      question: "Can I use GroceryIntel™ with my family/household?",
+      answer: "Yes! You can create a household and invite family members using a simple invite code. All household members share the same receipts, budgets, meal plans, and insights. The subscription is managed at the household level - when you subscribe, all household members benefit from the plan's scan allowance."
+    },
+    {
+      question: "How does billing work for households vs individuals?",
+      answer: (
+        <>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Individual users (not in a household):</strong> Your personal subscription tier determines your scan limits and features.</li>
+            <li><strong>Household members:</strong> The household's subscription tier applies to all members. When a paying member creates or joins a household, their subscription automatically applies to the entire household. Only one subscription is needed per household. If you're using GroceryIntel alone, you can subscribe individually. If you later create or join a household, your subscription seamlessly transfers to benefit everyone.</li>
+          </ul>
+        </>
+      )
+    },
+    {
+      question: "Is my data safe and private?",
+      answer: "Yes, absolutely. We prioritize your privacy and data security. We comply with UK GDPR regulations and use industry-standard encryption and security measures. We do not sell, trade, or rent your personal data. Please refer to our Privacy Policy for more details."
+    },
+    {
+      question: "Do you have a mobile app?",
+      answer: "GroceryIntel™ is a progressive web app (PWA), which means you can access it from any device's web browser. On mobile devices, you can 'Add to Home Screen' for an app-like experience without needing to download anything from app stores."
+    },
+    {
+      question: "What if I have an issue or feedback?",
+      answer: "We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application."
+    },
+    {
+      question: "Can I use GroceryIntel™ for business expenses?",
+      answer: "GroceryIntel™ is designed and engineered for personal and household grocery spending. While you could technically scan business receipts, our analytics and categorization are geared toward household food and essentials, so it might not be the best fit for detailed business expense tracking."
     }
   ];
 
@@ -169,13 +196,13 @@ const FAQsPage = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/TermsOfUse" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Terms of Use
               </a>
-              <a href="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/Privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Privacy Policy
               </a>
-              <a href="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/CookiePolicy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Cookie Policy
               </a>
               <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
