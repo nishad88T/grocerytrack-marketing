@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Users, CreditCard, AlertTriangle, Shield, Mail, ShoppingCart } from 'lucide-react';
+import { FileText, Users, CreditCard, AlertTriangle, Shield, Mail, ShoppingCart, ChefHat } from 'lucide-react';
 import Navigation from '@/components/shared/Navigation';
 
 const TermsPage = () => {
@@ -16,12 +16,12 @@ const TermsPage = () => {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Terms of Use</h1>
-              <p className="text-slate-600 text-sm mt-1">Last updated: 14 October 2025</p>
+              <p className="text-slate-600 text-sm mt-1">Last updated: 07 December 2025</p>
             </div>
           </div>
           <div className="text-slate-600 space-y-1">
-            <p><strong>Operated by:</strong> GroceryIntel Ltd</p>
-            <p><strong>Company No.:</strong> 16838153 (England and Wales)</p>
+            <p><strong>Operated by:</strong> GroceryIntel Ltd, registration no. 16838153</p>
+            <p><strong>Registered Office:</strong> 128 City Road London EC1V 2NX United Kingdom</p>
             <p><strong>Contact:</strong> <a href="mailto:support@groceryintel.com" className="text-slate-700 hover:underline">support@groceryintel.com</a></p>
           </div>
         </div>
@@ -34,14 +34,44 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Introduction</h2>
+              <h2 className="text-2xl font-bold text-slate-900">1. Introduction</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                Welcome to GroceryIntel™. These Terms of Use ("Terms") govern your access to and use of our service. By creating an account and using GroceryIntel™, you agree to be bound by these Terms.
+                Welcome to GroceryIntel ("we", "our", or "us"). These Terms of Use govern your access to and use of our application, website, and related services (collectively, the "Service").
               </p>
               <p>
-                Please read these Terms carefully before using our service. If you do not agree with any part of these Terms, you should not use GroceryIntel™.
+                By using GroceryIntel, you agree to these Terms and our Privacy Policy. If you do not agree, please do not use our Service. These Terms also apply to any future updates or features unless stated otherwise.
+              </p>
+            </div>
+          </div>
+
+          {/* Our Values */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">2. Our Values</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                GroceryIntel is built on principles of honesty, transparency, and care for every user. Our goal is to empower families and individuals to make wiser, more mindful financial and food choices. We commit to operating with integrity in all we do. We provide insights based on receipt data you upload, ensuring transparency and user control.
+              </p>
+            </div>
+          </div>
+
+          {/* Eligibility and Account */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <Users className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">3. Eligibility and Account</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                You must be at least 16 years old to create an account. You are responsible for maintaining your account credentials and ensuring that the information you provide is accurate and complete.
               </p>
             </div>
           </div>
@@ -52,44 +82,11 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <ShoppingCart className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Service Description</h2>
+              <h2 className="text-2xl font-bold text-slate-900">4. Description of the Service</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                GroceryIntel™ is a grocery tracking and analytics platform that helps you:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Scan and digitize grocery receipts</li>
-                <li>Track spending patterns and personal inflation</li>
-                <li>Set and monitor budgets</li>
-                <li>Analyze nutrition and food quality</li>
-                <li>Plan meals and generate shopping lists</li>
-                <li>Share household data (Plus plan only)</li>
-              </ul>
-              <p>
-                We reserve the right to modify, suspend, or discontinue any part of the service at any time with reasonable notice.
-              </p>
-            </div>
-          </div>
-
-          {/* Account Registration */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-slate-900">Account Registration</h2>
-            </div>
-            <div className="text-slate-700 leading-relaxed space-y-4">
-              <p>To use GroceryIntel™, you must:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Be at least 18 years old</li>
-                <li>Provide accurate and complete registration information</li>
-                <li>Keep your account credentials secure and confidential</li>
-                <li>Notify us immediately of any unauthorized access</li>
-              </ul>
-              <p>
-                You are responsible for all activities that occur under your account. We are not liable for any loss or damage arising from your failure to maintain account security.
+                GroceryIntel helps users analyse their grocery spending and nutrition through scanned receipts. The app uses advanced OCR and AI technologies to process receipts, offering insights such as monthly spending, inflation trends, and nutritional summaries. Users review and correct receipt data manually to improve data accuracy.
               </p>
             </div>
           </div>
@@ -100,21 +97,25 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <CreditCard className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Subscription Plans & Payment</h2>
+              <h2 className="text-2xl font-bold text-slate-900">5. Subscription Plans and Payments</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
-              <p>
-                GroceryIntel™ offers two subscription tiers: <strong>Standard</strong> and <strong>Plus</strong>. Both plans provide full access to analytics, insights, nutrition tracking, recipes, and meal planning features. The difference is in scan limits and household sharing:
-              </p>
+              <p>GroceryIntel offers two plans:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Standard:</strong> 12 scans/month, individual use</li>
-                <li><strong>Plus:</strong> 30 scans/month, household sharing enabled</li>
+                <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 12 scans/month and full analytics.</li>
+                <li><strong>Plus Plan:</strong> £59.99/year or £5.99/month, includes 30 scans/month and household features.</li>
               </ul>
               <p>
-                Subscriptions are billed monthly or annually. You authorize us to charge your payment method on a recurring basis until you cancel. Prices are subject to change with 30 days' notice.
+                Both plans receive the same analytics and insights with no tier bias.
               </p>
               <p>
-                <strong>Refund Policy:</strong> We do not offer refunds for partial subscription periods. If you cancel, you'll retain access until the end of your current billing period.
+                Unused monthly scans do not roll over to the next month. Subscriptions renew automatically unless cancelled before the next billing cycle. You can cancel anytime via your account settings.
+              </p>
+              <p>
+                We do not offer partial refunds for unused scans or mid-cycle cancellations, except where required by law.
+              </p>
+              <p>
+                Payment processing will be handled by a secure third-party provider such as Stripe. GroceryIntel does not directly process or store payment card information.
               </p>
             </div>
           </div>
@@ -125,42 +126,112 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Acceptable Use</h2>
+              <h2 className="text-2xl font-bold text-slate-900">6. Acceptable Use</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
-              <p>You agree NOT to:</p>
+              <p>You agree not to:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Use the service for any unlawful purpose</li>
-                <li>Upload malicious code, viruses, or harmful content</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Scrape, copy, or reverse engineer any part of the service</li>
-                <li>Share your account credentials with others (except within authorized household sharing)</li>
-                <li>Use the service to transmit spam or unsolicited messages</li>
-                <li>Violate any applicable laws or regulations</li>
+                <li>Upload fraudulent, offensive, or illegal receipts or data.</li>
+                <li>Attempt to reverse engineer or disrupt the app's operation.</li>
+                <li>Share, resell, or misuse analysis results for commercial gain.</li>
+                <li>Upload receipts containing sensitive personal data (e.g., payment card details).</li>
               </ul>
               <p>
-                Violation of these terms may result in immediate account suspension or termination without refund.
+                We reserve the right to suspend or terminate your account for misuse.
               </p>
             </div>
           </div>
 
-          {/* User Data & Content */}
+          {/* Data Accuracy and Disclaimers */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
-                <FileText className="w-5 h-5 text-white" />
+                <AlertTriangle className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">User Data & Content</h2>
+              <h2 className="text-2xl font-bold text-slate-900">7. Data Accuracy and Disclaimers</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                You retain ownership of the data you upload to GroceryIntel™ (receipts, budgets, preferences, etc.). By using our service, you grant us a limited license to process, store, and analyze your data solely to provide the service.
+                All analytics are based on user-submitted receipts and OCR outputs. While we aim for accuracy, variations in receipt quality may lead to occasional errors, particularly in identifying shrinkflation or unit sizes.
               </p>
               <p>
-                We use your data to generate insights, track trends, and improve our service. We will never sell your personal data to third parties. See our <a href="/privacy" className="text-slate-900 hover:underline font-semibold">Privacy Policy</a> for details.
+                Insights depend on the accuracy of OCR outputs and user review. Users are encouraged to verify and correct scanned data; if data is incorrect, insights will reflect those inaccuracies.
               </p>
               <p>
-                You are responsible for ensuring that any data you upload does not violate third-party rights or applicable laws.
+                <strong>GroceryIntel provides insights for informational purposes only and is not liable for decisions made based on those insights.</strong>
+              </p>
+            </div>
+          </div>
+
+          {/* Recipes and Meal Planning */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <ChefHat className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">8. Recipes and Meal Planning</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                GroceryIntel may provide access to a curated recipe database and meal planning features ("Recipe Features"). These features are designed to support household meal planning and budgeting. All recipe content is provided for informational and planning purposes only.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-slate-900 mt-6">8.1 Curated Recipes</h3>
+              <p>
+                The curated recipe library contains recipes that are:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>created by our team,</li>
+                <li>adapted or curated from publicly available sources such as TheMealDB and Pepesto, or</li>
+                <li>contributed under open licences or with permission where applicable.</li>
+              </ul>
+              <p>
+                Where required or appropriate, GroceryIntel includes source attribution for curated recipes. We do not claim exclusive ownership of recipes originating from external sources, and we make no guarantees about the accuracy, completeness, or suitability of any curated recipe for your dietary needs.
+              </p>
+
+              <h3 className="text-xl font-semibold text-slate-900 mt-6">8.2 User-Imported or Parsed Recipes</h3>
+              <p>
+                GroceryIntel allows users to import or parse recipes from external websites or sources ("Imported Recipes") for personal use within their household account. By using this feature, you agree to the following:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Privacy:</strong> Imported Recipes are stored privately within your account (or household, if shared accounts are enabled). They are not published, shared, or made publicly visible by GroceryIntel.</li>
+                <li><strong>Ownership:</strong> GroceryIntel does not claim ownership of Imported Recipes. You retain responsibility for any content you import.</li>
+                <li><strong>Copyright Responsibility:</strong> You are responsible for ensuring that any recipe you import or upload is used in compliance with copyright laws in your jurisdiction, including restrictions on copying or redistributing copyrighted material.</li>
+                <li><strong>No Redistribution:</strong> Imported Recipes must not be submitted for inclusion in the public curated library unless you hold appropriate rights or permissions.</li>
+              </ul>
+              <p>
+                GroceryIntel is not liable for any copyright or legal issues arising from Imported Recipes, including the text, images, or instructions they contain.
+              </p>
+
+              <h3 className="text-xl font-semibold text-slate-900 mt-6">8.3 Allergen Information</h3>
+              <p>
+                We may display allergen information based on common ingredients, following UK Food Information Regulations (FIR 2014) and Food Standards Agency (FSA) guidelines. However:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Allergen data may not be complete or exhaustive.</li>
+                <li>The 14 major UK allergens (celery, gluten-containing cereals, crustaceans, eggs, fish, lupin, milk, molluscs, mustard, peanuts, sesame seeds, soybeans, sulphur dioxide/sulphites, tree nuts) are flagged only where identifiable.</li>
+                <li>You must always check packaging and product labels for accurate allergen information.</li>
+                <li>GroceryIntel cannot guarantee the absence of allergens in any recipe or ingredient.</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-slate-900 mt-6">8.4 Disclaimers & Limitations</h3>
+              <p>
+                All recipe content—whether curated or imported—is provided for informational purposes only. GroceryIntel is not responsible or liable for:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>allergic reactions,</li>
+                <li>foodborne illness or adverse health effects,</li>
+                <li>inaccuracies in ingredient lists,</li>
+                <li>nutritional discrepancies,</li>
+                <li>or any outcomes related to food preparation or consumption.</li>
+              </ul>
+              <p>
+                If you have allergies, dietary restrictions, or specific nutritional needs, you must verify ingredient details independently and seek professional advice if necessary.
+              </p>
+
+              <h3 className="text-xl font-semibold text-slate-900 mt-6">8.5 Nutrition Data</h3>
+              <p>
+                Nutritional values displayed in the app rely on third-party datasets, estimations, or user-provided inputs. These values may vary based on brand differences, ingredient substitutions, cooking methods, and portion size. Nutrition data is intended as a general guide only.
               </p>
             </div>
           </div>
@@ -171,56 +242,26 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Intellectual Property</h2>
+              <h2 className="text-2xl font-bold text-slate-900">9. Intellectual Property</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                All rights, title, and interest in GroceryIntel™ (including software, design, trademarks, and content) are owned by GroceryIntel Ltd or our licensors. You may not copy, modify, distribute, or create derivative works without our express written permission.
-              </p>
-              <p>
-                The GroceryIntel™ name and logo are trademarks of GroceryIntel Ltd. You may not use our trademarks without prior written consent.
+                All content, features, and technology within GroceryIntel are owned by or licensed to us. Users may use them only for personal, non-commercial purposes.
               </p>
             </div>
           </div>
 
-          {/* Disclaimers & Limitations */}
+          {/* Limitation of Liability */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <AlertTriangle className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Disclaimers & Limitations of Liability</h2>
+              <h2 className="text-2xl font-bold text-slate-900">10. Limitation of Liability</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                <strong>Service "As Is":</strong> GroceryIntel™ is provided "as is" without warranties of any kind, express or implied. We do not guarantee that the service will be error-free, uninterrupted, or meet your specific requirements.
-              </p>
-              <p>
-                <strong>Accuracy:</strong> While we strive for accuracy in receipt scanning and data analysis, we cannot guarantee 100% accuracy. You are responsible for reviewing and verifying all extracted data.
-              </p>
-              <p>
-                <strong>Limitation of Liability:</strong> To the maximum extent permitted by law, GroceryIntel Ltd shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the service. Our total liability shall not exceed the amount you paid for the service in the 12 months preceding the claim.
-              </p>
-            </div>
-          </div>
-
-          {/* Termination */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-slate-900">Termination</h2>
-            </div>
-            <div className="text-slate-700 leading-relaxed space-y-4">
-              <p>
-                You may cancel your subscription at any time through your account settings. Your access will continue until the end of your current billing period.
-              </p>
-              <p>
-                We reserve the right to suspend or terminate your account if you violate these Terms, engage in fraudulent activity, or for any other reason at our sole discretion. We will provide reasonable notice unless immediate termination is required.
-              </p>
-              <p>
-                Upon termination, your data will be deleted within 30 days unless we are required to retain it by law.
+                We are not responsible for any indirect, incidental, or consequential damages arising from your use of the Service, except where required by UK law. Nothing in these Terms limits liability for fraud, death, or personal injury caused by negligence, as required under UK law.
               </p>
             </div>
           </div>
@@ -231,11 +272,11 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Changes to These Terms</h2>
+              <h2 className="text-2xl font-bold text-slate-900">11. Changes to the Terms</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                We may update these Terms from time to time. Significant changes will be communicated via email or in-app notification at least 30 days in advance. Your continued use of the service after changes take effect constitutes acceptance of the new Terms.
+                We may update these Terms periodically. If significant changes occur, we will notify you through the app or by email.
               </p>
             </div>
           </div>
@@ -246,11 +287,11 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Governing Law & Disputes</h2>
+              <h2 className="text-2xl font-bold text-slate-900">12. Governing Law</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                These Terms are governed by the laws of England and Wales. Any disputes arising from these Terms or your use of the service shall be subject to the exclusive jurisdiction of the courts of England and Wales.
+                These Terms are governed by and interpreted under the laws of the United Kingdom. Any disputes will be handled in UK courts.
               </p>
             </div>
           </div>
@@ -261,17 +302,12 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Mail className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Contact Us</h2>
+              <h2 className="text-2xl font-bold text-slate-900">13. Contact</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                If you have questions about these Terms, please contact us:
+                For any questions or concerns, please contact us at <a href="mailto:support@groceryintel.com" className="text-slate-900 hover:underline font-semibold">support@groceryintel.com</a> or via the in-app support form.
               </p>
-              <ul className="list-none space-y-2">
-                <li><strong>Email:</strong> <a href="mailto:support@groceryintel.com" className="text-slate-900 hover:underline">support@groceryintel.com</a></li>
-                <li><strong>Company:</strong> GroceryIntel Ltd</li>
-                <li><strong>Registration:</strong> England and Wales, Company No. 16838153</li>
-              </ul>
             </div>
           </div>
 
@@ -288,13 +324,13 @@ const TermsPage = () => {
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/TermsOfUse" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Terms of Use
               </a>
-              <a href="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/Privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Privacy Policy
               </a>
-              <a href="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+              <a href="/CookiePolicy" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Cookie Policy
               </a>
               <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
