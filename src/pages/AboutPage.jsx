@@ -60,23 +60,48 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
-        {/* From Spreadsheets to Smarter Grocery Habits */}
-        <Section icon={ShoppingCart} title="From Spreadsheets to Smarter Grocery Habits">
-          <p>
-            As a qualified accountant, I spent years helping businesses understand their finances.
-          </p>
-          <p>
-            But tracking my own grocery spending? Tedious spreadsheets and hours of manual entry.
-          </p>
-          <p>
-            That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
-          </p>
-          <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
-            <p className="text-emerald-900 font-medium">
-              GroceryIntel™ was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
-            </p>
-          </div>
-        </Section>
+        {/* From Spreadsheets to Smarter Grocery Habits – custom layout with GI logo */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <Card className="border-none shadow-lg bg-emerald-50/80 backdrop-blur-sm">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex items-start gap-4 mb-4">
+                {/* GI logo only for this section */}
+                <img
+                  src="/gi-logo-2.png"
+                  alt="GroceryIntel logo"
+                  className="w-12 h-12 md:w-14 md:h-14 rounded-xl shadow-sm flex-shrink-0"
+                />
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                    From Spreadsheets to Smarter Grocery Habits
+                  </h2>
+                  <div className="text-slate-700 leading-relaxed space-y-4">
+                    <p>
+                      As a qualified accountant, I spent years helping businesses understand their finances.
+                    </p>
+                    <p>
+                      But tracking my own grocery spending? Tedious spreadsheets and hours of manual entry.
+                    </p>
+                    <p>
+                      That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
+                    </p>
+                    <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
+                      <p className="text-emerald-900 font-medium">
+                        GroceryIntel™ was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
 
         {/* Our Mission */}
         <Section icon={Target} title="Our Mission" bgColor="bg-teal-50">
