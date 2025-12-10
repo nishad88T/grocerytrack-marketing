@@ -51,14 +51,34 @@ export default function HomePage() {
       {/* Hero */}
       <section className="pt-12 pb-16">
         <div className="container mx-auto px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-6">
-              <ShoppingCart className="w-8 h-8 text-white" />
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Logo above heading */}
+            <div className="flex justify-center mb-6">
+              <img
+                src="/gi-logo-2.png"
+                alt="GroceryIntel logo"
+                className="h-20 w-20 md:h-24 md:w-24 rounded-2xl shadow-lg"
+              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">What Makes GroceryIntel™ Different</h1>
-            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-8">
-              GroceryIntel™ goes beyond budgeting apps. Instead of just telling you "You spent £400 on groceries," it shows what's driving those costs — item by item, store by store, over time.
+
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              What Makes GroceryIntel™ Different
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-4">
+              GroceryIntel™ goes beyond budgeting apps. Instead of just telling you "You spent £400 on groceries," it
+              shows what's driving those costs — item by item, store by store, over time.
             </p>
+
+            {/* Tagline in green */}
+            <p className="text-lg font-semibold text-emerald-500 mb-8">
+              Track Smarter. Spend Better.
+            </p>
+
             <Button
               asChild
               size="lg"
@@ -73,8 +93,15 @@ export default function HomePage() {
       {/* Features */}
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-6 max-w-6xl">
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">Powerful, simple features</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
+              Powerful, simple features
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
                 icon={ScanLine}
@@ -99,9 +126,18 @@ export default function HomePage() {
       {/* Plans / Pricing CTA */}
       <section className="bg-slate-50 py-16 md:py-20">
         <div className="container mx-auto px-6 max-w-4xl text-center">
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Plans & Pricing</h3>
-            <p className="text-slate-600 mb-6">Same insights. Just sized for your household.</p>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Plans & Pricing
+            </h3>
+            <p className="text-slate-600 mb-6">
+              Same insights. Just sized for your household.
+            </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors">
@@ -110,11 +146,22 @@ export default function HomePage() {
                   <CardDescription>Individuals / small households</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-3xl font-bold text-slate-900">£35.99 <span className="text-lg font-normal text-slate-600">/year</span></p>
+                  <p className="text-3xl font-bold text-slate-900">
+                    £35.99{" "}
+                    <span className="text-lg font-normal text-slate-600">
+                      /year
+                    </span>
+                  </p>
                   <p className="text-slate-600">or £3.59/month</p>
                   <ul className="mt-4 space-y-2">
-                    <li className="flex items-start gap-2"><Check className="w-5 h-5 text-emerald-600 flex-shrink-0" /> Full analytics & insights</li>
-                    <li className="flex items-start gap-2"><Check className="w-5 h-5 text-emerald-600 flex-shrink-0" /> 12 scans/month</li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      Full analytics & insights
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      12 scans/month
+                    </li>
                   </ul>
                 </CardContent>
               </Card>
@@ -125,11 +172,22 @@ export default function HomePage() {
                   <CardDescription>Shared or growing households</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-3xl font-bold text-slate-900">£59.99 <span className="text-lg font-normal text-slate-600">/year</span></p>
+                  <p className="text-3xl font-bold text-slate-900">
+                    £59.99{" "}
+                    <span className="text-lg font-normal text-slate-600">
+                      /year
+                    </span>
+                  </p>
                   <p className="text-slate-600">or £5.99/month</p>
                   <ul className="mt-4 space-y-2">
-                    <li className="flex items-start gap-2"><Check className="w-5 h-5 text-emerald-600 flex-shrink-0" /> Full analytics & insights</li>
-                    <li className="flex items-start gap-2"><Check className="w-5 h-5 text-emerald-600 flex-shrink-0" /> 30 scans/month & household sharing</li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      Full analytics & insights
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      30 scans/month & household sharing
+                    </li>
                   </ul>
                 </CardContent>
               </Card>

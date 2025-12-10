@@ -41,21 +41,30 @@ const Navigation = () => {
   return (
     <header className="p-4 md:p-6 bg-white/95 border-b border-emerald-100 sticky top-0 z-[1000]">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo + Title + BETA */}
-        <Link to={createPageUrl('/')} onClick={closeMenu} className="flex items-center gap-3">
-          {/* Icon (rounded square with cart) */}
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center shadow-sm">
-            <svg className="w-6 h-6 md:w-7 md:h-7 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M3 4h2l1.6 8.4A2 2 0 007.6 15h9.8a2 2 0 001.98-1.6L21 6H6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="10" cy="19" r="1.4" fill="white" />
-              <circle cx="17" cy="19" r="1.4" fill="white" />
-            </svg>
-          </div>
+        {/* Logo + Title + Tagline + BETA */}
+        <Link
+          to={createPageUrl('/')}
+          onClick={closeMenu}
+          className="flex items-center gap-3"
+        >
+          <img
+            src="/gi-logo-2.png"
+            alt="GroceryIntel logo"
+            className="h-9 w-9 md:h-11 md:w-11 rounded-2xl"
+          />
 
-          {/* Title + BETA pill */}
-          <div className="flex items-center gap-3">
-            <span className="text-slate-900 font-semibold text-lg md:text-xl">GroceryIntel™</span>
-            <span className="ml-1 inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2 py-1 rounded-full">BETA</span>
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <span className="text-slate-900 font-semibold text-lg md:text-xl">
+                GroceryIntel™
+              </span>
+              <span className="inline-block bg-amber-100 text-amber-800 text-xs md:text-sm font-semibold px-2 py-1 rounded-full">
+                BETA
+              </span>
+            </div>
+            <span className="text-xs md:text-sm font-medium text-emerald-500 tracking-tight">
+              Track Smarter. Spend Better.
+            </span>
           </div>
         </Link>
 
@@ -101,34 +110,55 @@ const Navigation = () => {
 
       {/* Full-screen mobile overlay */}
       <div
-        className={`fixed inset-0 z-[1200] ${isOpen ? 'block' : 'pointer-events-none'} transition-opacity duration-200`}
+        className={`fixed inset-0 z-[1200] ${
+          isOpen ? 'block' : 'pointer-events-none'
+        } transition-opacity duration-200`}
         aria-hidden={!isOpen}
       >
         {/* Stronger semi-opaque backdrop */}
         <div
           onClick={closeMenu}
-          className={`absolute inset-0 bg-black/60 ${isOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
+          className={`absolute inset-0 bg-black/60 ${
+            isOpen ? 'opacity-100' : 'opacity-0'
+          } transition-opacity duration-200`}
         />
 
         {/* Opaque slide-in panel that fills small screens */}
         <aside
-          className={`fixed top-0 right-0 h-full bg-white shadow-2xl p-6 transform transition-transform duration-250 ${isOpen ? 'translate-x-0' : 'translate-x-full'} w-full sm:w-3/4 md:w-80`}
+          className={`fixed top-0 right-0 h-full bg-white shadow-2xl p-6 transform transition-transform duration-250 ${
+            isOpen ? 'translate-x-0' : 'translate-x-full'
+          } w-full sm:w-3/4 md:w-80`}
           role="dialog"
           aria-modal="true"
         >
           <div className="flex items-center justify-between mb-6">
-            <Link to={createPageUrl('/')} onClick={closeMenu} className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <circle cx="12" cy="12" r="6" stroke="rgba(255,255,255,0.95)" strokeWidth="1.2" />
-                </svg>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-900">GroceryIntel</span>
-                <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded-full">BETA</span>
+            <Link
+              to={createPageUrl('/')}
+              onClick={closeMenu}
+              className="flex items-center gap-3"
+            >
+              <img
+                src="/gi-logo-2.png"
+                alt="GroceryIntel logo"
+                className="h-8 w-8 rounded-2xl"
+              />
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-slate-900">
+                    GroceryIntel™
+                  </span>
+                  <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded-full">
+                    BETA
+                  </span>
+                </div>
+                <span className="text-[11px] font-medium text-emerald-500 tracking-tight">
+                  Track Smarter. Spend Better.
+                </span>
               </div>
             </Link>
-            <button onClick={closeMenu} aria-label="Close menu"><X className="w-5 h-5" /></button>
+            <button onClick={closeMenu} aria-label="Close menu">
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           <nav aria-label="Mobile">
