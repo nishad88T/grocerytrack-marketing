@@ -44,11 +44,20 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
-            <ShoppingCart className="w-8 h-8 text-white" />
+          {/* New logo above heading */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/gi-logo-2.png"
+              alt="GroceryIntel logo"
+              className="h-16 w-16 md:h-20 md:w-20 rounded-2xl shadow-lg"
+            />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">About GroceryIntel™</h1>
-          <p className="text-lg text-slate-600">Empowering smarter grocery decisions, one receipt at a time.</p>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            About GroceryIntel™
+          </h1>
+          <p className="text-lg text-slate-600">
+            Empowering smarter grocery decisions, one receipt at a time.
+          </p>
         </motion.div>
 
         {/* From Spreadsheets to Smarter Grocery Habits */}
@@ -60,7 +69,7 @@ export default function AboutPage() {
             But tracking my own grocery spending? Tedious spreadsheets and hours of manual entry.
           </p>
           <p>
-            That's when I realized: **groceries are 12–15% of household budgets** — one of the few expenses you can truly control.
+            That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
           </p>
           <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
             <p className="text-emerald-900 font-medium">
@@ -83,14 +92,18 @@ export default function AboutPage() {
               <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-900">Full access for all users:</p>
-                <p className="text-slate-700">No "Premium" tiers. Both Standard and Plus plans offer the exact same powerful analytics and insights.</p>
+                <p className="text-slate-700">
+                  No "Premium" tiers. Both Standard and Plus plans offer the exact same powerful analytics and insights.
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-900">Household sharing:</p>
-                <p className="text-slate-700">Standard for individuals, Plus for shared households.</p>
+                <p className="text-slate-700">
+                  Standard for individuals, Plus for shared households.
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-3">
