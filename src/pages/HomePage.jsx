@@ -9,7 +9,8 @@ import {
   TrendingUp,
   BarChart3,
   Lightbulb,
-  Check
+  Check,
+  Wallet
 } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -66,17 +67,18 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              What Makes GroceryIntel™ Different
+              All-in-one grocery planning, tracking, and insights
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-4">
-              GroceryIntel™ goes beyond budgeting apps. Instead of just telling you "You spent £400 on groceries," it
-              shows what's driving those costs — item by item, store by store, over time.
+              GroceryIntel™ combines recipes, meal planning, shopping lists, and effortless receipt scanning so you can
+              control grocery spend without adding extra work—including budgets that start on your payday, not the
+              calendar month.
             </p>
 
             {/* Tagline in green */}
             <p className="text-lg font-semibold text-emerald-500 mb-8">
-              Track Smarter. Spend Better.
+              Track Smarter. Spend Better. Eat Well.
             </p>
 
             <Button
@@ -100,24 +102,86 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
-              Powerful, simple features
+              Built to make grocery savings effortless
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
+                icon={ShoppingCart}
+                title="Plan and shop in one place"
+                description="Curated and user-imported recipes feed straight into meal plans and smart shopping lists with cost estimates from your past receipts."
+              />
+              <Feature
                 icon={ScanLine}
-                title="Scan any receipt"
-                description="Paper or digital receipts — scan and digitize instantly."
+                title="Frictionless tracking"
+                description="Snap paper receipts, forward digital ones, or upload later. Our smart receipt parser handles the details in the background so you never slow down at checkout."
               />
               <Feature
                 icon={BarChart3}
-                title="Analyse trends"
-                description="Track spending by item, store and time to find savings."
+                title="Analytics that guide you"
+                description="See price inflation, category spend, and store comparisons. Spot high-impact swaps to keep your basket on budget and on track."
               />
               <Feature
                 icon={Lightbulb}
-                title="Actionable insights"
-                description="Personalised tips and shopping lists that help you save."
+                title="Habit-forming convenience"
+                description="Forward an email, drop a photo, and come back whenever you like. GroceryIntel™ keeps processing and reminds you where to focus, not where you slipped."
               />
+              <Feature
+                icon={Wallet}
+                title="Payday-aligned budgeting"
+                description="Start budgets on the day you get paid instead of the first of the month, so your grocery tracking and limits match how cash actually hits your account."
+              />
+              <Feature
+                icon={TrendingUp}
+                title="Nutrition meets value"
+                description="Pair spending data with nutritional breakdowns to balance cost and quality for every shop."
+              />
+              <Feature
+                icon={Check}
+                title="Proven weekly wins"
+                description="Track savings by category over time and celebrate the small improvements that compound into hundreds saved each year."
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="bg-slate-50 py-16 md:py-20">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
+              Low-friction from idea to insight
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <Card className="border-emerald-100 shadow-sm">
+                <CardHeader>
+                  <CardTitle className="text-xl">1. Plan meals effortlessly</CardTitle>
+                  <CardDescription>
+                    Pick from curated recipes or paste any link. GroceryIntel™ extracts ingredients, instructions, and nutrition automatically.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+              <Card className="border-emerald-100 shadow-sm">
+                <CardHeader>
+                  <CardTitle className="text-xl">2. Shop with clarity</CardTitle>
+                  <CardDescription>
+                    Auto-generate shopping lists with quantities and estimated costs based on your past spend and preferred stores.
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+                <Card className="border-emerald-100 shadow-sm">
+                  <CardHeader>
+                    <CardTitle className="text-xl">3. Track without slowing down</CardTitle>
+                    <CardDescription>
+                      Scan or forward receipts, including standard photos and email receipts. Automated processing runs in the background so you can get on with your day, with budgets that align to your payday instead of the calendar.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
             </div>
           </motion.div>
         </div>
