@@ -40,7 +40,7 @@ const FAQsPage = () => {
           <p>GroceryIntel™ follows a continuous improvement cycle to help you manage your grocery spending:</p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li><strong>Plan:</strong> Browse curated recipes or import your own from websites. Create meal plans for the week.</li>
-            <li><strong>Shop:</strong> Generate AI-powered shopping lists with estimated costs based on your past purchases.</li>
+            <li><strong>Shop:</strong> Generate smart shopping lists with estimated costs based on your past purchases.</li>
             <li><strong>Track:</strong> Snap photos of receipts in-app, or forward receipt photos and online grocery order emails to receipts@groceryintel.com from your registered email address.</li>
             <li><strong>Analyze:</strong> Our system extracts all item details automatically in the background—no waiting. Once processing completes, review and correct any data, then instantly access analytics on spending, personal inflation, nutrition, and more.</li>
           </ul>
@@ -56,7 +56,7 @@ const FAQsPage = () => {
       question: "How do I import recipes from websites?",
       answer: (
         <>
-          <p>Go to Parse Recipe in the menu, paste any recipe URL from your browser, and our AI will extract ingredients, instructions, cooking times, and nutritional info automatically.</p>
+          <p>Go to Parse Recipe in the menu, paste any recipe URL from your browser, and our recipe parser will extract ingredients, instructions, cooking times, and nutritional info automatically.</p>
           <p className="mt-3"><strong>Legal note:</strong> Imported recipes are stored privately in your account for personal use only. You're responsible for ensuring any recipe you import complies with copyright laws. GroceryIntel does not claim ownership of imported recipes and they are never made publicly visible. See our Terms of Use (Section 8) for full details on recipe usage and copyright responsibilities.</p>
         </>
       )
