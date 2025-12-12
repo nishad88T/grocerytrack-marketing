@@ -1,6 +1,7 @@
 import React from 'react';
-import { Shield, Eye, Lock, Users, FileText, Mail, ShoppingCart } from 'lucide-react';
+import { Shield, Eye, Lock, Users, FileText, Mail } from 'lucide-react';
 import Navigation from '@/components/shared/Navigation';
+import LegalFooter from '@/components/shared/LegalFooter';
 
 const PrivacyPage = () => {
   return (
@@ -229,37 +230,7 @@ const PrivacyPage = () => {
 
         </div>
 
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-slate-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <ShoppingCart className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-slate-700 font-semibold">GroceryIntel™</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href="/terms" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Terms of Use
-              </a>
-              <a href="/privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="/cookie-policy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Cookie Policy
-              </a>
-              <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Contact Support
-              </a>
-            </div>
-          </div>
-          
-          <div className="text-center text-xs text-slate-500 mt-6">
-            <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-            <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
-          </div>
-        </footer>
+        <LegalFooter />
       </div>
     </div>
   );
