@@ -78,7 +78,7 @@ export default function HomePage() {
 
             {/* Tagline in green */}
             <p className="text-lg font-semibold text-emerald-500 mb-8">
-              Track Smarter. Spend Better. Eat Well.
+              Track Smarter. Spend Better.
             </p>
 
             <Button
