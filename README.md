@@ -42,7 +42,7 @@ If the port is busy, Vite will suggest another one—use the URL it prints. Clos
 
 ### If you only use GitHub.com (no local terminal)
 
-You can still preview the site without installing anything by launching a Codespace from the GitHub web UI. Make sure you open the branch you want to test (for this project, `marketing-seo-copy` right now) so the Codespace reflects the latest commits:
+You can still preview the site without installing anything by launching a Codespace from the GitHub web UI. Make sure you open the branch you want to test (for this project, `marketing-copy-fix` right now) so the Codespace reflects the latest commits:
 
 1. Open the repository on GitHub.com.
 2. Click the green **Code** button and choose **Create codespace on main** (or the branch you want to preview).
@@ -56,7 +56,7 @@ You can still preview the site without installing anything by launching a Codesp
 
 #### Where are my changes right now?
 
-- The updates we authored (Home, Features, FAQs copy) are saved in this repo’s `marketing-seo-copy` branch. They are **not** automatically live on GroceryIntel.com until that branch is pushed and deployed to the production-tracked branch (often `main`) that Vercel watches.
+- The updates we authored (Home, Features, FAQs copy) are saved in this repo’s `marketing-copy-fix` branch. They are **not** automatically live on GroceryIntel.com until that branch is pushed and deployed to the production-tracked branch (often `main`) that Vercel watches.
 - If you make additional edits inside a Codespace, they stay inside that Codespace until you run `git commit` and `git push` to the branch. Closing a Codespace without pushing will leave those extra edits behind.
 
 ### How to push your changes from a Codespace

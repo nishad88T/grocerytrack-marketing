@@ -78,7 +78,7 @@ export default function HomePage() {
 
             {/* Tagline in green */}
             <p className="text-lg font-semibold text-emerald-500 mb-8">
-              Track Smarter. Spend Better. Eat Well.
+              Track Smarter. Spend Better.
             </p>
 
             <Button
@@ -118,7 +118,7 @@ export default function HomePage() {
               <Feature
                 icon={BarChart3}
                 title="Analytics that guide you"
-                description="See price inflation, category spend, and store comparisons. Spot high-impact swaps to keep your basket on budget and on track."
+                description="See price trends, category spend, and store comparisons so you can spot where your money is going and decide where to cut back if you want to."
               />
               <Feature
                 icon={Lightbulb}
@@ -134,11 +134,6 @@ export default function HomePage() {
                 icon={TrendingUp}
                 title="Nutrition meets value"
                 description="Pair spending data with nutritional breakdowns to balance cost and quality for every shop."
-              />
-              <Feature
-                icon={Check}
-                title="Proven weekly wins"
-                description="Track savings by category over time and celebrate the small improvements that compound into hundreds saved each year."
               />
             </div>
           </motion.div>
