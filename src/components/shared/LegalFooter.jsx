@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import OnboardingDisclaimerCTA from './OnboardingDisclaimerCTA';
 
 export default function LegalFooter() {
   return (
@@ -30,6 +31,13 @@ export default function LegalFooter() {
           <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
             Contact Support
           </a>
+          <OnboardingDisclaimerCTA
+            label="Read beta notice"
+            redirectUrl={null}
+            variant="link"
+            className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
+            size="sm"
+          />
         </div>
       </div>
 
