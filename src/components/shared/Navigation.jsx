@@ -51,7 +51,7 @@ const Navigation = () => {
           <img
             src="/gi-logo-2.png"
             alt="GroceryIntel logo"
-            className="h-9 w-9 md:h-11 md:w-11 rounded-2xl"
+            className="h-9 w-9 md:h-11 md:w-11 rounded-lg"
           />
 
           <div className="flex flex-col">
@@ -141,7 +141,7 @@ const Navigation = () => {
               <img
                 src="/gi-logo-2.png"
                 alt="GroceryIntel logo"
-                className="h-8 w-8 rounded-2xl"
+                className="h-8 w-8 rounded-lg"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">

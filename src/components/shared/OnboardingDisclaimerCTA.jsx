@@ -8,7 +8,7 @@ const LEGACY_KEYS = ["giOnboardingAcknowledged"];
 const APP_URL = "https://app.groceryintel.com";
 
 const disclaimerPoints = [
-  "GroceryIntel is currently in MVP Beta.",
+  "GroceryIntel is currently in Beta.",
   "Features may change and data may be refined as the product evolves.",
   "Insights are provided for informational purposes only and are designed to help you understand your grocery spending — not to provide financial advice or guarantees.",
 ];
@@ -129,8 +129,8 @@ function OnboardingDisclaimerCTA({
 
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700">
               {disclaimerPoints.map((point) => (
-                <div key={point} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-600" />
+                <div key={point} className="flex items-start gap-3">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600" />
                   <span>{point}</span>
                 </div>
               ))}
@@ -147,7 +147,7 @@ function OnboardingDisclaimerCTA({
                 onChange={(event) => setChecked(event.target.checked)}
               />
               <span>
-                I have read and understand the MVP Beta disclaimer and want to continue to create my account.
+                I have read and understand the Beta disclaimer and want to continue to create my account.
               </span>
             </label>
 

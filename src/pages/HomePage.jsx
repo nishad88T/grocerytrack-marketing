@@ -91,7 +91,7 @@ export default function HomePage() {
                 Start with a free 1-month trial — no payment required.
               </p>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
-                Enjoy full access to analytics and insights with up to 4 receipt scans to explore how GroceryIntel fits your routine.
+                Enjoy full access to analytics and insights, with up to 4 receipt scans and 10 recipe imports to explore how GroceryIntel fits into your routine.
               </p>
             </div>
           </motion.div>
