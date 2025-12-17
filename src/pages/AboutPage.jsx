@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { ShoppingCart, CheckCircle, Users, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
+import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
 
 const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => (
   <motion.div
@@ -159,13 +159,11 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button
-            asChild
+          <OnboardingDisclaimerCTA
+            label="Get Started →"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
-          >
-            <a href="https://app.groceryintel.com">Get Started →</a>
-          </Button>
+          />
         </motion.div>
 
         {/* Footer */}
