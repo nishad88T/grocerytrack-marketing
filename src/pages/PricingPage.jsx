@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Check, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
+import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
 
 export default function PricingPage() {
   return (
@@ -29,6 +29,9 @@ export default function PricingPage() {
           </p>
           <p className="text-xl text-slate-700">
             just sized for your scanning needs.
+          </p>
+          <p className="text-base text-slate-700 mt-4">
+            Start with a free 1-month trial — no payment required — and get full analytics and insights with up to 4 receipt scans to see how GroceryIntel fits your routine.
           </p>
           <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
@@ -189,13 +192,11 @@ export default function PricingPage() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button
-            asChild
+          <OnboardingDisclaimerCTA
+            label="Get Started Today →"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
-          >
-            <a href="https://app.groceryintel.com">Get Started Today →</a>
-          </Button>
+          />
         </motion.div>
 
         {/* Footer */}
