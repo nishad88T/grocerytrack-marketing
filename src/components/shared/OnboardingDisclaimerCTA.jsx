@@ -131,7 +131,7 @@ function OnboardingDisclaimerCTA({
               {disclaimerPoints.map((point) => (
                 <div key={point} className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600" />
-                  <span>{point}</span>
+                  <span className="flex-1">{point}</span>
                 </div>
               ))}
               <p className="text-sm font-semibold text-slate-800">
