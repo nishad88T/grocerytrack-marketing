@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { createPageUrl } from "@/utils";
 import {
   ShoppingCart,
   ScanLine,
@@ -16,6 +14,7 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navigation from "@/components/shared/Navigation";
 import LegalFooter from "@/components/shared/LegalFooter";
+import OnboardingDisclaimerCTA from "@/components/shared/OnboardingDisclaimerCTA";
 
 const Feature = ({ icon: Icon, title, description }) => (
   <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
@@ -81,13 +80,20 @@ export default function HomePage() {
               Track Smarter. Spend Better.
             </p>
 
-            <Button
-              asChild
+            <OnboardingDisclaimerCTA
+              label="Get Started →"
               size="lg"
               className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold"
-            >
-              <a href="https://app.groceryintel.com">Get Started →</a>
-            </Button>
+            />
+
+            <div className="mt-4 space-y-1 text-slate-700">
+              <p className="text-base font-semibold text-emerald-700">
+                Start with a free 1-month trial — no payment required.
+              </p>
+              <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
+                Enjoy full access to analytics and insights with up to 4 receipt scans to explore how GroceryIntel fits your routine.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -252,13 +258,11 @@ export default function HomePage() {
               </Card>
             </div>
 
-            <Button
-              asChild
+            <OnboardingDisclaimerCTA
+              label="Get Started Today →"
               size="lg"
               className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl px-8 py-4 text-lg font-semibold"
-            >
-              <a href="https://app.groceryintel.com">Get Started Today →</a>
-            </Button>
+            />
           </motion.div>
         </div>
       </section>
