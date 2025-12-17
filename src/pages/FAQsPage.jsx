@@ -80,7 +80,7 @@ const FAQsPage = () => {
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes! New users receive a one-month free trial with 4 scans and full analytics and insights. No payment is required to start. After your trial, both our plans are very affordable—Standard costs less than a cup of coffee! We believe in transparent pricing and delivering value from day one."
+      answer: "Yes. New users receive a one-month free trial with full access to analytics and insights, plus up to 4 receipt scans and 10 recipe imports. No payment is required to start. After your trial, you can choose a plan based on your monthly scan needs."
     },
     {
       question: "What are the subscription plans?",

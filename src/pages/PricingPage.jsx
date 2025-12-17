@@ -31,7 +31,7 @@ export default function PricingPage() {
             just sized for your scanning needs.
           </p>
           <p className="text-base text-slate-700 mt-4">
-            Start with a free 1-month trial — no payment required — and get full analytics and insights with up to 4 receipt scans to see how GroceryIntel fits your routine.
+            Start with a free 1-month trial — no payment required. Enjoy full access to analytics and insights, with up to 4 receipt scans and 10 recipe imports to explore how GroceryIntel fits into your routine.
           </p>
           <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
