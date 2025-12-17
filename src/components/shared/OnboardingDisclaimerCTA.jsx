@@ -130,7 +130,9 @@ function OnboardingDisclaimerCTA({
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700">
               {disclaimerPoints.map((point) => (
                 <div key={point} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600" />
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center text-emerald-600">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </span>
                   <span className="flex-1">{point}</span>
                 </div>
               ))}
