@@ -32,7 +32,7 @@ const FAQsPage = () => {
   const faqs = [
     {
       question: "What is GroceryIntel™?",
-      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, shop, and track your grocery spending. We provide detailed insights into price changes, spending patterns, and nutritional information—empowering you to make wiser financial and food choices week after week."
+      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, track, and understand your grocery spending.\n\nIt uses scanned receipts and user-reviewed data to provide insights into price changes, spending patterns, and nutritional information—helping households build awareness and make more informed grocery decisions over time."
     },
     {
       question: "How does GroceryIntel™ work?",
