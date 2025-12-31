@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { createPageUrl } from '@/utils';
+import OnboardingDisclaimerCTA from './OnboardingDisclaimerCTA';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +51,7 @@ const Navigation = () => {
           <img
             src="/gi-logo-2.png"
             alt="GroceryIntel logo"
-            className="h-9 w-9 md:h-11 md:w-11 rounded-2xl"
+            className="h-9 w-9 md:h-11 md:w-11 rounded-lg"
           />
 
           <div className="flex flex-col">
@@ -87,12 +88,12 @@ const Navigation = () => {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="https://app.groceryintel.com"
-            className="inline-block px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg shadow-sm font-medium"
-          >
-            Get Started
-          </a>
+          <OnboardingDisclaimerCTA
+            label="Get Started"
+            className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg shadow-sm font-medium"
+            size="lg"
+            onTrigger={closeMenu}
+          />
         </div>
 
         {/* Mobile hamburger */}
@@ -140,7 +141,7 @@ const Navigation = () => {
               <img
                 src="/gi-logo-2.png"
                 alt="GroceryIntel logo"
-                className="h-8 w-8 rounded-2xl"
+                className="h-8 w-8 rounded-lg"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
@@ -177,13 +178,12 @@ const Navigation = () => {
             </ul>
 
             <div className="mt-8">
-              <a
-                href="https://app.groceryintel.com"
-                onClick={closeMenu}
-                className="block text-center px-4 py-3 bg-emerald-500 text-white rounded-lg font-semibold"
-              >
-                Get Started
-              </a>
+              <OnboardingDisclaimerCTA
+                label="Get Started"
+                className="w-full px-4 py-3 bg-emerald-500 text-white rounded-lg font-semibold"
+                size="lg"
+                onTrigger={closeMenu}
+              />
             </div>
           </nav>
         </aside>

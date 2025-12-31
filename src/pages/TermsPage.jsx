@@ -17,7 +17,7 @@ const TermsPage = () => {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Terms of Use</h1>
-              <p className="text-slate-600 text-sm mt-1">Last updated: 07 December 2025</p>
+              <p className="text-slate-600 text-sm mt-1">Last updated: 17 December 2025</p>
             </div>
           </div>
           <div className="text-slate-600 space-y-1">
@@ -89,6 +89,9 @@ const TermsPage = () => {
               <p>
                 GroceryIntel helps users analyse their grocery spending and nutrition through scanned receipts. The app uses advanced OCR and AI technologies to process receipts, offering insights such as monthly spending, inflation trends, and nutritional summaries. Users review and correct receipt data manually to improve data accuracy.
               </p>
+              <p>
+                <strong>Beta Status.</strong> GroceryIntel is currently offered as a Beta service. Features, functionality, and outputs may change, be refined, or be removed during this phase. Users acknowledge that the Service is provided on an early-access basis while we continue to test and improve the product.
+              </p>
             </div>
           </div>
 
@@ -101,6 +104,9 @@ const TermsPage = () => {
               <h2 className="text-2xl font-bold text-slate-900">5. Subscription Plans and Payments</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                <strong>Free Trial Access.</strong> GroceryIntel may offer a free trial period that provides full access to application features, subject to usage limits such as a restricted number of receipt scans and recipe imports. The trial is intended to allow users to evaluate the Service before subscribing. Usage limits during a trial are clearly communicated within the app.
+              </p>
               <p>GroceryIntel offers two plans:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 12 scans/month and full analytics.</li>
@@ -160,6 +166,9 @@ const TermsPage = () => {
               </p>
               <p>
                 <strong>GroceryIntel provides insights for informational purposes only and is not liable for decisions made based on those insights.</strong>
+              </p>
+              <p>
+                GroceryIntel does not provide financial, budgeting, or investment advice and does not guarantee savings, outcomes, or financial performance.
               </p>
             </div>
           </div>

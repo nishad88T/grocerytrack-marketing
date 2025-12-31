@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, ChevronUp, ShoppingCart } from 'lucide-react';
 import Navigation from '@/components/shared/Navigation';
+import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const FAQsPage = () => {
   const faqs = [
     {
       question: "What is GroceryIntel™?",
-      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, shop, and track your grocery spending. We provide detailed insights into price changes, spending patterns, and nutritional information—empowering you to make wiser financial and food choices week after week."
+      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, track, and understand your grocery spending.\n\nIt uses scanned receipts and user-reviewed data to provide insights into price changes, spending patterns, and nutritional information—helping households build awareness and make more informed grocery decisions over time."
     },
     {
       question: "How does GroceryIntel™ work?",
@@ -79,7 +80,7 @@ const FAQsPage = () => {
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes! New users receive a one-month free trial with 4 scans and access to all features. After your trial, both our plans are very affordable—Standard costs less than a cup of coffee! We believe in transparent pricing and delivering value from day one."
+      answer: "Yes. New users receive a one-month free trial with full access to analytics and insights, plus up to 4 receipt scans and 10 recipe imports. No payment is required to start. After your trial, you can choose a plan based on your monthly scan needs."
     },
     {
       question: "What are the subscription plans?",
@@ -178,11 +179,11 @@ const FAQsPage = () => {
           <p className="text-slate-600 mb-6">
             Join thousands of households making smarter grocery decisions.
           </p>
-          <a href="https://app.groceryintel.com" className="inline-block">
-            <button className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700">
-              Get Started Today →
-            </button>
-          </a>
+          <OnboardingDisclaimerCTA
+            label="Get Started Today →"
+            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700"
+            size="lg"
+          />
         </div>
 
         {/* Footer */}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import {
     ShoppingCart,
     ScanLine,
@@ -15,6 +14,7 @@ import {
 } from 'lucide-react';
 import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
+import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
 
 const Feature = ({ icon: Icon, title, description }) => (
     <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
@@ -224,13 +224,11 @@ export default function FeaturesPage() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button
-            asChild
+          <OnboardingDisclaimerCTA
+            label="Get Started Today →"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
-          >
-            <a href="https://app.groceryintel.com">Get Started Today →</a>
-          </Button>
+          />
         </motion.div>
 
         {/* Footer */}
