@@ -3,20 +3,18 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import OnboardingDisclaimerCTA from './OnboardingDisclaimerCTA';
+import { lockBodyScroll, unlockBodyScroll } from '@/utils/bodyScrollLock';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Lock page scroll when menu open, restore when closed
   useEffect(() => {
-    if (isOpen) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => {
-        document.body.style.overflow = prev || '';
-      };
-    }
-    return;
+    if (!isOpen) return undefined;
+    lockBodyScroll();
+    return () => {
+      unlockBodyScroll();
+    };
   }, [isOpen]);
 
   // Close on Escape
