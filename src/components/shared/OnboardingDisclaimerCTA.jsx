@@ -90,7 +90,7 @@ function OnboardingDisclaimerCTA({
   const handleClose = () => setOpen(false);
 
   const modal = open ? (
-    <div className="fixed inset-0 z-[2000] flex items-center justify-center px-4">
+    <div className="fixed inset-0 z-[2000] flex items-start justify-center px-4 py-6 sm:items-center">
       <div
         className="absolute inset-0 bg-slate-900/60"
         aria-hidden="true"
@@ -98,16 +98,16 @@ function OnboardingDisclaimerCTA({
       />
 
       <div
-        className="relative w-full max-w-xl rounded-2xl bg-white p-6 shadow-2xl"
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-4 shadow-2xl sm:p-6"
         role="dialog"
         aria-modal="true"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-amber-50">
-            <ShieldAlert className="h-6 w-6 text-amber-600" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 sm:h-11 sm:w-11">
+            <ShieldAlert className="h-5 w-5 text-amber-600 sm:h-6 sm:w-6" />
           </div>
           <div className="space-y-1">
-            <h2 className="text-xl font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
               Mandatory beta disclaimer
             </h2>
             <p className="text-sm text-slate-600">
@@ -130,7 +130,7 @@ function OnboardingDisclaimerCTA({
           </p>
         </div>
 
-        <label className="mt-6 flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-800">
+        <label className="mt-5 flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-800 sm:mt-6">
           <input
             type="checkbox"
             className="mt-1 h-4 w-4 accent-emerald-600"
@@ -142,7 +142,7 @@ function OnboardingDisclaimerCTA({
           </span>
         </label>
 
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-end">
+        <div className="mt-4 flex flex-col gap-3 sm:mt-5 sm:flex-row sm:justify-end">
           <Button
             variant="outline"
             className="w-full sm:w-auto"
