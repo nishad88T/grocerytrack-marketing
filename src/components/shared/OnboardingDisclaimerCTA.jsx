@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ShieldAlert, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { lockBodyScroll, unlockBodyScroll } from "@/utils/bodyScrollLock";
 
 const STORAGE_KEY = "gi_beta_disclaimer_accepted";
 const LEGACY_KEYS = ["giOnboardingAcknowledged"];
@@ -49,10 +50,9 @@ function OnboardingDisclaimerCTA({
 
   useEffect(() => {
     if (!open) return undefined;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockBodyScroll();
     return () => {
-      document.body.style.overflow = previousOverflow || "";
+      unlockBodyScroll();
     };
   }, [open]);
 
