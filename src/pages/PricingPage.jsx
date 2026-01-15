@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
+import BetaDiscountBanner from '@/components/shared/BetaDiscountBanner';
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       <Navigation />
+      <BetaDiscountBanner />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}

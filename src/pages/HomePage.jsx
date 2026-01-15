@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/shared/Navigation";
 import LegalFooter from "@/components/shared/LegalFooter";
 import OnboardingDisclaimerCTA from "@/components/shared/OnboardingDisclaimerCTA";
+import BetaDiscountBanner from "@/components/shared/BetaDiscountBanner";
 
 const Feature = ({ icon: Icon, title, description }) => (
   <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
@@ -47,6 +48,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Shared header/navigation */}
       <Navigation />
+      <BetaDiscountBanner />
 
       {/* Hero */}
       <section className="pt-12 pb-16">
