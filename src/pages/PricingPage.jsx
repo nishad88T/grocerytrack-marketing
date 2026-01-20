@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
+import BetaDiscountBanner from '@/components/shared/BetaDiscountBanner';
 
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       <Navigation />
+      <BetaDiscountBanner />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
         {/* Header */}
@@ -166,6 +168,9 @@ export default function PricingPage() {
             </Card>
           </motion.div>
         </div>
+        <p className="text-xs text-slate-500 italic text-center -mt-6 mb-12">
+          * Promo terms: GI-BETA50 gives 50% off the first year. Max redemptions: 500. Expires March 31, 2026.
+        </p>
 
         {/* No Tier Bias Statement */}
         <motion.div
