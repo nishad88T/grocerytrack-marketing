@@ -120,7 +120,7 @@ export default function HomePage() {
               />
               <Feature
                 icon={ScanLine}
-                title="Frictionless tracking"
+                title="Low friction tracking"
                 description="Snap paper receipts, forward digital ones, or upload later. Our smart receipt parser handles the details in the background so you never slow down at checkout."
               />
               <Feature
