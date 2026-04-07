@@ -169,7 +169,7 @@ export default function PricingPage() {
           </motion.div>
         </div>
         <p className="text-xs text-slate-500 italic text-center -mt-6 mb-12">
-          * Promo terms: GI-BETA50 gives 50% off the first year. Max redemptions: 500. Expires March 31, 2026.
+          * Promo terms: GI-BETA50 gives 50% off the first year. Max redemptions: 500. Expires August 31, 2026.
         </p>
 
         {/* No Tier Bias Statement */}
