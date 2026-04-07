@@ -72,7 +72,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-4">
-              GroceryIntel™ combines recipes, meal planning, shopping lists, and effortless receipt scanning so you can
+              GroceryIntel™ combines recipes, meal planning, shopping lists, and low friction receipt scanning so you can
               control grocery spend without adding extra work—including budgets that start on your payday, not the
               calendar month.
             </p>
