@@ -1,5 +1,4 @@
 import os, struct, zlib, textwrap
-from datetime import date
 
 ROOT = os.path.dirname(__file__)
 REPO = os.path.dirname(ROOT)
@@ -139,39 +138,53 @@ COLORS = {
 
 slides = [
     ("GroceryIntel", "Track Smarter. Spend Better.", [
-        "AI-powered grocery planning, receipt intelligence, and spending insights.",
-        "Prepared for Spendbase AWS onboarding.",
-        f"Generated: {date.today().isoformat()}"
+        "AI-powered grocery planning, receipt intelligence, and spend optimisation."
     ]),
     ("Problem", "Households struggle to control grocery spend.", [
-        "Grocery costs are rising while shopping behavior is fragmented across apps, paper receipts, and memory.",
-        "Most tools either focus on coupons, static lists, or basic budgeting-not actionable, behavior-driven insights.",
+        "Grocery costs are rising while shopping behaviour is fragmented across apps, paper receipts, and memory.",
+        "Groceries make up ~12-15% of household budgets - one of the few expenses people can actually control.",
+        "Yet most households lack the tools to consistently improve how they shop, spend, and eat.",
         "Manual tracking is too time-consuming, so users abandon the habit quickly."
     ]),
     ("Solution", "A unified grocery operating system.", [
-        "Meal planning + smart shopping lists + frictionless receipt capture in one workflow.",
-        "Receipt parsing runs in the background from photos or email forwards.",
-        "Analytics reveal category trends, store comparisons, and payday-aligned budgets."
+        "Meal planning + smart shopping lists + low-friction receipt scanning in one workflow.",
+        "Automatically extract item-level data from receipts via photo or email.",
+        "Analytics reveal trends, store comparisons, and personalised spend insights."
     ]),
     ("Product", "What users can do today", [
         "Plan meals from curated recipes or imported links with automatic ingredient extraction.",
-        "Generate cost-aware shopping lists based on historical spend.",
+        "Generate cost-aware shopping lists based on real purchase history.",
         "Track every shop with low-friction scans and receive spend + nutrition insights."
+    ]),
+    ("Why It Matters", "Financial and lifestyle impact", [
+        "Groceries are one of the few expenses households can truly control.",
+        "They typically account for 12-15% of monthly spending.",
+        "Small, consistent improvements (10-15%) can save hundreds per year.",
+        "Reducing waste and improving nutrition creates both financial and lifestyle impact."
+    ]),
+    ("Where Budget Apps Stop", "GroceryIntelTM continues", [
+        "Traditional budgeting apps show what you spent. GroceryIntelTM helps you improve it.",
+        "Item-level receipt intelligence vs total spend only.",
+        "Automatic classification vs manual categorisation.",
+        "Grocery-specific insights vs generic categories.",
+        "Personal price tracking vs no visibility into inflation.",
+        "Spend + nutrition insights vs cost-only tracking.",
+        "Plan -> Shop -> Track -> Improve."
     ]),
     ("Business Model", "Simple consumer subscription tiers", [
         "Standard: £35.99/year (or £3.59/month) for full insights + 12 scans/month.",
         "Plus: £59.99/year (or £5.99/month) for 30 scans/month + household sharing.",
         "One-month free trial lowers adoption friction and improves conversion quality."
     ]),
-    ("Why AWS", "Cloud foundation for secure, scalable intelligence", [
-        "Serverless processing for receipt OCR and extraction pipelines.",
-        "Analytics-ready data architecture for spend insights and personalized recommendations.",
-        "Reliable global infrastructure to support growth with strong security controls."
+    ("Why AWS", "Built to scale intelligent grocery insights", [
+        "Built on a scalable, serverless architecture designed for data-intensive workflows.",
+        "Supports real-time receipt processing, analytics, and personalised insights at scale.",
+        "Enables rapid iteration while maintaining reliability, security, and cost efficiency."
     ]),
     ("Roadmap & Ask", "Next 12 months", [
         "Expand automated ingestion, recommendation quality, and collaborative household workflows.",
         "Increase retention through proactive coaching and spend anomaly alerts.",
-        "Partner with AWS via Spendbase onboarding to optimize reliability, cost, and velocity."
+        "Leverage AWS credits and infrastructure support to accelerate product development, improve system performance, and scale efficiently."
     ]),
 ]
 
@@ -228,7 +241,7 @@ for i, (kicker, title, bullets) in enumerate(slides):
 
     # footer
     c.append("BT")
-    c.append(f"/F1 16 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg 80 32 Td (groceryintel.ai  |  Confidential pitch deck) Tj")
+    c.append(f"/F1 16 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg 80 32 Td (GroceryIntel.com) Tj")
     c.append("ET")
     c.append("BT")
     c.append(f"/F1 16 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg {W-130} 32 Td ({i+1}/{len(slides)}) Tj")
