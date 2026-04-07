@@ -162,14 +162,9 @@ slides = [
         "Small, consistent improvements (10-15%) can save hundreds per year.",
         "Reducing waste and improving nutrition creates both financial and lifestyle impact."
     ]),
-    ("Where Budget Apps Stop", "GroceryIntelTM continues", [
-        "Traditional budgeting apps show what you spent. GroceryIntelTM helps you improve it.",
-        "Item-level receipt intelligence vs total spend only.",
-        "Automatic classification vs manual categorisation.",
-        "Grocery-specific insights vs generic categories.",
-        "Personal price tracking vs no visibility into inflation.",
-        "Spend + nutrition insights vs cost-only tracking.",
-        "Plan -> Shop -> Track -> Improve."
+    ("Where Budget Apps Stop", "Where Budget Apps Stop, GroceryIntel Continues", [
+        "Budgeting apps are a great starting point for financial awareness. GroceryIntel goes further by focusing on groceries - the area families can actively control, optimise, and improve week by week.",
+        "comparison_table"
     ]),
     ("Business Model", "Simple consumer subscription tiers", [
         "Standard: £35.99/year (or £3.59/month) for full insights + 12 scans/month.",
@@ -224,20 +219,62 @@ for i, (kicker, title, bullets) in enumerate(slides):
     c.append(f"/F2 26 Tf {COLORS['emerald'][0]/255:.3f} {COLORS['emerald'][1]/255:.3f} {COLORS['emerald'][2]/255:.3f} rg 80 {H-95} Td ({esc(kicker.upper())}) Tj")
     c.append("ET")
 
+    title_font = 38 if kicker == "Where Budget Apps Stop" else 48
     c.append("BT")
-    c.append(f"/F2 48 Tf {COLORS['title'][0]/255:.3f} {COLORS['title'][1]/255:.3f} {COLORS['title'][2]/255:.3f} rg 80 {H-165} Td ({esc(title)}) Tj")
+    c.append(f"/F2 {title_font} Tf {COLORS['title'][0]/255:.3f} {COLORS['title'][1]/255:.3f} {COLORS['title'][2]/255:.3f} rg 80 {H-165} Td ({esc(title)}) Tj")
     c.append("ET")
 
     y_cursor = H - 250
-    for b in bullets:
-        lines = wrap(b, 88)
-        c.append(f"{COLORS['emerald'][0]/255:.3f} {COLORS['emerald'][1]/255:.3f} {COLORS['emerald'][2]/255:.3f} rg 84 {y_cursor+3} 7 7 re f")
-        for li, line in enumerate(lines):
-            xx = 104 if li == 0 else 104
+    if kicker == "Where Budget Apps Stop":
+        intro_lines = wrap(bullets[0], 104)
+        for li, line in enumerate(intro_lines):
             c.append("BT")
-            c.append(f"/F1 24 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg {xx} {y_cursor - (li*30)} Td ({esc(line)}) Tj")
+            c.append(f"/F1 19 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg 80 {y_cursor - (li*24)} Td ({esc(line)}) Tj")
             c.append("ET")
-        y_cursor -= max(55, 36*len(lines)+20)
+        y_cursor -= (len(intro_lines) * 24) + 28
+
+        left_x = 80
+        table_w = 1200
+        col1_w = 420
+        col2_w = table_w - col1_w
+        row_h = 54
+        table_rows = [
+            ("Traditional budgeting apps", "GroceryIntel"),
+            ("Often show only total grocery spend", "Break down every receipt into item-level insights and trends"),
+            ("Usually require manual categorisation", "Automatic, accurate receipt scanning with itemised classification"),
+            ("Use broad or generic spending categories", "Clear grocery-specific categories for meaningful insight"),
+            ("Limited visibility into price changes", "Track personal inflation and item-level price movement over time"),
+            ("Do not link cost with nutrition or value", "Connect spend with nutritional impact to support smarter choices"),
+            ("Help manage a monthly budget overall", "Add the full improvement cycle: Plan -> Shop -> Track -> Improve"),
+        ]
+        for ridx, (left_txt, right_txt) in enumerate(table_rows):
+            y_top = y_cursor - (ridx * row_h)
+            bg = COLORS['white'] if ridx % 2 == 0 else (245, 250, 248)
+            c.append(f"{bg[0]/255:.3f} {bg[1]/255:.3f} {bg[2]/255:.3f} rg {left_x} {y_top-row_h+4} {table_w} {row_h-2} re f")
+            c.append(f"0.859 0.890 0.922 RG {left_x} {y_top-row_h+4} m {left_x+table_w} {y_top-row_h+4} l S")
+
+            left_color = COLORS['title'] if ridx == 0 else COLORS['body']
+            right_color = COLORS['emerald'] if ridx == 0 else COLORS['title']
+            left_font = 18 if ridx == 0 else 15
+            right_font = 18 if ridx == 0 else 15
+
+            for li, line in enumerate(wrap(left_txt, 32)):
+                c.append("BT")
+                c.append(f"/F2 {left_font} Tf {left_color[0]/255:.3f} {left_color[1]/255:.3f} {left_color[2]/255:.3f} rg {left_x+14} {y_top-22-(li*18)} Td ({esc(line)}) Tj")
+                c.append("ET")
+            for li, line in enumerate(wrap(right_txt, 60)):
+                c.append("BT")
+                c.append(f"/F2 {right_font} Tf {right_color[0]/255:.3f} {right_color[1]/255:.3f} {right_color[2]/255:.3f} rg {left_x+col1_w+14} {y_top-22-(li*18)} Td ({esc(line)}) Tj")
+                c.append("ET")
+    else:
+        for b in bullets:
+            lines = wrap(b, 88)
+            c.append(f"{COLORS['emerald'][0]/255:.3f} {COLORS['emerald'][1]/255:.3f} {COLORS['emerald'][2]/255:.3f} rg 84 {y_cursor+3} 7 7 re f")
+            for li, line in enumerate(lines):
+                c.append("BT")
+                c.append(f"/F1 24 Tf {COLORS['body'][0]/255:.3f} {COLORS['body'][1]/255:.3f} {COLORS['body'][2]/255:.3f} rg 104 {y_cursor - (li*30)} Td ({esc(line)}) Tj")
+                c.append("ET")
+            y_cursor -= max(55, 36*len(lines)+20)
 
     # footer
     c.append("BT")
