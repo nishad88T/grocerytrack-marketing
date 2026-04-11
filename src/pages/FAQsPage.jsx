@@ -119,11 +119,24 @@ const FAQsPage = () => {
     },
     {
       question: "Do you have a mobile app?",
-      answer: "GroceryIntel™ is a progressive web app (PWA), which means you can access it from any device's web browser. On mobile devices, you can 'Add to Home Screen' for an app-like experience without needing to download anything from app stores."
+      answer: "GroceryIntel™ is currently available as a progressive web app (PWA), so you can use it from any device's browser today. On mobile devices, you can 'Add to Home Screen' for an app-like experience right away. Native Apple App Store and Google Play apps are coming soon."
     },
     {
       question: "What if I have an issue or feedback?",
-      answer: "We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application."
+      answer: (
+        <>
+          <p>We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application.</p>
+          <p className="mt-3">
+            You can also follow us for updates on new features and launch news:
+            {" "}
+            <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">Instagram</a>,
+            {" "}
+            <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">YouTube</a>,
+            {" "}
+            <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">LinkedIn</a>.
+          </p>
+        </>
+      )
     },
     {
       question: "Can I use GroceryIntel™ for business expenses?",
@@ -208,6 +221,15 @@ const FAQsPage = () => {
               </a>
               <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
                 Contact Support
+              </a>
+              <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                Instagram
+              </a>
+              <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                YouTube
+              </a>
+              <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+                LinkedIn
               </a>
             </div>
           </div>
