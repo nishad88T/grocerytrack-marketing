@@ -31,9 +31,18 @@ export default function LegalFooter() {
           <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
             Contact Support
           </a>
+          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            Instagram
+          </a>
+          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            YouTube
+          </a>
+          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            LinkedIn
+          </a>
           <OnboardingDisclaimerCTA
-            label="Read beta notice"
-            redirectUrl={null}
+            label="Before you get started"
+            redirectUrl="https://app.groceryintel.com"
             variant="link"
             className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
             size="sm"
@@ -44,7 +53,7 @@ export default function LegalFooter() {
       {/* Legal text */}
       <div className="text-center text-xs text-slate-500 mt-6">
         <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-        <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
+        <p className="mt-2">© 2026 GroceryIntel™. All rights reserved.</p>
       </div>
     </footer>
   );
