@@ -42,7 +42,7 @@ export default function LegalFooter() {
           </a>
           <OnboardingDisclaimerCTA
             label="Before you get started"
-            redirectUrl={null}
+            redirectUrl="https://app.groceryintel.com"
             variant="link"
             className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
             size="sm"
@@ -53,7 +53,7 @@ export default function LegalFooter() {
       {/* Legal text */}
       <div className="text-center text-xs text-slate-500 mt-6">
         <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-        <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
+        <p className="mt-2">© 2026 GroceryIntel™. All rights reserved.</p>
       </div>
     </footer>
   );
