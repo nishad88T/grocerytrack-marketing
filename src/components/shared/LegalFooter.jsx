@@ -31,8 +31,17 @@ export default function LegalFooter() {
           <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
             Contact Support
           </a>
+          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            Instagram
+          </a>
+          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            YouTube
+          </a>
+          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+            LinkedIn
+          </a>
           <OnboardingDisclaimerCTA
-            label="Read beta notice"
+            label="Before you get started"
             redirectUrl={null}
             variant="link"
             className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"

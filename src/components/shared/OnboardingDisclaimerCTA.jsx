@@ -10,9 +10,9 @@ const LEGACY_KEYS = ["giOnboardingAcknowledged"];
 const APP_URL = "https://app.groceryintel.com";
 
 const disclaimerPoints = [
-  "GroceryIntel is currently in Beta.",
-  "Features may change and data may be refined as the product evolves.",
-  "Insights are provided for informational purposes only and are designed to help you understand your grocery spending — not to provide financial advice or guarantees.",
+  "We’re continuously improving GroceryIntel to give you better insights over time.",
+  "GroceryIntel helps you understand your grocery spending and make informed decisions.",
+  "Insights are provided for informational purposes and do not constitute financial advice.",
 ];
 
 function OnboardingDisclaimerCTA({
@@ -108,10 +108,10 @@ function OnboardingDisclaimerCTA({
           </div>
           <div className="space-y-1">
             <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
-              Mandatory beta disclaimer
+              Before you get started
             </h2>
             <p className="text-sm text-slate-600">
-              Please review and acknowledge before creating your account.
+              A quick note to help you get the most out of GroceryIntel.
             </p>
           </div>
         </div>
@@ -126,7 +126,15 @@ function OnboardingDisclaimerCTA({
             </div>
           ))}
           <p className="text-sm font-semibold text-slate-800">
-            By continuing, you acknowledge that GroceryIntel is an early-stage product and agree to use it as part of this Beta phase.
+            By continuing, you agree to use GroceryIntel in accordance with our{" "}
+            <a href="/TermsOfUse" className="text-emerald-700 underline hover:text-emerald-800">
+              Terms
+            </a>{" "}
+            and{" "}
+            <a href="/Privacy" className="text-emerald-700 underline hover:text-emerald-800">
+              Privacy Policy
+            </a>
+            .
           </p>
         </div>
 
@@ -138,7 +146,7 @@ function OnboardingDisclaimerCTA({
             onChange={(event) => setChecked(event.target.checked)}
           />
           <span>
-            I have read and understand the Beta disclaimer and want to continue to create my account.
+            I agree to the Terms & Privacy Policy.
           </span>
         </label>
 
