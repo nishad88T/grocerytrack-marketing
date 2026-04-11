@@ -41,7 +41,7 @@ export default function LegalFooter() {
             LinkedIn
           </a>
           <OnboardingDisclaimerCTA
-            label="Read beta notice"
+            label="Before you get started"
             redirectUrl={null}
             variant="link"
             className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
