@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, ChevronUp, ShoppingCart } from 'lucide-react';
+import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import Navigation from '@/components/shared/Navigation';
 import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
+import LegalFooter from '@/components/shared/LegalFooter';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,11 +120,24 @@ const FAQsPage = () => {
     },
     {
       question: "Do you have a mobile app?",
-      answer: "GroceryIntel™ is a progressive web app (PWA), which means you can access it from any device's web browser. On mobile devices, you can 'Add to Home Screen' for an app-like experience without needing to download anything from app stores."
+      answer: "GroceryIntel™ is currently available as a progressive web app (PWA), so you can use it from any device's browser today. On mobile devices, you can 'Add to Home Screen' for an app-like experience right away. Native Apple App Store and Google Play apps are coming soon."
     },
     {
       question: "What if I have an issue or feedback?",
-      answer: "We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application."
+      answer: (
+        <>
+          <p>We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application.</p>
+          <p className="mt-3">
+            You can also follow us for updates on new features and launch news:
+            {" "}
+            <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">Instagram</a>,
+            {" "}
+            <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">YouTube</a>,
+            {" "}
+            <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">LinkedIn</a>.
+          </p>
+        </>
+      )
     },
     {
       question: "Can I use GroceryIntel™ for business expenses?",
@@ -187,36 +201,7 @@ const FAQsPage = () => {
         </div>
 
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-slate-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <ShoppingCart className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-slate-700 font-semibold">GroceryIntel™</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-              <a href="/TermsOfUse" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Terms of Use
-              </a>
-              <a href="/Privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="/CookiePolicy" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Cookie Policy
-              </a>
-              <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
-                Contact Support
-              </a>
-            </div>
-          </div>
-          
-          <div className="text-center text-xs text-slate-500 mt-6">
-            <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-            <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
-          </div>
-        </footer>
+        <LegalFooter />
       </div>
     </div>
   );

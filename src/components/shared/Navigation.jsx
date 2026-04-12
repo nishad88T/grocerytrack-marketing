@@ -40,7 +40,7 @@ const Navigation = () => {
   return (
     <header className="p-4 md:p-6 bg-white/95 border-b border-emerald-100 sticky top-0 z-[1000]">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo + Title + Tagline + BETA */}
+        {/* Logo + Title + Tagline */}
         <Link
           to={createPageUrl('/')}
           onClick={closeMenu}
@@ -56,9 +56,6 @@ const Navigation = () => {
             <div className="flex items-center gap-2">
               <span className="text-slate-900 font-semibold text-lg md:text-xl">
                 GroceryIntel™
-              </span>
-              <span className="inline-block bg-amber-100 text-amber-800 text-xs md:text-sm font-semibold px-2 py-1 rounded-full">
-                BETA
               </span>
             </div>
             <span className="text-xs md:text-sm font-medium text-emerald-500 tracking-tight">
@@ -145,9 +142,6 @@ const Navigation = () => {
                 <div className="flex items-center gap-2">
                   <span className="font-semibold text-slate-900">
                     GroceryIntel™
-                  </span>
-                  <span className="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded-full">
-                    BETA
                   </span>
                 </div>
                 <span className="text-[11px] font-medium text-emerald-500 tracking-tight">
