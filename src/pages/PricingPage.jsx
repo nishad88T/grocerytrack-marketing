@@ -109,10 +109,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="border-2 border-emerald-500 shadow-lg relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
+            <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="text-3xl">👨👩👧👦</div>
