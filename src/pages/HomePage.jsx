@@ -110,12 +110,12 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
-              Built to make grocery savings effortless
+              Start seeing where your grocery money actually goes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
                 icon={ShoppingCart}
-                title="Plan and shop in one place"
+                title="From receipt to receipt - all connected"
                 description="Curated and user-imported recipes feed straight into meal plans and smart shopping lists with cost estimates from your past receipts."
               />
               <Feature
