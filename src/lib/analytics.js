@@ -1,4 +1,5 @@
 const GA_MEASUREMENT_ID = 'G-P88Y0BE6LS';
+let hasTrackedSignUp = false;
 
 export const isAnalyticsReady = () =>
   typeof window !== 'undefined' && typeof window.gtag === 'function';
@@ -19,8 +20,20 @@ export const trackEvent = (name, params = {}) => {
   window.gtag('event', name, params);
 };
 
+export const trackSignUp = (method) => {
+  if (hasTrackedSignUp || !method) return;
+
+  trackEvent('sign_up', { method });
+  hasTrackedSignUp = true;
+};
+
+export const resetSignUpTracking = () => {
+  hasTrackedSignUp = false;
+};
+
 export const analytics = {
   measurementId: GA_MEASUREMENT_ID,
   trackPageView,
   trackEvent,
+  trackSignUp,
 };
