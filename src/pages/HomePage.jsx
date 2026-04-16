@@ -115,7 +115,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
                 icon={ShoppingCart}
-                title="From receipt to receipt - all connected"
+                title="From recipe to receipt - all connected"
                 description="Curated and user-imported recipes feed straight into meal plans and smart shopping lists with cost estimates from your past receipts."
               />
               <Feature
