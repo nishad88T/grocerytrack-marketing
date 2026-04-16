@@ -9,11 +9,13 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiePage from './pages/CookiePage';
 import ScrollToTop from './components/shared/ScrollToTop';
+import AnalyticsTracker from './components/shared/AnalyticsTracker';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <AnalyticsTracker />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Features" element={<FeaturesPage />} />
