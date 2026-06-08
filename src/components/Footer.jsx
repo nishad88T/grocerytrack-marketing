@@ -52,7 +52,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center text-xs text-slate-400">
           <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-          <p className="mt-2">© 2025 GroceryIntel™. All rights reserved.</p>
+          <p className="mt-2">© 2026 GroceryIntel™. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -83,17 +83,17 @@ export default function HomePage() {
             </p>
 
             <OnboardingDisclaimerCTA
-              label="Get Started →"
+              label="Join the waitlist"
               size="lg"
               className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold"
             />
 
             <div className="mt-4 space-y-1 text-slate-700">
               <p className="text-base font-semibold text-emerald-700">
-                Start with a free 1-month trial — no payment required.
+                The app is coming soon — join the waitlist for early access updates.
               </p>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
-                Enjoy full access to analytics and insights, with up to 4 receipt scans and 10 recipe imports to explore how GroceryIntel fits into your routine.
+                We’ll let you know when GroceryIntel is ready, including launch news, onboarding details, and early access availability.
               </p>
             </div>
           </motion.div>
@@ -110,12 +110,12 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 text-center mb-8">
-              Built to make grocery savings effortless
+              Start seeing where your grocery money actually goes
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
                 icon={ShoppingCart}
-                title="Plan and shop in one place"
+                title="From receipt to receipt - all connected"
                 description="Curated and user-imported recipes feed straight into meal plans and smart shopping lists with cost estimates from your past receipts."
               />
               <Feature
@@ -261,7 +261,7 @@ export default function HomePage() {
             </div>
 
             <OnboardingDisclaimerCTA
-              label="Get Started Today →"
+              label="Join the waitlist"
               size="lg"
               className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl px-8 py-4 text-lg font-semibold"
             />

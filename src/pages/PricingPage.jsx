@@ -33,7 +33,7 @@ export default function PricingPage() {
             just sized for your scanning needs.
           </p>
           <p className="text-base text-slate-700 mt-4">
-            Start with a free 1-month trial — no payment required. Enjoy full access to analytics and insights, with up to 4 receipt scans and 10 recipe imports to explore how GroceryIntel fits into your routine.
+            The GroceryIntel app is coming soon. Join the waitlist for launch updates, onboarding details, and early access availability.
           </p>
           <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
@@ -109,10 +109,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="border-2 border-emerald-500 shadow-lg relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                Most Popular
-              </div>
+            <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="text-3xl">👨👩👧👦</div>
@@ -169,7 +166,7 @@ export default function PricingPage() {
           </motion.div>
         </div>
         <p className="text-xs text-slate-500 italic text-center -mt-6 mb-12">
-          * Promo terms: GI-BETA50 gives 50% off the first year. Max redemptions: 500. Expires August 31, 2026.
+          * Promo terms: FOUNDER50 gives lifetime 50% off. Limited to the first 100 users.
         </p>
 
         {/* No Tier Bias Statement */}
@@ -198,7 +195,7 @@ export default function PricingPage() {
           className="text-center"
         >
           <OnboardingDisclaimerCTA
-            label="Get Started Today →"
+            label="Join the waitlist"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />

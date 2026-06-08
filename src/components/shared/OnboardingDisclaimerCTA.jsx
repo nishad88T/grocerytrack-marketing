@@ -1,23 +1,25 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
-import { ShieldAlert, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { lockBodyScroll, unlockBodyScroll } from "@/utils/bodyScrollLock";
 
-const STORAGE_KEY = "gi_beta_disclaimer_accepted";
-const LEGACY_KEYS = ["giOnboardingAcknowledged"];
-const APP_URL = "https://app.groceryintel.com";
+const WAITLIST_EMAIL = "support@groceryintel.com";
+const WAITLIST_SUBJECT = "Join the GroceryIntel waitlist";
+const WAITLIST_MAILTO = `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(
+  WAITLIST_SUBJECT
+)}`;
 
-const disclaimerPoints = [
-  "GroceryIntel is currently in Beta.",
-  "Features may change and data may be refined as the product evolves.",
-  "Insights are provided for informational purposes only and are designed to help you understand your grocery spending — not to provide financial advice or guarantees.",
+const waitlistPoints = [
+  "The GroceryIntel app is coming soon while we prepare the next release.",
+  "Join the waitlist and we’ll let you know when early access opens.",
+  "We’ll keep updates focused on product availability, onboarding, and launch news.",
 ];
 
 function OnboardingDisclaimerCTA({
-  label = "Get Started →",
-  redirectUrl = APP_URL,
+  label = "Join the waitlist",
+  waitlistUrl = WAITLIST_MAILTO,
   className = "",
   size = "lg",
   variant,
@@ -25,29 +27,6 @@ function OnboardingDisclaimerCTA({
   onTrigger,
 }) {
   const [open, setOpen] = useState(false);
-  const [checked, setChecked] = useState(false);
-  const [acknowledged, setAcknowledged] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      let stored = window.localStorage.getItem(STORAGE_KEY) === "true";
-
-      if (!stored) {
-        stored = LEGACY_KEYS.some(
-          (legacyKey) => window.localStorage.getItem(legacyKey) === "true"
-        );
-        if (stored) {
-          window.localStorage.setItem(STORAGE_KEY, "true");
-        }
-      }
-
-      setAcknowledged(stored);
-      if (stored) setChecked(true);
-    } catch (error) {
-      // noop – storage is best-effort
-    }
-  }, []);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -67,24 +46,14 @@ function OnboardingDisclaimerCTA({
     if (onTrigger) {
       onTrigger();
     }
-    if (acknowledged && redirectUrl) {
-      window.location.href = redirectUrl;
-      return;
-    }
     setOpen(true);
   };
 
-  const handleContinue = () => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, "true");
-    } catch (error) {
-      // noop – storage is best-effort
+  const handleJoinWaitlist = () => {
+    if (waitlistUrl) {
+      window.location.href = waitlistUrl;
     }
-    setAcknowledged(true);
     setOpen(false);
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-    }
   };
 
   const handleClose = () => setOpen(false);
@@ -103,21 +72,21 @@ function OnboardingDisclaimerCTA({
         aria-modal="true"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 sm:h-11 sm:w-11">
-            <ShieldAlert className="h-5 w-5 text-amber-600 sm:h-6 sm:w-6" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 sm:h-11 sm:w-11">
+            <Sparkles className="h-5 w-5 text-emerald-600 sm:h-6 sm:w-6" />
           </div>
           <div className="space-y-1">
             <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
-              Mandatory beta disclaimer
+              GroceryIntel is coming soon
             </h2>
             <p className="text-sm text-slate-600">
-              Please review and acknowledge before creating your account.
+              We’re getting the app ready and would love to keep you updated.
             </p>
           </div>
         </div>
 
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700 text-left">
-          {disclaimerPoints.map((point) => (
+          {waitlistPoints.map((point) => (
             <div key={point} className="flex items-start gap-3">
               <span className="shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center text-emerald-600">
                 <CheckCircle2 className="h-5 w-5" />
@@ -125,22 +94,11 @@ function OnboardingDisclaimerCTA({
               <span className="flex-1 text-left leading-relaxed">{point}</span>
             </div>
           ))}
-          <p className="text-sm font-semibold text-slate-800">
-            By continuing, you acknowledge that GroceryIntel is an early-stage product and agree to use it as part of this Beta phase.
+          <p className="rounded-lg bg-emerald-50 px-3 py-3 text-sm font-medium text-emerald-900">
+            Click “Join the waitlist” to send us a quick email. We’ll add you to
+            the launch list and reply when the next access window is available.
           </p>
         </div>
-
-        <label className="mt-5 flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-800 sm:mt-6">
-          <input
-            type="checkbox"
-            className="mt-1 h-4 w-4 accent-emerald-600"
-            checked={checked}
-            onChange={(event) => setChecked(event.target.checked)}
-          />
-          <span>
-            I have read and understand the Beta disclaimer and want to continue to create my account.
-          </span>
-        </label>
 
         <div className="mt-4 flex flex-col gap-3 sm:mt-5 sm:flex-row sm:justify-end">
           <Button
@@ -149,15 +107,15 @@ function OnboardingDisclaimerCTA({
             onClick={handleClose}
             type="button"
           >
-            Go back
+            Not now
           </Button>
           <Button
             className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
-            onClick={handleContinue}
+            onClick={handleJoinWaitlist}
             type="button"
-            disabled={!checked}
           >
-            Continue to signup
+            <Mail className="mr-2 h-4 w-4" />
+            Join the waitlist
           </Button>
         </div>
       </div>
