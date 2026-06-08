@@ -225,7 +225,7 @@ export default function FeaturesPage() {
           className="text-center"
         >
           <OnboardingDisclaimerCTA
-            label="Get Started Today →"
+            label="Join the waitlist"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />

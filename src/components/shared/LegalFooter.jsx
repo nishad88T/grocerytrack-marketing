@@ -41,8 +41,7 @@ export default function LegalFooter() {
             LinkedIn
           </a>
           <OnboardingDisclaimerCTA
-            label="Before you get started"
-            redirectUrl="https://app.groceryintel.com"
+            label="Join the waitlist"
             variant="link"
             className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
             size="sm"

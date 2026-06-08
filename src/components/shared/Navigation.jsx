@@ -84,7 +84,7 @@ const Navigation = () => {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">
           <OnboardingDisclaimerCTA
-            label="Get Started"
+            label="Join the waitlist"
             className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg shadow-sm font-medium"
             size="lg"
             onTrigger={closeMenu}
@@ -171,7 +171,7 @@ const Navigation = () => {
 
             <div className="mt-8">
               <OnboardingDisclaimerCTA
-                label="Get Started"
+                label="Join the waitlist"
                 className="w-full px-4 py-3 bg-emerald-500 text-white rounded-lg font-semibold"
                 size="lg"
                 onTrigger={closeMenu}

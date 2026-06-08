@@ -81,7 +81,7 @@ const FAQsPage = () => {
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes. New users receive a one-month free trial with full access to analytics and insights, plus up to 4 receipt scans and 10 recipe imports. No payment is required to start. After your trial, you can choose a plan based on your monthly scan needs."
+      answer: "The app is coming soon. We plan to offer a one-month free trial when access opens, so you can explore GroceryIntel before choosing a plan."
     },
     {
       question: "What are the subscription plans?",
@@ -89,7 +89,7 @@ const FAQsPage = () => {
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept all major credit and debit cards (Visa, Mastercard, Amex) as well as digital wallets. All payments are processed securely through Stripe."
+      answer: "Payments are not open while the app is coming soon. When paid plans launch, we expect to support major credit and debit cards and digital wallets through secure Stripe processing."
     },
     {
       question: "What if I exceed my monthly scan limit?",
@@ -120,13 +120,13 @@ const FAQsPage = () => {
     },
     {
       question: "Do you have a mobile app?",
-      answer: "GroceryIntel™ is currently available as a progressive web app (PWA), so you can use it from any device's browser today. On mobile devices, you can 'Add to Home Screen' for an app-like experience right away. Native Apple App Store and Google Play apps are coming soon."
+      answer: "The GroceryIntel app experience is coming soon. We're preparing web access first, with native Apple App Store and Google Play apps planned after launch."
     },
     {
       question: "What if I have an issue or feedback?",
       answer: (
         <>
-          <p>We're here to help! You can contact us via email at support@groceryintel.com or use the in-app feedback form once you're logged into the application.</p>
+          <p>We're here to help! While the app is being prepared, you can contact us via email at support@groceryintel.com.</p>
           <p className="mt-3">
             You can also follow us for updates on new features and launch news:
             {" "}
@@ -188,13 +188,13 @@ const FAQsPage = () => {
         {/* CTA */}
         <div className="text-center mb-16">
           <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Ready to Get Started?
+            Want early access?
           </h3>
           <p className="text-slate-600 mb-6">
-            Join thousands of households making smarter grocery decisions.
+            The GroceryIntel app is coming soon. Join the waitlist and we’ll let you know when early access opens.
           </p>
           <OnboardingDisclaimerCTA
-            label="Get Started Today →"
+            label="Join the waitlist"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700"
             size="lg"
           />
