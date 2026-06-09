@@ -105,7 +105,7 @@ const TermsPage = () => {
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                <strong>Free Trial Access.</strong> GroceryIntel may offer a free trial period that provides full access to application features, subject to usage limits such as a restricted number of receipt scans and recipe imports. The trial is intended to allow users to evaluate the Service before subscribing. Usage limits during a trial are clearly communicated within the app.
+                <strong>Free Trial Access.</strong> GroceryIntel may offer a 14-day full Standard tier trial, subject to the Standard Plan usage limits and any trial terms presented at sign-up. The trial is intended to allow users to evaluate the Service before subscribing. Usage limits during a trial are clearly communicated within the app.
               </p>
               <p>GroceryIntel offers two plans:</p>
               <ul className="list-disc pl-6 space-y-2">

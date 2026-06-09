@@ -160,7 +160,7 @@ export default function AboutPage() {
           className="text-center mt-12"
         >
           <OnboardingDisclaimerCTA
-            label="Get Started →"
+            label="Join the waitlist"
             size="lg"
             className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />

@@ -1,23 +1,37 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
-import { ShieldAlert, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { lockBodyScroll, unlockBodyScroll } from "@/utils/bodyScrollLock";
 
-const STORAGE_KEY = "gi_beta_disclaimer_accepted";
-const LEGACY_KEYS = ["giOnboardingAcknowledged"];
-const APP_URL = "https://app.groceryintel.com";
+const WAITLIST_EMAIL = "support@groceryintel.com";
+const WAITLIST_SUBJECT = "Join the GroceryIntel waitlist";
+const WAITLIST_ENDPOINT = import.meta.env.VITE_WAITLIST_ENDPOINT;
 
-const disclaimerPoints = [
-  "GroceryIntel is currently in Beta.",
-  "Features may change and data may be refined as the product evolves.",
-  "Insights are provided for informational purposes only and are designed to help you understand your grocery spending — not to provide financial advice or guarantees.",
+const waitlistPoints = [
+  "The GroceryIntel app is coming soon while we prepare the next release.",
+  "Join the waitlist and we’ll let you know when early access opens.",
+  "Early access will include a 14-day full Standard tier trial when it becomes available.",
 ];
 
+const getWaitlistMailto = (email) => {
+  const body = [
+    "Hi GroceryIntel,",
+    "",
+    "Please add me to the GroceryIntel waitlist.",
+    `Email: ${email}`,
+    "",
+    "Thanks",
+  ].join("\n");
+
+  return `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(
+    WAITLIST_SUBJECT
+  )}&body=${encodeURIComponent(body)}`;
+};
+
 function OnboardingDisclaimerCTA({
-  label = "Get Started →",
-  redirectUrl = APP_URL,
+  label = "Join the waitlist",
   className = "",
   size = "lg",
   variant,
@@ -25,29 +39,10 @@ function OnboardingDisclaimerCTA({
   onTrigger,
 }) {
   const [open, setOpen] = useState(false);
-  const [checked, setChecked] = useState(false);
-  const [acknowledged, setAcknowledged] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      let stored = window.localStorage.getItem(STORAGE_KEY) === "true";
-
-      if (!stored) {
-        stored = LEGACY_KEYS.some(
-          (legacyKey) => window.localStorage.getItem(legacyKey) === "true"
-        );
-        if (stored) {
-          window.localStorage.setItem(STORAGE_KEY, "true");
-        }
-      }
-
-      setAcknowledged(stored);
-      if (stored) setChecked(true);
-    } catch (error) {
-      // noop – storage is best-effort
-    }
-  }, []);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -67,27 +62,52 @@ function OnboardingDisclaimerCTA({
     if (onTrigger) {
       onTrigger();
     }
-    if (acknowledged && redirectUrl) {
-      window.location.href = redirectUrl;
-      return;
-    }
     setOpen(true);
   };
 
-  const handleContinue = () => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, "true");
-    } catch (error) {
-      // noop – storage is best-effort
+  const handleJoinWaitlist = async (event) => {
+    event.preventDefault();
+
+    const trimmedEmail = email.trim();
+    if (!/^\S+@\S+\.\S+$/.test(trimmedEmail)) {
+      setError("Please enter a valid email address.");
+      return;
     }
-    setAcknowledged(true);
-    setOpen(false);
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
+
+    setError("");
+
+    if (WAITLIST_ENDPOINT) {
+      setSubmitting(true);
+      try {
+        const response = await fetch(WAITLIST_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: trimmedEmail, source: "marketing-site" }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Waitlist submission failed");
+        }
+
+        setSubmitted(true);
+        setSubmitting(false);
+        return;
+      } catch (submissionError) {
+        setSubmitting(false);
+        setError(
+          "We couldn't submit automatically. Please use the email button below so we can add you manually."
+        );
+      }
     }
+
+    window.location.href = getWaitlistMailto(trimmedEmail);
+    setSubmitted(true);
   };
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setError("");
+  };
 
   const modal = open ? (
     <div className="fixed inset-0 z-[2000] flex items-start justify-center px-4 py-6 sm:items-center">
@@ -103,21 +123,21 @@ function OnboardingDisclaimerCTA({
         aria-modal="true"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-50 sm:h-11 sm:w-11">
-            <ShieldAlert className="h-5 w-5 text-amber-600 sm:h-6 sm:w-6" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 sm:h-11 sm:w-11">
+            <Sparkles className="h-5 w-5 text-emerald-600 sm:h-6 sm:w-6" />
           </div>
           <div className="space-y-1">
             <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
-              Mandatory beta disclaimer
+              GroceryIntel is coming soon
             </h2>
             <p className="text-sm text-slate-600">
-              Please review and acknowledge before creating your account.
+              Enter your email and we’ll keep you updated as early access opens.
             </p>
           </div>
         </div>
 
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700 text-left">
-          {disclaimerPoints.map((point) => (
+          {waitlistPoints.map((point) => (
             <div key={point} className="flex items-start gap-3">
               <span className="shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center text-emerald-600">
                 <CheckCircle2 className="h-5 w-5" />
@@ -125,41 +145,52 @@ function OnboardingDisclaimerCTA({
               <span className="flex-1 text-left leading-relaxed">{point}</span>
             </div>
           ))}
-          <p className="text-sm font-semibold text-slate-800">
-            By continuing, you acknowledge that GroceryIntel is an early-stage product and agree to use it as part of this Beta phase.
-          </p>
         </div>
 
-        <label className="mt-5 flex items-start gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-800 sm:mt-6">
+        {submitted ? (
+          <div className="mt-5 rounded-lg bg-emerald-50 px-3 py-3 text-sm font-medium text-emerald-900">
+            Thanks — your waitlist request is ready. If your email app opened,
+            please send the message so we can add you to the list.
+          </div>
+        ) : null}
+
+        <form onSubmit={handleJoinWaitlist} className="mt-5 space-y-3">
+          <label className="block text-sm font-semibold text-slate-800" htmlFor="waitlist-email">
+            Email address
+          </label>
           <input
-            type="checkbox"
-            className="mt-1 h-4 w-4 accent-emerald-600"
-            checked={checked}
-            onChange={(event) => setChecked(event.target.checked)}
+            id="waitlist-email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="you@example.com"
+            className="w-full rounded-lg border border-slate-300 px-3 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+            required
           />
-          <span>
-            I have read and understand the Beta disclaimer and want to continue to create my account.
-          </span>
-        </label>
+          <p className="text-xs text-slate-500">
+            We’ll only use this to contact you about GroceryIntel launch and early access updates.
+          </p>
+          {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
 
-        <div className="mt-4 flex flex-col gap-3 sm:mt-5 sm:flex-row sm:justify-end">
-          <Button
-            variant="outline"
-            className="w-full sm:w-auto"
-            onClick={handleClose}
-            type="button"
-          >
-            Go back
-          </Button>
-          <Button
-            className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
-            onClick={handleContinue}
-            type="button"
-            disabled={!checked}
-          >
-            Continue to signup
-          </Button>
-        </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto"
+              onClick={handleClose}
+              type="button"
+            >
+              Not now
+            </Button>
+            <Button
+              className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
+              type="submit"
+              disabled={submitting}
+            >
+              <Mail className="mr-2 h-4 w-4" />
+              {submitting ? "Joining..." : "Join the waitlist"}
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   ) : null;
