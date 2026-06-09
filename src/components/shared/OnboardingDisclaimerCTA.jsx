@@ -7,19 +7,31 @@ import { lockBodyScroll, unlockBodyScroll } from "@/utils/bodyScrollLock";
 
 const WAITLIST_EMAIL = "support@groceryintel.com";
 const WAITLIST_SUBJECT = "Join the GroceryIntel waitlist";
-const WAITLIST_MAILTO = `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(
-  WAITLIST_SUBJECT
-)}`;
+const WAITLIST_ENDPOINT = import.meta.env.VITE_WAITLIST_ENDPOINT;
 
 const waitlistPoints = [
   "The GroceryIntel app is coming soon while we prepare the next release.",
   "Join the waitlist and we’ll let you know when early access opens.",
-  "We’ll keep updates focused on product availability, onboarding, and launch news.",
+  "Early access will include a 14-day full Standard tier trial when it becomes available.",
 ];
+
+const getWaitlistMailto = (email) => {
+  const body = [
+    "Hi GroceryIntel,",
+    "",
+    "Please add me to the GroceryIntel waitlist.",
+    `Email: ${email}`,
+    "",
+    "Thanks",
+  ].join("\n");
+
+  return `mailto:${WAITLIST_EMAIL}?subject=${encodeURIComponent(
+    WAITLIST_SUBJECT
+  )}&body=${encodeURIComponent(body)}`;
+};
 
 function OnboardingDisclaimerCTA({
   label = "Join the waitlist",
-  waitlistUrl = WAITLIST_MAILTO,
   className = "",
   size = "lg",
   variant,
@@ -27,6 +39,10 @@ function OnboardingDisclaimerCTA({
   onTrigger,
 }) {
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -49,14 +65,49 @@ function OnboardingDisclaimerCTA({
     setOpen(true);
   };
 
-  const handleJoinWaitlist = () => {
-    if (waitlistUrl) {
-      window.location.href = waitlistUrl;
+  const handleJoinWaitlist = async (event) => {
+    event.preventDefault();
+
+    const trimmedEmail = email.trim();
+    if (!/^\S+@\S+\.\S+$/.test(trimmedEmail)) {
+      setError("Please enter a valid email address.");
+      return;
     }
-    setOpen(false);
+
+    setError("");
+
+    if (WAITLIST_ENDPOINT) {
+      setSubmitting(true);
+      try {
+        const response = await fetch(WAITLIST_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: trimmedEmail, source: "marketing-site" }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Waitlist submission failed");
+        }
+
+        setSubmitted(true);
+        setSubmitting(false);
+        return;
+      } catch (submissionError) {
+        setSubmitting(false);
+        setError(
+          "We couldn't submit automatically. Please use the email button below so we can add you manually."
+        );
+      }
+    }
+
+    window.location.href = getWaitlistMailto(trimmedEmail);
+    setSubmitted(true);
   };
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setError("");
+  };
 
   const modal = open ? (
     <div className="fixed inset-0 z-[2000] flex items-start justify-center px-4 py-6 sm:items-center">
@@ -80,7 +131,7 @@ function OnboardingDisclaimerCTA({
               GroceryIntel is coming soon
             </h2>
             <p className="text-sm text-slate-600">
-              We’re getting the app ready and would love to keep you updated.
+              Enter your email and we’ll keep you updated as early access opens.
             </p>
           </div>
         </div>
@@ -94,30 +145,52 @@ function OnboardingDisclaimerCTA({
               <span className="flex-1 text-left leading-relaxed">{point}</span>
             </div>
           ))}
-          <p className="rounded-lg bg-emerald-50 px-3 py-3 text-sm font-medium text-emerald-900">
-            Click “Join the waitlist” to send us a quick email. We’ll add you to
-            the launch list and reply when the next access window is available.
-          </p>
         </div>
 
-        <div className="mt-4 flex flex-col gap-3 sm:mt-5 sm:flex-row sm:justify-end">
-          <Button
-            variant="outline"
-            className="w-full sm:w-auto"
-            onClick={handleClose}
-            type="button"
-          >
-            Not now
-          </Button>
-          <Button
-            className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
-            onClick={handleJoinWaitlist}
-            type="button"
-          >
-            <Mail className="mr-2 h-4 w-4" />
-            Join the waitlist
-          </Button>
-        </div>
+        {submitted ? (
+          <div className="mt-5 rounded-lg bg-emerald-50 px-3 py-3 text-sm font-medium text-emerald-900">
+            Thanks — your waitlist request is ready. If your email app opened,
+            please send the message so we can add you to the list.
+          </div>
+        ) : null}
+
+        <form onSubmit={handleJoinWaitlist} className="mt-5 space-y-3">
+          <label className="block text-sm font-semibold text-slate-800" htmlFor="waitlist-email">
+            Email address
+          </label>
+          <input
+            id="waitlist-email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="you@example.com"
+            className="w-full rounded-lg border border-slate-300 px-3 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+            required
+          />
+          <p className="text-xs text-slate-500">
+            We’ll only use this to contact you about GroceryIntel launch and early access updates.
+          </p>
+          {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto"
+              onClick={handleClose}
+              type="button"
+            >
+              Not now
+            </Button>
+            <Button
+              className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
+              type="submit"
+              disabled={submitting}
+            >
+              <Mail className="mr-2 h-4 w-4" />
+              {submitting ? "Joining..." : "Join the waitlist"}
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   ) : null;

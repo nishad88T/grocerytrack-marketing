@@ -81,7 +81,7 @@ const FAQsPage = () => {
     },
     {
       question: "Do you offer a free trial?",
-      answer: "The app is coming soon. We plan to offer a one-month free trial when access opens, so you can explore GroceryIntel before choosing a plan."
+      answer: "The app is coming soon. We plan to offer a 14-day full Standard tier trial when access opens, so you can explore GroceryIntel before choosing a plan."
     },
     {
       question: "What are the subscription plans?",

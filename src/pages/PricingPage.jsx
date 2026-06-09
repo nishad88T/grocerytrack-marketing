@@ -33,7 +33,7 @@ export default function PricingPage() {
             just sized for your scanning needs.
           </p>
           <p className="text-base text-slate-700 mt-4">
-            The GroceryIntel app is coming soon. Join the waitlist for launch updates, onboarding details, and early access availability.
+            The GroceryIntel app is coming soon. Join the waitlist for launch updates, onboarding details, and a 14-day full Standard tier trial when early access opens.
           </p>
           <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
@@ -166,7 +166,7 @@ export default function PricingPage() {
           </motion.div>
         </div>
         <p className="text-xs text-slate-500 italic text-center -mt-6 mb-12">
-          * Promo terms: FOUNDER50 gives lifetime 50% off. Limited to the first 100 users.
+          * Early access pricing and launch offers will be announced closer to release.
         </p>
 
         {/* No Tier Bias Statement */}
