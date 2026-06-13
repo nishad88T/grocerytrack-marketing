@@ -38,7 +38,7 @@ const Navigation = () => {
   ];
 
   return (
-    <header className="p-4 md:p-6 bg-white/95 border-b border-emerald-100 sticky top-0 z-[1000]">
+    <header className="p-4 md:p-6 bg-white/95 border-b border-slate-200 sticky top-0 z-[1000]">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo + Title + Tagline */}
         <Link
@@ -47,9 +47,9 @@ const Navigation = () => {
           className="flex items-center gap-3"
         >
           <img
-            src="/gi-logo-2.png"
+            src="/glyph-orange.png"
             alt="GroceryIntel logo"
-            className="h-9 w-9 md:h-11 md:w-11 rounded-lg"
+            className="h-9 w-9 md:h-11 md:w-11"
           />
 
           <div className="flex flex-col">
@@ -58,7 +58,7 @@ const Navigation = () => {
                 GroceryIntel™
               </span>
             </div>
-            <span className="text-xs md:text-sm font-medium text-emerald-500 tracking-tight">
+            <span className="text-xs md:text-sm font-medium text-tangerine-600 tracking-tight">
               Track Smarter. Spend Better.
             </span>
           </div>
@@ -85,7 +85,7 @@ const Navigation = () => {
         <div className="hidden md:flex items-center gap-4">
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
-            className="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg shadow-sm font-medium"
+            className="px-4 py-2 bg-tangerine-500 hover:bg-tangerine-600 text-white rounded-lg shadow-sm font-medium"
             size="lg"
             onTrigger={closeMenu}
           />
@@ -134,9 +134,9 @@ const Navigation = () => {
               className="flex items-center gap-3"
             >
               <img
-                src="/gi-logo-2.png"
+                src="/glyph-orange.png"
                 alt="GroceryIntel logo"
-                className="h-8 w-8 rounded-lg"
+                className="h-8 w-8"
               />
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ const Navigation = () => {
                     GroceryIntel™
                   </span>
                 </div>
-                <span className="text-[11px] font-medium text-emerald-500 tracking-tight">
+                <span className="text-[11px] font-medium text-tangerine-600 tracking-tight">
                   Track Smarter. Spend Better.
                 </span>
               </div>
@@ -172,7 +172,7 @@ const Navigation = () => {
             <div className="mt-8">
               <OnboardingDisclaimerCTA
                 label="Join the waitlist"
-                className="w-full px-4 py-3 bg-emerald-500 text-white rounded-lg font-semibold"
+                className="w-full px-4 py-3 bg-tangerine-500 text-white rounded-lg font-semibold"
                 size="lg"
                 onTrigger={closeMenu}
               />

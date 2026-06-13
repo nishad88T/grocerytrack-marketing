@@ -9,7 +9,7 @@ import BetaDiscountBanner from '@/components/shared/BetaDiscountBanner';
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-slate-50">
       <Navigation />
       <BetaDiscountBanner />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
@@ -20,7 +20,7 @@ export default function PricingPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
+          <div className="inline-block p-4 bg-tangerine-500 rounded-xl shadow-lg mb-4">
             <CreditCard className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -48,7 +48,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative">
+            <Card className="border-2 border-slate-200 hover:border-tangerine-500 transition-colors relative">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="text-3xl">☕</div>
@@ -64,7 +64,7 @@ export default function PricingPage() {
                     £35.99<span className="text-lg font-normal text-slate-600">/year</span>
                   </p>
                   <p className="text-slate-600">or £3.59/month</p>
-                  <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="inline-block bg-tangerine-100 text-tangerine-700 px-3 py-1 rounded-full text-sm font-semibold">
                     Save 16% annually
                   </div>
                   <p className="text-sm text-slate-500 italic">
@@ -75,23 +75,23 @@ export default function PricingPage() {
                   <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Full analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Full nutrition diagnostics</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Shopping List Generator</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Recipes & Meal Planning</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">**12 scans/month**</span>
                     </li>
                   </ul>
@@ -109,7 +109,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors relative">
+            <Card className="border-2 border-slate-200 hover:border-tangerine-500 transition-colors relative">
               <CardHeader>
                 <div className="flex items-center gap-2 mb-2">
                   <div className="text-3xl">👨👩👧👦</div>
@@ -125,7 +125,7 @@ export default function PricingPage() {
                     £59.99<span className="text-lg font-normal text-slate-600">/year</span>
                   </p>
                   <p className="text-slate-600">or £5.99/month</p>
-                  <div className="inline-block bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="inline-block bg-tangerine-100 text-tangerine-700 px-3 py-1 rounded-full text-sm font-semibold">
                     Save 17% annually
                   </div>
                 </div>
@@ -133,27 +133,27 @@ export default function PricingPage() {
                   <p className="font-semibold text-slate-900 mb-3">What You Get:</p>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Full analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Full nutrition diagnostics</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Shopping List Generator</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">Recipes & Meal Planning</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">**30 scans/month**</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
                       <span className="text-slate-700">**Household sharing**</span>
                     </li>
                   </ul>
@@ -197,7 +197,7 @@ export default function PricingPage() {
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
             size="lg"
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+            className="bg-tangerine-500 hover:bg-tangerine-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />
         </motion.div>
 

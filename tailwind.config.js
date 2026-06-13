@@ -7,6 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        tangerine: {
+          50: '#FFF5EC',
+          100: '#FFE3CC',
+          200: '#FFCBA0',
+          300: '#FFA866',
+          400: '#FB923C',
+          500: '#F97316',
+          600: '#EA580C',
+          700: '#C2410C',
+          800: '#9A3412',
+          900: '#7C2D12',
+        },
         emerald: {
           50: '#ecfdf5',
           100: '#d1fae5',

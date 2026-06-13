@@ -15,7 +15,7 @@ const FAQItem = ({ question, answer }) => {
       >
         <span className="font-semibold text-slate-900 pr-4">{question}</span>
         {isOpen ? (
-          <ChevronUp className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+          <ChevronUp className="w-5 h-5 text-tangerine-600 flex-shrink-0" />
         ) : (
           <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" />
         )}
@@ -130,11 +130,11 @@ const FAQsPage = () => {
           <p className="mt-3">
             You can also follow us for updates on new features and launch news:
             {" "}
-            <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">Instagram</a>,
+            <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-tangerine-700 hover:text-tangerine-800 underline">Instagram</a>,
             {" "}
-            <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">YouTube</a>,
+            <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-tangerine-700 hover:text-tangerine-800 underline">YouTube</a>,
             {" "}
-            <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-emerald-700 hover:text-emerald-800 underline">LinkedIn</a>.
+            <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-tangerine-700 hover:text-tangerine-800 underline">LinkedIn</a>.
           </p>
         </>
       )
@@ -152,7 +152,7 @@ const FAQsPage = () => {
         
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
+          <div className="inline-block p-4 bg-tangerine-500 rounded-xl shadow-lg mb-4">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -171,7 +171,7 @@ const FAQsPage = () => {
         </div>
 
         {/* Still Have Questions? */}
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-xl p-8 text-center mb-16">
+        <div className="bg-tangerine-500 rounded-xl shadow-xl p-8 text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Still Have Questions?
           </h2>
@@ -179,7 +179,7 @@ const FAQsPage = () => {
             Our team is here to help. Get in touch and we'll respond within 24 hours.
           </p>
           <a href="mailto:support@groceryintel.com" className="inline-block">
-            <button className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
+            <button className="bg-white text-tangerine-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold rounded-lg transition-colors">
               Contact Support
             </button>
           </a>
@@ -195,7 +195,7 @@ const FAQsPage = () => {
           </p>
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg hover:from-emerald-600 hover:to-teal-700"
+            className="bg-tangerine-500 hover:bg-tangerine-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold rounded-lg"
             size="lg"
           />
         </div>

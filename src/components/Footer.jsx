@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react'; // Assuming you have lucide-react installed
 
 export default function Footer() {
   return (
@@ -10,9 +9,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
-                <ShoppingCart className="w-4 h-4 text-white" />
-              </div>
+              <img src="/glyph-orange.png" alt="GroceryIntel" className="w-8 h-8" />
               <span className="font-bold text-lg">GroceryIntel™</span>
             </Link>
             <p className="text-slate-400 text-sm">
@@ -24,10 +21,10 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><Link to="/features" className="hover:text-emerald-400 transition-colors">Features</Link></li>
-              <li><Link to="/pricing" className="hover:text-emerald-400 transition-colors">Pricing</Link></li>
-              <li><Link to="/faqs" className="hover:text-emerald-400 transition-colors">FAQs</Link></li>
-              <li><Link to="/about" className="hover:text-emerald-400 transition-colors">About Us</Link></li>
+              <li><Link to="/features" className="hover:text-tangerine-400 transition-colors">Features</Link></li>
+              <li><Link to="/pricing" className="hover:text-tangerine-400 transition-colors">Pricing</Link></li>
+              <li><Link to="/faqs" className="hover:text-tangerine-400 transition-colors">FAQs</Link></li>
+              <li><Link to="/about" className="hover:text-tangerine-400 transition-colors">About Us</Link></li>
             </ul>
           </div>
 
@@ -35,9 +32,9 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><Link to="/Privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/TermsOfUse" className="hover:text-emerald-400 transition-colors">Terms of Use</Link></li>
-              <li><Link to="/CookiePolicy" className="hover:text-emerald-400 transition-colors">Cookie Policy</Link></li>
+              <li><Link to="/Privacy" className="hover:text-tangerine-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/TermsOfUse" className="hover:text-tangerine-400 transition-colors">Terms of Use</Link></li>
+              <li><Link to="/CookiePolicy" className="hover:text-tangerine-400 transition-colors">Cookie Policy</Link></li>
             </ul>
           </div>
 
@@ -45,7 +42,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <p className="text-slate-400 text-sm">
-              Email: <a href="mailto:support@groceryintel.com" className="hover:text-emerald-400 transition-colors">support@groceryintel.com</a>
+              Email: <a href="mailto:support@groceryintel.com" className="hover:text-tangerine-400 transition-colors">support@groceryintel.com</a>
             </p>
           </div>
         </div>

@@ -19,7 +19,7 @@ import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA
 const Feature = ({ icon: Icon, title, description }) => (
     <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
         <div className="flex-shrink-0">
-            <Icon className="w-6 h-6 text-emerald-600" />
+            <Icon className="w-6 h-6 text-tangerine-600" />
         </div>
         <div>
             <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
@@ -30,7 +30,7 @@ const Feature = ({ icon: Icon, title, description }) => (
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-slate-50">
       <Navigation />
       <div className="max-w-6xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
@@ -40,7 +40,7 @@ export default function FeaturesPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <div className="inline-block p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl shadow-lg mb-4">
+          <div className="inline-block p-4 bg-tangerine-500 rounded-xl shadow-lg mb-4">
             <Sparkles className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -117,7 +117,7 @@ export default function FeaturesPage() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <Card className="border-none shadow-xl bg-emerald-50/80 backdrop-blur-sm">
+          <Card className="border-none shadow-xl bg-tangerine-50/80 backdrop-blur-sm">
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Why It Matters</h2>
               <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto">
@@ -151,7 +151,7 @@ export default function FeaturesPage() {
                   <thead>
                     <tr className="border-b-2 border-slate-200">
                       <th className="text-left py-4 px-4 text-slate-700 font-semibold">Traditional Budgeting Apps</th>
-                      <th className="text-left py-4 px-4 text-emerald-700 font-semibold">GroceryIntel™</th>
+                      <th className="text-left py-4 px-4 text-tangerine-700 font-semibold">GroceryIntel™</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -227,7 +227,7 @@ export default function FeaturesPage() {
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
             size="lg"
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+            className="bg-tangerine-500 hover:bg-tangerine-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />
         </motion.div>
 
