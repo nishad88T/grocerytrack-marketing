@@ -6,7 +6,7 @@ import Navigation from '@/components/shared/Navigation';
 import LegalFooter from '@/components/shared/LegalFooter';
 import OnboardingDisclaimerCTA from '@/components/shared/OnboardingDisclaimerCTA';
 
-const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => (
+const Section = ({ icon: Icon, title, children, bgColor = "bg-tangerine-50" }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => 
     <Card className={`border-none shadow-lg ${bgColor}/80 backdrop-blur-sm`}>
       <CardContent className="p-6 md:p-8">
         <div className="flex items-start gap-4 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+          <div className="w-12 h-12 bg-tangerine-500 rounded-xl flex items-center justify-center flex-shrink-0">
             <Icon className="w-6 h-6 text-white" />
           </div>
           <div className="flex-1">
@@ -34,7 +34,7 @@ const Section = ({ icon: Icon, title, children, bgColor = "bg-emerald-50" }) => 
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-slate-50">
       <Navigation />
       <div className="max-w-4xl mx-auto px-4 py-8 md:px-6 md:py-12">
         
@@ -47,9 +47,9 @@ export default function AboutPage() {
           {/* New logo above heading */}
           <div className="flex justify-center mb-4">
             <img
-              src="/gi-logo-2.png"
+              src="/glyph-orange.png"
               alt="GroceryIntel logo"
-              className="h-16 w-16 md:h-20 md:w-20 rounded-2xl shadow-lg"
+              className="h-16 w-16 md:h-20 md:w-20"
             />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
@@ -68,14 +68,14 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <Card className="border-none shadow-lg bg-emerald-50/80 backdrop-blur-sm">
+          <Card className="border-none shadow-lg bg-tangerine-50/80 backdrop-blur-sm">
             <CardContent className="p-6 md:p-8">
               <div className="flex items-start gap-4 mb-4">
                 {/* GI logo only for this section */}
                 <img
-                  src="/gi-logo-2.png"
+                  src="/glyph-orange.png"
                   alt="GroceryIntel logo"
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-xl shadow-sm flex-shrink-0"
+                  className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0"
                 />
                 <div className="flex-1">
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">
@@ -91,8 +91,8 @@ export default function AboutPage() {
                     <p>
                       That's when I realized: <strong>groceries are 12–15% of household budgets</strong> — one of the few expenses you can truly control.
                     </p>
-                    <div className="bg-emerald-100 border-l-4 border-emerald-500 p-4 rounded-r-lg mt-4">
-                      <p className="text-emerald-900 font-medium">
+                    <div className="bg-tangerine-100 border-l-4 border-tangerine-500 p-4 rounded-r-lg mt-4">
+                      <p className="text-tangerine-900 font-medium">
                         GroceryIntel™ was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
                       </p>
                     </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
         <Section icon={Users} title="Our Philosophy" bgColor="bg-blue-50">
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-900">Full access for all users:</p>
                 <p className="text-slate-700">
@@ -123,7 +123,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-900">Household sharing:</p>
                 <p className="text-slate-700">
@@ -132,7 +132,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-slate-900">Transparent & simple:</p>
                 <p className="text-slate-700">Clear pricing, data you own.</p>
@@ -162,7 +162,7 @@ export default function AboutPage() {
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
             size="lg"
-            className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+            className="bg-tangerine-500 hover:bg-tangerine-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
           />
         </motion.div>
 

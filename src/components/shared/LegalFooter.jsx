@@ -10,40 +10,40 @@ export default function LegalFooter() {
         {/* Logo + Name */}
         <div className="flex items-center gap-2">
           <img
-            src="/gi-logo-2.png"
+            src="/glyph-orange.png"
             alt="GroceryIntel logo"
-            className="h-8 w-8 rounded-lg"
+            className="h-8 w-8"
           />
           <span className="text-slate-700 font-semibold">GroceryIntel™</span>
         </div>
 
         {/* Links */}
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-          <Link to="/TermsOfUse" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <Link to="/TermsOfUse" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Terms of Use
           </Link>
-          <Link to="/Privacy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <Link to="/Privacy" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Privacy Policy
           </Link>
-          <Link to="/CookiePolicy" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <Link to="/CookiePolicy" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Cookie Policy
           </Link>
-          <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Contact Support
           </a>
-          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Instagram
           </a>
-          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             YouTube
           </a>
-          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-emerald-600 transition-colors">
+          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             LinkedIn
           </a>
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
             variant="link"
-            className="text-slate-600 hover:text-emerald-600 transition-colors p-0 h-auto"
+            className="text-slate-600 hover:text-tangerine-600 transition-colors p-0 h-auto"
             size="sm"
           />
         </div>

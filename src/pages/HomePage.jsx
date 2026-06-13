@@ -20,7 +20,7 @@ import BetaDiscountBanner from "@/components/shared/BetaDiscountBanner";
 const Feature = ({ icon: Icon, title, description }) => (
   <div className="flex items-start gap-4 p-6 bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow">
     <div className="flex-shrink-0">
-      <Icon className="w-6 h-6 text-emerald-600" />
+      <Icon className="w-6 h-6 text-tangerine-600" />
     </div>
     <div>
       <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
@@ -45,7 +45,7 @@ export default function HomePage() {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-slate-50">
       {/* Shared header/navigation */}
       <Navigation />
       <BetaDiscountBanner />
@@ -61,9 +61,9 @@ export default function HomePage() {
             {/* Logo above heading */}
             <div className="flex justify-center mb-6">
               <img
-                src="/gi-logo-2.png"
+                src="/glyph-orange.png"
                 alt="GroceryIntel logo"
-                className="h-20 w-20 md:h-24 md:w-24 rounded-2xl shadow-lg"
+                className="h-20 w-20 md:h-24 md:w-24"
               />
             </div>
 
@@ -78,18 +78,18 @@ export default function HomePage() {
             </p>
 
             {/* Tagline in green */}
-            <p className="text-lg font-semibold text-emerald-500 mb-8">
+            <p className="text-lg font-semibold text-tangerine-600 mb-8">
               Track Smarter. Spend Better.
             </p>
 
             <OnboardingDisclaimerCTA
               label="Join the waitlist"
               size="lg"
-              className="bg-white text-emerald-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold"
+              className="bg-white text-tangerine-700 hover:bg-slate-100 shadow-lg px-8 py-4 text-lg font-semibold"
             />
 
             <div className="mt-4 space-y-1 text-slate-700">
-              <p className="text-base font-semibold text-emerald-700">
+              <p className="text-base font-semibold text-tangerine-700">
                 The app is coming soon — join the waitlist for early access updates.
               </p>
               <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
@@ -161,7 +161,7 @@ export default function HomePage() {
               Low-friction from idea to insight
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <Card className="border-emerald-100 shadow-sm">
+              <Card className="border-slate-200 shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-xl">1. Plan meals effortlessly</CardTitle>
                   <CardDescription>
@@ -169,7 +169,7 @@ export default function HomePage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="border-emerald-100 shadow-sm">
+              <Card className="border-slate-200 shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-xl">2. Shop with clarity</CardTitle>
                   <CardDescription>
@@ -177,7 +177,7 @@ export default function HomePage() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-                <Card className="border-emerald-100 shadow-sm">
+                <Card className="border-slate-200 shadow-sm">
                   <CardHeader>
                     <CardTitle className="text-xl">3. Track without slowing down</CardTitle>
                     <CardDescription>
@@ -207,7 +207,7 @@ export default function HomePage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <Card className="border-2 border-slate-200 hover:border-emerald-500 transition-colors">
+              <Card className="border-2 border-slate-200 hover:border-tangerine-500 transition-colors">
                 <CardHeader>
                   <CardTitle className="text-2xl">Standard</CardTitle>
                   <CardDescription>Individuals / small households</CardDescription>
@@ -222,18 +222,18 @@ export default function HomePage() {
                   <p className="text-slate-600">or £3.59/month</p>
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
                       Full analytics & insights
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
                       12 scans/month
                     </li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-emerald-500 shadow-lg">
+              <Card className="border-2 border-tangerine-500 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl">Plus</CardTitle>
                   <CardDescription>Shared or growing households</CardDescription>
@@ -248,11 +248,11 @@ export default function HomePage() {
                   <p className="text-slate-600">or £5.99/month</p>
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
                       Full analytics & insights
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-emerald-600 flex-shrink-0" />{" "}
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
                       30 scans/month & household sharing
                     </li>
                   </ul>
@@ -263,7 +263,7 @@ export default function HomePage() {
             <OnboardingDisclaimerCTA
               label="Join the waitlist"
               size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg hover:shadow-xl px-8 py-4 text-lg font-semibold"
+              className="bg-tangerine-500 hover:bg-tangerine-600 text-white shadow-lg hover:shadow-xl px-8 py-4 text-lg font-semibold"
             />
           </motion.div>
         </div>

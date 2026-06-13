@@ -123,8 +123,8 @@ function OnboardingDisclaimerCTA({
         aria-modal="true"
       >
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 sm:h-11 sm:w-11">
-            <Sparkles className="h-5 w-5 text-emerald-600 sm:h-6 sm:w-6" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tangerine-50 sm:h-11 sm:w-11">
+            <Sparkles className="h-5 w-5 text-tangerine-600 sm:h-6 sm:w-6" />
           </div>
           <div className="space-y-1">
             <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
@@ -139,7 +139,7 @@ function OnboardingDisclaimerCTA({
         <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-700 text-left">
           {waitlistPoints.map((point) => (
             <div key={point} className="flex items-start gap-3">
-              <span className="shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center text-emerald-600">
+              <span className="shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center text-tangerine-600">
                 <CheckCircle2 className="h-5 w-5" />
               </span>
               <span className="flex-1 text-left leading-relaxed">{point}</span>
@@ -148,7 +148,7 @@ function OnboardingDisclaimerCTA({
         </div>
 
         {submitted ? (
-          <div className="mt-5 rounded-lg bg-emerald-50 px-3 py-3 text-sm font-medium text-emerald-900">
+          <div className="mt-5 rounded-lg bg-tangerine-50 px-3 py-3 text-sm font-medium text-tangerine-900">
             Thanks — your waitlist request is ready. If your email app opened,
             please send the message so we can add you to the list.
           </div>
@@ -164,7 +164,7 @@ function OnboardingDisclaimerCTA({
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="you@example.com"
-            className="w-full rounded-lg border border-slate-300 px-3 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+            className="w-full rounded-lg border border-slate-300 px-3 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-tangerine-500 focus:ring-2 focus:ring-tangerine-100"
             required
           />
           <p className="text-xs text-slate-500">
@@ -182,7 +182,7 @@ function OnboardingDisclaimerCTA({
               Not now
             </Button>
             <Button
-              className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-700"
+              className="w-full sm:w-auto bg-tangerine-600 text-white hover:bg-tangerine-700"
               type="submit"
               disabled={submitting}
             >
