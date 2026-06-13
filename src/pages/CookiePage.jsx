@@ -39,7 +39,7 @@ export default function CookiePolicyPage() {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Cookie Policy</h1>
-              <p className="text-slate-600 text-sm mt-1">Last updated: 14 October 2025</p>
+              <p className="text-slate-600 text-sm mt-1">Last updated: 13 June 2026</p>
             </div>
           </div>
           <div className="text-slate-600 space-y-1">
@@ -63,28 +63,36 @@ export default function CookiePolicyPage() {
                 </p>
               </Section>
 
-              {/* How We Use Cookies */}
-              <Section icon={Settings} title="How We Use Cookies">
+              {/* Categories of Cookies We Use */}
+              <Section icon={Settings} title="Categories of Cookies We Use">
                 <p>
-                  GroceryIntel uses only <strong>essential and functional cookies</strong> necessary for the app to operate correctly. These cookies enable:
+                  <strong>1. Essential and functional cookies.</strong> These are necessary for the site and app to operate correctly and cannot be switched off. They enable:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>User authentication and session management</li>
                   <li>Secure access to your account and data</li>
-                  <li>Basic functionality of the application</li>
+                  <li>Remembering your cookie preferences</li>
+                  <li>Basic functionality, deployment, and performance, including cookies set by our hosting provider to deliver the service reliably</li>
                 </ul>
                 <p className="mt-4">
-                  Additionally, certain cookies related to application deployment and performance are managed by our hosting provider, <strong>Vercel</strong>. These cookies help ensure the reliable delivery and optimal performance of our service.
+                  <strong>2. Analytics cookies (consent-based).</strong> With your consent, we use Google Analytics to understand how our website is used in aggregate so we can improve it. These cookies are <strong>only set after you select “Accept all”</strong> in our cookie banner, and are not set if you reject non-essential cookies. Typical Google Analytics cookies include:
                 </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li><code>_ga</code> — distinguishes unique visitors (expires after ~2 years)</li>
+                  <li><code>_ga_&lt;container-id&gt;</code> — persists session state for Google Analytics 4 (expires after ~2 years)</li>
+                </ul>
                 <p className="mt-4">
-                  <strong>We do not use tracking, advertising, or analytics cookies.</strong>
+                  <strong>We do not use advertising cookies, and we do not share analytics data with advertising networks.</strong>
                 </p>
               </Section>
 
               {/* Managing Cookies */}
-              <Section icon={Shield} title="Managing Cookies">
+              <Section icon={Shield} title="Managing Your Cookie Choices">
                 <p>
-                  You can manage or disable cookies through your browser settings. However, please note that disabling essential cookies may affect the functionality of GroceryIntel and prevent you from accessing certain features.
+                  When you first visit our website, a banner lets you accept or reject non-essential (analytics) cookies. You can change your choice at any time using the <strong>“Cookie settings”</strong> link in the footer of any page, which reopens the banner.
+                </p>
+                <p className="mt-4">
+                  You can also manage or disable cookies through your browser settings. Please note that disabling essential cookies may affect the functionality of GroceryIntel and prevent you from accessing certain features.
                 </p>
                 <p className="mt-4">
                   For more information on managing cookies, visit your browser's help section:
