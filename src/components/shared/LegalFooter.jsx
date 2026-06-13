@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Instagram, Youtube, Linkedin } from 'lucide-react';
 import OnboardingDisclaimerCTA from './OnboardingDisclaimerCTA';
 
 export default function LegalFooter() {
@@ -31,14 +32,14 @@ export default function LegalFooter() {
           <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Contact Support
           </a>
-          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
-            Instagram
+          <a href="https://www.instagram.com/groceryintel/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="GroceryIntel on Instagram" title="Instagram" className="text-slate-600 hover:text-tangerine-600 transition-colors">
+            <Instagram className="w-5 h-5" />
           </a>
-          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
-            YouTube
+          <a href="https://www.youtube.com/@GroceryIntel" target="_blank" rel="noopener noreferrer" aria-label="GroceryIntel on YouTube" title="YouTube" className="text-slate-600 hover:text-tangerine-600 transition-colors">
+            <Youtube className="w-5 h-5" />
           </a>
-          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-tangerine-600 transition-colors">
-            LinkedIn
+          <a href="https://www.linkedin.com/company/groceryintel/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="GroceryIntel on LinkedIn" title="LinkedIn" className="text-slate-600 hover:text-tangerine-600 transition-colors">
+            <Linkedin className="w-5 h-5" />
           </a>
           <OnboardingDisclaimerCTA
             label="Join the waitlist"
