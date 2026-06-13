@@ -10,6 +10,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import CookiePage from './pages/CookiePage';
 import ScrollToTop from './components/shared/ScrollToTop';
 import AnalyticsTracker from './components/shared/AnalyticsTracker';
+import CookieConsent from './components/shared/CookieConsent';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         {/* Fallback route */}
         <Route path="*" element={<HomePage />} />
       </Routes>
+      <CookieConsent />
     </Router>
   );
 }

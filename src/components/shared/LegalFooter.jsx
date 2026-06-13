@@ -28,6 +28,13 @@ export default function LegalFooter() {
           <Link to="/CookiePolicy" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Cookie Policy
           </Link>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+            className="text-slate-600 hover:text-tangerine-600 transition-colors"
+          >
+            Cookie settings
+          </button>
           <a href="mailto:support@groceryintel.com" className="text-slate-600 hover:text-tangerine-600 transition-colors">
             Contact Support
           </a>
