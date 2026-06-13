@@ -17,7 +17,7 @@ const TermsPage = () => {
             </div>
             <div>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Terms of Use</h1>
-              <p className="text-slate-600 text-sm mt-1">Last updated: 17 December 2025</p>
+              <p className="text-slate-600 text-sm mt-1">Last updated: 13 June 2026</p>
             </div>
           </div>
           <div className="text-slate-600 space-y-1">
@@ -42,7 +42,7 @@ const TermsPage = () => {
                 Welcome to GroceryIntel ("we", "our", or "us"). These Terms of Use govern your access to and use of our application, website, and related services (collectively, the "Service").
               </p>
               <p>
-                By using GroceryIntel, you agree to these Terms and our Privacy Policy. If you do not agree, please do not use our Service. These Terms also apply to any future updates or features unless stated otherwise.
+                By using GroceryIntel, you agree to these Terms, our <a href="/Privacy" className="text-slate-900 hover:underline font-semibold">Privacy Policy</a>, and our <a href="/CookiePolicy" className="text-slate-900 hover:underline font-semibold">Cookie Policy</a>. If you do not agree, please do not use our Service. These Terms also apply to any future updates or features unless stated otherwise.
               </p>
             </div>
           </div>
@@ -74,6 +74,9 @@ const TermsPage = () => {
               <p>
                 You must be at least 16 years old to create an account. You are responsible for maintaining your account credentials and ensuring that the information you provide is accurate and complete.
               </p>
+              <p>
+                You may close your account at any time through your account settings or by contacting us. Account closure and the deletion of your data are handled as described in our <a href="/Privacy" className="text-slate-700 hover:underline font-semibold">Privacy Policy</a>.
+              </p>
             </div>
           </div>
 
@@ -91,6 +94,9 @@ const TermsPage = () => {
               </p>
               <p>
                 <strong>Beta Status.</strong> GroceryIntel is currently offered as a Beta service. Features, functionality, and outputs may change, be refined, or be removed during this phase. Users acknowledge that the Service is provided on an early-access basis while we continue to test and improve the product.
+              </p>
+              <p>
+                <strong>Service Availability.</strong> The Service is provided on an "as available" basis. We do not guarantee that the Service will be uninterrupted, error-free, or available at all times, and we may suspend, withdraw, or restrict all or part of the Service for maintenance, technical, or operational reasons. We will aim to give reasonable notice of any planned interruption where practicable.
               </p>
             </div>
           </div>
@@ -119,10 +125,16 @@ const TermsPage = () => {
                 Unused monthly scans do not roll over to the next month. Subscriptions renew automatically unless cancelled before the next billing cycle. You can cancel anytime via your account settings.
               </p>
               <p>
-                We do not offer partial refunds for unused scans or mid-cycle cancellations, except where required by law.
+                <strong>14-Day Right to Cancel.</strong> If you are a consumer in the UK, you have the right to cancel a new subscription within 14 days of purchase under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013. By starting to use the paid Service during this period, you acknowledge that you may lose this right once the service has been fully performed, and that any refund may be reduced to reflect the use you have already made of the Service. To exercise this right, contact us at <a href="mailto:support@groceryintel.com" className="text-slate-700 hover:underline font-semibold">support@groceryintel.com</a>.
               </p>
               <p>
-                Payment processing will be handled by a secure third-party provider such as Stripe. GroceryIntel does not directly process or store payment card information.
+                Other than the statutory right above, we do not offer partial refunds for unused scans or mid-cycle cancellations, except where required by law.
+              </p>
+              <p>
+                <strong>Price Changes.</strong> We may change subscription prices from time to time. Any price change will not affect your current billing period; we will give you reasonable advance notice (by email or in-app notice) before a new price applies to a renewal, and you may cancel before the change takes effect.
+              </p>
+              <p>
+                Payment processing is handled by a secure third-party payment provider. GroceryIntel does not directly process or store payment card information.
               </p>
             </div>
           </div>
@@ -169,6 +181,9 @@ const TermsPage = () => {
               </p>
               <p>
                 GroceryIntel does not provide financial, budgeting, or investment advice and does not guarantee savings, outcomes, or financial performance.
+              </p>
+              <p>
+                Receipt processing relies on automated document recognition and AI services, and your anonymised price data may be aggregated with other users' data for short-term price-comparison analysis. How we collect, process, share, and retain your data — including the use of third-party processors and AI services — is described in our <a href="/Privacy" className="text-slate-900 hover:underline font-semibold">Privacy Policy</a>.
               </p>
             </div>
           </div>
@@ -261,13 +276,28 @@ const TermsPage = () => {
             </div>
           </div>
 
+          {/* Indemnity */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">10. Indemnity</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <p>
+                You agree to indemnify and hold harmless GroceryIntel, its directors, employees, and partners from any claims, losses, liabilities, or expenses (including reasonable legal fees) arising from your misuse of the Service, your breach of these Terms, or content you upload or import — including any copyright or other third-party rights issues arising from Imported Recipes or other material you submit. This does not apply to liability that cannot be excluded by law.
+              </p>
+            </div>
+          </div>
+
           {/* Limitation of Liability */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <AlertTriangle className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">10. Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-slate-900">11. Limitation of Liability</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
@@ -282,7 +312,7 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">11. Changes to the Terms</h2>
+              <h2 className="text-2xl font-bold text-slate-900">12. Changes to the Terms</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
@@ -297,12 +327,31 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">12. Governing Law</h2>
+              <h2 className="text-2xl font-bold text-slate-900">13. Governing Law</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                These Terms are governed by and interpreted under the laws of the United Kingdom. Any disputes will be handled in UK courts.
+                These Terms are governed by and interpreted under the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales. Nothing in this clause affects the statutory rights of consumers resident elsewhere in the UK.
               </p>
+            </div>
+          </div>
+
+          {/* General */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">14. General</h2>
+            </div>
+            <div className="text-slate-700 leading-relaxed space-y-4">
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Force majeure:</strong> We are not liable for any failure or delay in performing our obligations caused by events beyond our reasonable control.</li>
+                <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
+                <li><strong>Entire agreement:</strong> These Terms, together with our Privacy Policy and Cookie Policy, form the entire agreement between you and us regarding the Service.</li>
+                <li><strong>Assignment:</strong> You may not transfer your rights under these Terms without our consent. We may assign or transfer our rights and obligations, for example as part of a reorganisation or sale of the business.</li>
+                <li><strong>Waiver:</strong> A failure to enforce any provision of these Terms is not a waiver of our right to do so later.</li>
+              </ul>
             </div>
           </div>
 
@@ -312,7 +361,7 @@ const TermsPage = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-slate-600 to-gray-700 rounded-lg flex items-center justify-center">
                 <Mail className="w-5 h-5 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">13. Contact</h2>
+              <h2 className="text-2xl font-bold text-slate-900">15. Contact</h2>
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
