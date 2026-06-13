@@ -77,7 +77,7 @@ const PrivacyPage = () => {
               This Privacy Policy explains how GroceryIntel (“we”, “our”, or “us”) collects, uses, stores, and protects personal data when you use our application, website, and related services (the “Service”).
             </p>
             <p>
-              GroceryIntel is currently offered as a Beta service. Features, data processing methods, and insights may evolve as we continue to improve the product.
+              GroceryIntel is continuously improving. Features, data processing methods, and insights may evolve as we develop and refine the product.
             </p>
             <p>
               We comply with the UK General Data Protection Regulation (UK GDPR) and applicable UK data protection laws.
@@ -308,7 +308,7 @@ const PrivacyPage = () => {
                 <li>You are removed from any household you belong to, and any household you own is dissolved</li>
                 <li>Deletion of your authentication record is irreversible</li>
               </ul>
-              <p><strong>Current behaviour (Beta):</strong> Account deletion is currently processed immediately upon request. No grace period is in place.</p>
+              <p><strong>Current behaviour:</strong> Account deletion is currently processed immediately upon request. No grace period is in place.</p>
               <p><strong>Planned future behaviour:</strong> We intend to introduce a 30-day grace period before permanent deletion, during which your account will be deactivated but recoverable if you change your mind. Once the 30-day period expires, deletion will be permanent and irreversible, and no data will be recoverable. This policy will be updated before that change is implemented.</p>
             </div>
 
@@ -395,9 +395,9 @@ const PrivacyPage = () => {
             </Callout>
           </Section>
 
-          {/* 13. Beta Status and Disclaimers */}
-          <Section icon={AlertTriangle} title="13. Beta Status and Disclaimers">
-            <p>GroceryIntel is an early-stage Beta product. During this phase:</p>
+          {/* 13. Ongoing Development and Disclaimers */}
+          <Section icon={AlertTriangle} title="13. Ongoing Development and Disclaimers">
+            <p>GroceryIntel is continuously improving. As we develop the product:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Features may change or be refined without prior notice</li>
               <li>Data accuracy may improve over time as systems evolve</li>

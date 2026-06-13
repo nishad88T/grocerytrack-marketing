@@ -93,7 +93,7 @@ const TermsPage = () => {
                 GroceryIntel helps users analyse their grocery spending and nutrition through scanned receipts. The app uses advanced OCR and AI technologies to process receipts, offering insights such as monthly spending, inflation trends, and nutritional summaries. Users review and correct receipt data manually to improve data accuracy.
               </p>
               <p>
-                <strong>Beta Status.</strong> GroceryIntel is currently offered as a Beta service. Features, functionality, and outputs may change, be refined, or be removed during this phase. Users acknowledge that the Service is provided on an early-access basis while we continue to test and improve the product.
+                <strong>Ongoing Development.</strong> GroceryIntel is continuously improving. Features, functionality, and outputs may change, be refined, or be removed as we develop the product. Users acknowledge that the Service is actively maintained and evolving while we continue to test and improve it.
               </p>
               <p>
                 <strong>Service Availability.</strong> The Service is provided on an "as available" basis. We do not guarantee that the Service will be uninterrupted, error-free, or available at all times, and we may suspend, withdraw, or restrict all or part of the Service for maintenance, technical, or operational reasons. We will aim to give reasonable notice of any planned interruption where practicable.
