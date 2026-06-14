@@ -131,7 +131,7 @@ export default function HomePage() {
               <Feature
                 icon={Lightbulb}
                 title="Habit-forming convenience"
-                description="Snap a photo or share from your gallery, then come back whenever you like. GroceryIntel™ keeps processing and reminds you where to focus, not where you slipped."
+                description="Snap a photo or share from your gallery, then come back whenever you like. GroceryIntel keeps processing and reminds you where to focus, not where you slipped."
               />
               <Feature
                 icon={Wallet}
@@ -165,7 +165,7 @@ export default function HomePage() {
                 <CardHeader>
                   <CardTitle className="text-xl">1. Plan meals effortlessly</CardTitle>
                   <CardDescription>
-                    Pick from curated recipes, or import your own from a website or video link. GroceryIntel™ pulls out the ingredient list to help you build your shopping list.
+                    Pick from curated recipes, or import your own from a website or video link. GroceryIntel pulls out the ingredient list to help you build your shopping list.
                   </CardDescription>
                 </CardHeader>
               </Card>

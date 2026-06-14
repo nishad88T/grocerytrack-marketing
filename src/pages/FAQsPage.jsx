@@ -32,14 +32,14 @@ const FAQItem = ({ question, answer }) => {
 const FAQsPage = () => {
   const faqs = [
     {
-      question: "What is GroceryIntel™?",
-      answer: "GroceryIntel™ is a smart budgeting web app that helps you plan, track, and understand your grocery spending.\n\nIt uses scanned receipts and user-reviewed data to provide insights into price changes, spending patterns, and nutritional information—helping households build awareness and make more informed grocery decisions over time."
+      question: "What is GroceryIntel?",
+      answer: "GroceryIntel is a smart budgeting web app that helps you plan, track, and understand your grocery spending.\n\nIt uses scanned receipts and user-reviewed data to provide insights into price changes, spending patterns, and nutritional information—helping households build awareness and make more informed grocery decisions over time."
     },
     {
-      question: "How does GroceryIntel™ work?",
+      question: "How does GroceryIntel work?",
       answer: (
         <>
-          <p>GroceryIntel™ follows a continuous improvement cycle to help you manage your grocery spending:</p>
+          <p>GroceryIntel follows a continuous improvement cycle to help you manage your grocery spending:</p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li><strong>Plan:</strong> Browse curated recipes or import your own from websites. Create meal plans for the week.</li>
             <li><strong>Shop:</strong> Generate smart shopping lists with estimated costs based on your past purchases.</li>
@@ -65,7 +65,7 @@ const FAQsPage = () => {
     },
     {
       question: "How do budgets work?",
-      answer: "You can set flexible budgets that align with your actual pay schedule (weekly, monthly, or custom). GroceryIntel™ tracks your spending against these budgets in real-time and provides alerts when you're approaching your limit."
+      answer: "You can set flexible budgets that align with your actual pay schedule (weekly, monthly, or custom). GroceryIntel tracks your spending against these budgets in real-time and provides alerts when you're approaching your limit."
     },
     {
       question: "What kind of insights will I get?",
@@ -100,7 +100,7 @@ const FAQsPage = () => {
       answer: "Yes, you can cancel your subscription at any time through your account settings. If you cancel, you'll retain access until the end of your current billing period."
     },
     {
-      question: "Can I use GroceryIntel™ with my family/household?",
+      question: "Can I use GroceryIntel with my family/household?",
       answer: "Yes! You can create a household and invite family members using a simple invite code. All household members share the same receipts, budgets, meal plans, and insights. The subscription is managed at the household level - when you subscribe, all household members benefit from the plan's scan allowance."
     },
     {
@@ -140,8 +140,8 @@ const FAQsPage = () => {
       )
     },
     {
-      question: "Can I use GroceryIntel™ for business expenses?",
-      answer: "GroceryIntel™ is designed and engineered for personal and household grocery spending. While you could technically scan business receipts, our analytics and categorization are geared toward household food and essentials, so it might not be the best fit for detailed business expense tracking."
+      question: "Can I use GroceryIntel for business expenses?",
+      answer: "GroceryIntel is designed and engineered for personal and household grocery spending. While you could technically scan business receipts, our analytics and categorization are geared toward household food and essentials, so it might not be the best fit for detailed business expense tracking."
     }
   ];
 
