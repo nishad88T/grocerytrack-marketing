@@ -43,10 +43,10 @@ const FAQsPage = () => {
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li><strong>Plan:</strong> Browse curated recipes or import your own from websites. Create meal plans for the week.</li>
             <li><strong>Shop:</strong> Generate smart shopping lists with estimated costs based on your past purchases.</li>
-            <li><strong>Track:</strong> Snap photos of receipts in-app, or forward receipt photos and online grocery order emails to receipts@groceryintel.com from your registered email address.</li>
-            <li><strong>Analyze:</strong> Our system extracts all item details automatically in the background—no waiting. Once processing completes, review and correct any data, then instantly access analytics on spending, personal inflation, nutrition, and more.</li>
+            <li><strong>Track:</strong> Snap photos of receipts in-app, or share them straight from your photo gallery.</li>
+            <li><strong>Analyze:</strong> Our system extracts all item details automatically in the background—no waiting. Once processing completes, review and correct any data, then instantly access analytics on spending, price changes, basket composition, and more.</li>
           </ul>
-          <p className="mt-3"><strong>Important:</strong> Send one receipt per email for best results. Processing happens in the background, and you'll receive an in-app notification when your receipt is ready for review.</p>
+          <p className="mt-3"><strong>Important:</strong> For best results, capture one receipt at a time. Processing happens in the background, and you'll receive an in-app notification when your receipt is ready for review.</p>
         </>
       )
     },
@@ -55,10 +55,10 @@ const FAQsPage = () => {
       answer: "Our advanced OCR technology is highly accurate. However, receipt quality can vary. We allow you to easily review and correct any scanned data to ensure your insights are always precise."
     },
     {
-      question: "How do I import recipes from websites?",
+      question: "How do I import recipes?",
       answer: (
         <>
-          <p>Go to Parse Recipe in the menu, paste any recipe URL from your browser, and our recipe parser will extract ingredients, instructions, cooking times, and nutritional info automatically.</p>
+          <p>Go to Parse Recipe in the menu and paste a recipe link from a website or video. Our parser pulls out the ingredient list to help you build a shopping list.</p>
           <p className="mt-3"><strong>Legal note:</strong> Imported recipes are stored privately in your account for personal use only. You're responsible for ensuring any recipe you import complies with copyright laws. GroceryIntel does not claim ownership of imported recipes and they are never made publicly visible. See our Terms of Use (Section 8) for full details on recipe usage and copyright responsibilities.</p>
         </>
       )
@@ -69,15 +69,15 @@ const FAQsPage = () => {
     },
     {
       question: "What kind of insights will I get?",
-      answer: "You'll see breakdowns of spending by category and store, personal inflation rates for items you buy regularly, price volatility alerts, budget projections, and nutritional summaries of your purchases. We go beyond just total spending to show you what's really driving your costs."
+      answer: "You'll see breakdowns of spending by category and store, Price Watch alerts when items you buy regularly change sharply in price, budget projections, and a high-level Basket Vibe breakdown of your purchases. We go beyond just total spending to show you what's really driving your costs."
     },
     {
-      question: "What is 'personal inflation tracking'?",
-      answer: "Unlike national inflation rates, personal inflation shows how prices change for the specific items YOU buy. GroceryIntel™ tracks price movements for your regular purchases over time, helping you see which items are getting more expensive and by how much."
+      question: "What is Price Watch?",
+      answer: "Price Watch flags when prices for the specific items you buy regularly move sharply, so you can quickly see which items are getting more expensive over time and by how much."
     },
     {
-      question: "Do you track nutrition information?",
-      answer: "Yes! GroceryIntel™ links your spending to nutritional data, showing you how much you spend on protein, carbs, healthy vs. processed foods, and more. This helps you balance cost with nutrition quality."
+      question: "Do you analyse what's in my basket?",
+      answer: "Yes — through Basket Vibe, a high-level breakdown of your spend across whole, starchy, and processed foods. It's an estimate based on general food categories, not a precise scientific calculation, designed to give you an overview of your habits so you can make more mindful decisions."
     },
     {
       question: "Do you offer a free trial?",
@@ -85,7 +85,7 @@ const FAQsPage = () => {
     },
     {
       question: "What are the subscription plans?",
-      answer: "We offer two plans: Standard (12 scans/month, £35.99/year or £3.59/month) with full analytics and insights, and Plus (30 scans/month, £59.99/year or £5.99/month) with extra capacity. Both plans give you access to all analytics, nutrition insights, recipes, and meal planning. Visit our Pricing page for full details."
+      answer: "We offer two plans: Standard (12 receipt scans and 45 recipe imports per month, £35.99/year or £3.59/month) and Plus (30 receipt scans and 90 recipe imports per month, £59.99/year or £5.99/month). Both plans include exactly the same features — analytics, Basket Vibe, Price Watch, recipes & meal planning, video & web recipe imports, and household sharing. The only difference is your monthly receipt-scan and recipe-import allowances. Visit our Pricing page for full details."
     },
     {
       question: "What payment methods do you accept?",
