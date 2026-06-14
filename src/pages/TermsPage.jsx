@@ -90,7 +90,7 @@ const TermsPage = () => {
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                GroceryIntel helps users analyse their grocery spending and nutrition through scanned receipts. The app uses advanced OCR and AI technologies to process receipts, offering insights such as monthly spending, inflation trends, and nutritional summaries. Users review and correct receipt data manually to improve data accuracy.
+                GroceryIntel helps users analyse their grocery spending and basket composition through scanned receipts. The app uses OCR and AI technologies to process receipts, offering insights such as monthly spending, price-change alerts, and a high-level food-category overview of your basket. Users review and correct receipt data manually to improve data accuracy.
               </p>
               <p>
                 <strong>Ongoing Development.</strong> GroceryIntel is continuously improving. Features, functionality, and outputs may change, be refined, or be removed as we develop the product. Users acknowledge that the Service is actively maintained and evolving while we continue to test and improve it.
@@ -115,11 +115,11 @@ const TermsPage = () => {
               </p>
               <p>GroceryIntel offers two plans:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 12 scans/month and full analytics.</li>
-                <li><strong>Plus Plan:</strong> £59.99/year or £5.99/month, includes 30 scans/month and household features.</li>
+                <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 12 receipt scans and 45 recipe imports per month.</li>
+                <li><strong>Plus Plan:</strong> £59.99/year or £5.99/month, includes 30 receipt scans and 90 recipe imports per month.</li>
               </ul>
               <p>
-                Both plans receive the same analytics and insights with no tier bias.
+                Both plans include the same features, including household sharing, with no tier bias. The only difference is your monthly receipt-scan and recipe-import allowances.
               </p>
               <p>
                 Unused monthly scans do not roll over to the next month. Subscriptions renew automatically unless cancelled before the next billing cycle. You can cancel anytime via your account settings.
