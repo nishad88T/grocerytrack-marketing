@@ -15,7 +15,7 @@ export default function LegalFooter() {
             alt="GroceryIntel logo"
             className="h-8 w-8"
           />
-          <span className="text-slate-700 font-semibold">GroceryIntel™</span>
+          <span className="text-slate-700 font-semibold">GroceryIntel</span>
         </div>
 
         {/* Links */}
@@ -60,7 +60,7 @@ export default function LegalFooter() {
       {/* Legal text */}
       <div className="text-center text-xs text-slate-500 mt-6">
         <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-        <p className="mt-2">© 2026 GroceryIntel™. All rights reserved.</p>
+        <p className="mt-2">© 2026 GroceryIntel. All rights reserved.</p>
       </div>
     </footer>
   );

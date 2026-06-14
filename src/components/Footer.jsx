@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
               <img src="/glyph-orange.png" alt="GroceryIntel" className="w-8 h-8" />
-              <span className="font-bold text-lg">GroceryIntel™</span>
+              <span className="font-bold text-lg">GroceryIntel</span>
             </Link>
             <p className="text-slate-400 text-sm">
               Smart grocery tracking, budgeting, and insights.
@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center text-xs text-slate-400">
           <p>GroceryIntel Ltd · Registered in England and Wales · Company No. 16838153</p>
-          <p className="mt-2">© 2026 GroceryIntel™. All rights reserved.</p>
+          <p className="mt-2">© 2026 GroceryIntel. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -140,9 +140,9 @@ export default function FeaturesPage() {
         >
           <Card className="border-none shadow-xl bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl md:text-3xl">Where Budget Apps Stop, GroceryIntel™ Continues</CardTitle>
+              <CardTitle className="text-2xl md:text-3xl">Where Budget Apps Stop, GroceryIntel Continues</CardTitle>
               <p className="text-slate-600 mt-4 max-w-3xl mx-auto leading-relaxed">
-                Budgeting apps are a great starting point for building financial awareness. GroceryIntel™ simply goes further — focusing on groceries, the one area families can actively control, optimise, and improve week by week.
+                Budgeting apps are a great starting point for building financial awareness. GroceryIntel simply goes further — focusing on groceries, the one area families can actively control, optimise, and improve week by week.
               </p>
             </CardHeader>
             <CardContent>
@@ -151,7 +151,7 @@ export default function FeaturesPage() {
                   <thead>
                     <tr className="border-b-2 border-slate-200">
                       <th className="text-left py-4 px-4 text-slate-700 font-semibold">Traditional Budgeting Apps</th>
-                      <th className="text-left py-4 px-4 text-tangerine-700 font-semibold">GroceryIntel™</th>
+                      <th className="text-left py-4 px-4 text-tangerine-700 font-semibold">GroceryIntel</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
@@ -209,7 +209,7 @@ export default function FeaturesPage() {
               
               <div className="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="text-slate-700 text-center leading-relaxed">
-                  **In short:** Traditional budgeting apps help you understand your money. GroceryIntel™ helps you *improve* it — turning everyday grocery shopping into smarter financial and lifestyle decisions.
+                  **In short:** Traditional budgeting apps help you understand your money. GroceryIntel helps you *improve* it — turning everyday grocery shopping into smarter financial and lifestyle decisions.
                 </p>
               </div>
             </CardContent>

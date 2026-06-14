@@ -93,7 +93,7 @@ export default function AboutPage() {
                     </p>
                     <div className="bg-tangerine-100 border-l-4 border-tangerine-500 p-4 rounded-r-lg mt-4">
                       <p className="text-tangerine-900 font-medium">
-                        GroceryIntel™ was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
+                        GroceryIntel was born to do that — transforming everyday receipts into instant insights, empowering households to save, shop smarter, and make healthier choices.
                       </p>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
             Understanding grocery habits gives households control — over spending, waste, and nutrition.
           </p>
           <p className="font-medium text-slate-800 mt-4">
-            GroceryIntel™ isn't just an app; it's a movement to help families spend smarter, save more, and live healthier.
+            GroceryIntel isn't just an app; it's a movement to help families spend smarter, save more, and live healthier.
           </p>
         </Section>
 
