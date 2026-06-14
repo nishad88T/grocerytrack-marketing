@@ -65,7 +65,7 @@ export default function FeaturesPage() {
             <Feature
               icon={ChefHat}
               title="Recipes & Meal Planning"
-              description="Import recipes from any website, access curated collections, plan meals, and organize your week. Our smart parser extracts ingredients, instructions, and nutritional info automatically."
+              description="Import recipes from a website or video link, access curated collections, plan meals, and organise your week. Our parser pulls out the ingredient list to help you build smart shopping lists."
             />
             <Feature
               icon={Calendar}
@@ -76,8 +76,8 @@ export default function FeaturesPage() {
             {/* Shopping/Tracking */}
             <Feature
               icon={ScanLine}
-              title="Email Receipt Processing"
-              description="Track spending by forwarding receipts to our automated processing system. No apps to open, no manual uploads—just email and go. Supports physical receipt photos and online order emails from all major UK supermarkets."
+              title="Quick Receipt Capture"
+              description="Snap a photo of your receipt or share it straight from your photo gallery. Our scanner extracts the items automatically in the background—no manual entry needed."
             />
             <Feature
               icon={PiggyBank}
@@ -88,8 +88,8 @@ export default function FeaturesPage() {
             {/* Insights */}
             <Feature
               icon={TrendingUp}
-              title="Personal Inflation Tracking"
-              description="See how your basket's prices evolve over time."
+              title="Price Watch"
+              description="Spot when prices for the items you buy move sharply, so you can see what's getting more expensive over time."
             />
             <Feature
               icon={Sparkles}
@@ -98,8 +98,8 @@ export default function FeaturesPage() {
             />
             <Feature
               icon={HeartPulse}
-              title="Nutrition Meets Value"
-              description="Link spending patterns with the nutritional quality of your food."
+              title="Basket Vibe"
+              description="A high-level breakdown of your spend across whole, starchy, and processed foods—an estimate based on general food categories to help you make more mindful choices, not clinical nutrition advice."
             />
             <Feature
               icon={Users}
@@ -184,15 +184,15 @@ export default function FeaturesPage() {
                         Limited visibility into price changes
                       </td>
                       <td className="py-4 px-4 text-slate-800">
-                        Track your personal inflation and item-level price movement over time
+                        Flags sharp price changes and item-level price movement over time
                       </td>
                     </tr>
                     <tr>
                       <td className="py-4 px-4 text-slate-600">
-                        Doesn't link cost with nutrition or value
+                        Rarely connect food spend to what's actually in your basket
                       </td>
                       <td className="py-4 px-4 text-slate-800">
-                        Connects spend with nutritional impact to support smarter choices
+                        Connects spend with a high-level food-category breakdown to support more mindful choices
                       </td>
                     </tr>
                     <tr>

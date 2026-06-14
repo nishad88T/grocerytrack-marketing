@@ -118,7 +118,7 @@ export default function AboutPage() {
               <div>
                 <p className="font-semibold text-slate-900">Full access for all users:</p>
                 <p className="text-slate-700">
-                  No "Premium" tiers. Both Standard and Plus plans offer the exact same powerful analytics and insights.
+                  No "Premium" tiers and no locked features. Standard and Plus include exactly the same features — the only difference is your monthly receipt-scan and recipe-import allowances.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
               <div>
                 <p className="font-semibold text-slate-900">Household sharing:</p>
                 <p className="text-slate-700">
-                  Standard for individuals, Plus for shared households.
+                  Available on every plan—share receipts, budgets, and insights with your household, then pick the allowance that matches how often you shop.
                 </p>
               </div>
             </div>

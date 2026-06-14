@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import {
   ShoppingCart,
   ScanLine,
-  TrendingUp,
+  Activity,
   BarChart3,
   Lightbulb,
   Check,
@@ -115,13 +115,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Feature
                 icon={ShoppingCart}
-                title="From receipt to receipt - all connected"
+                title="From Recipe to Receipt - all connected"
                 description="Curated and user-imported recipes feed straight into meal plans and smart shopping lists with cost estimates from your past receipts."
               />
               <Feature
                 icon={ScanLine}
                 title="Low friction tracking"
-                description="Snap paper receipts, forward digital ones, or upload later. Our smart receipt parser handles the details in the background so you never slow down at checkout."
+                description="Snap a photo of your paper receipts or share them straight from your photo gallery. Our smart receipt scanner handles the details in the background so you never slow down at checkout."
               />
               <Feature
                 icon={BarChart3}
@@ -131,7 +131,7 @@ export default function HomePage() {
               <Feature
                 icon={Lightbulb}
                 title="Habit-forming convenience"
-                description="Forward an email, drop a photo, and come back whenever you like. GroceryIntel™ keeps processing and reminds you where to focus, not where you slipped."
+                description="Snap a photo or share from your gallery, then come back whenever you like. GroceryIntel™ keeps processing and reminds you where to focus, not where you slipped."
               />
               <Feature
                 icon={Wallet}
@@ -139,9 +139,9 @@ export default function HomePage() {
                 description="Start budgets on the day you get paid instead of the first of the month, so your grocery tracking and limits match how cash actually hits your account."
               />
               <Feature
-                icon={TrendingUp}
-                title="Nutrition meets value"
-                description="Pair spending data with nutritional breakdowns to balance cost and quality for every shop."
+                icon={Activity}
+                title="Basket Vibe"
+                description="See how your basket splits across whole, starchy, and processed foods with a simple basket-health overview. It's a high-level guide based on general food categories—not clinical nutrition—to help you shop more mindfully."
               />
             </div>
           </motion.div>
@@ -165,7 +165,7 @@ export default function HomePage() {
                 <CardHeader>
                   <CardTitle className="text-xl">1. Plan meals effortlessly</CardTitle>
                   <CardDescription>
-                    Pick from curated recipes or paste any link. GroceryIntel™ extracts ingredients, instructions, and nutrition automatically.
+                    Pick from curated recipes, or import your own from a website or video link. GroceryIntel™ pulls out the ingredient list to help you build your shopping list.
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -181,7 +181,7 @@ export default function HomePage() {
                   <CardHeader>
                     <CardTitle className="text-xl">3. Track without slowing down</CardTitle>
                     <CardDescription>
-                      Scan or forward receipts, including standard photos and email receipts. Automated processing runs in the background so you can get on with your day, with budgets that align to your payday instead of the calendar.
+                      Scan your receipts or share them from your photo gallery. Automated processing runs in the background so you can get on with your day, with budgets that align to your payday instead of the calendar.
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -223,11 +223,11 @@ export default function HomePage() {
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      Full analytics & insights
+                      All features included
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      12 scans/month
+                      12 receipt scans + 45 recipe imports / month
                     </li>
                   </ul>
                 </CardContent>
@@ -249,11 +249,11 @@ export default function HomePage() {
                   <ul className="mt-4 space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      Full analytics & insights
+                      All features included
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      30 scans/month & household sharing
+                      30 receipt scans + 90 recipe imports / month
                     </li>
                   </ul>
                 </CardContent>

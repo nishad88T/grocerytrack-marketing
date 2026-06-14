@@ -36,7 +36,7 @@ export default function PricingPage() {
             The GroceryIntel app is coming soon. Join the waitlist for launch updates, onboarding details, and a 14-day full Standard tier trial when early access opens.
           </p>
           <p className="text-slate-600 mt-4 italic">
-            At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans offer the **exact same powerful analytics and insights**. The only difference? Your monthly scan allowance and household sharing capabilities.
+            At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans include exactly the same features. The only difference is your monthly receipt-scan and recipe-import allowances.
           </p>
         </motion.div>
 
@@ -76,15 +76,15 @@ export default function PricingPage() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Full analytics & insights</span>
+                      <span className="text-slate-700">Spending analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Full nutrition diagnostics</span>
+                      <span className="text-slate-700">Basket Vibe (food-category breakdown)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Shopping List Generator</span>
+                      <span className="text-slate-700">Price Watch (price-change alerts)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
@@ -92,7 +92,23 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">**12 scans/month**</span>
+                      <span className="text-slate-700">Video & web recipe imports</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Household sharing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">12 receipt scans / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">45 recipe imports / month</span>
                     </li>
                   </ul>
                   <p className="text-xs text-slate-500 mt-4 italic">
@@ -134,15 +150,15 @@ export default function PricingPage() {
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Full analytics & insights</span>
+                      <span className="text-slate-700">Spending analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Full nutrition diagnostics</span>
+                      <span className="text-slate-700">Basket Vibe (food-category breakdown)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">Shopping List Generator</span>
+                      <span className="text-slate-700">Price Watch (price-change alerts)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
@@ -150,11 +166,23 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">**30 scans/month**</span>
+                      <span className="text-slate-700">Video & web recipe imports</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">**Household sharing**</span>
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Household sharing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">30 receipt scans / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">90 recipe imports / month</span>
                     </li>
                   </ul>
                   <p className="text-xs text-slate-500 mt-4 italic">
@@ -180,7 +208,7 @@ export default function PricingPage() {
           <Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
             <CardContent className="p-6">
               <p className="text-slate-700 text-lg leading-relaxed">
-                🎯 **No locked features. No confusing tiers.** Just the same mission, sized for your household usage. The difference between Standard and Plus is driven by how often you shop—**smaller households with less monthly receipts versus bigger households with more frequent shops and more receipts.**
+                🎯 No locked features. No confusing tiers. Both plans include the same features — the only difference is your monthly receipt-scan and recipe-import allowances, sized to how often you shop. Smaller households tend to fit Standard; busier households with more receipts tend to prefer Plus.
               </p>
             </CardContent>
           </Card>
