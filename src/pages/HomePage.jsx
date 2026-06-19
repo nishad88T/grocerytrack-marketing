@@ -220,14 +220,42 @@ export default function HomePage() {
                     </span>
                   </p>
                   <p className="text-slate-600">or £3.59/month</p>
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-4 space-y-2 text-left">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      All features included
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Spending analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      12 receipt scans + 45 recipe imports / month
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Basket Vibe (food-category breakdown)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Price Watch (price-change alerts)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Recipes & Meal Planning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Video & web recipe imports</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Household sharing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">12 receipt scans / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">45 recipe imports / month</span>
                     </li>
                   </ul>
                 </CardContent>
@@ -246,14 +274,42 @@ export default function HomePage() {
                     </span>
                   </p>
                   <p className="text-slate-600">or £5.99/month</p>
-                  <ul className="mt-4 space-y-2">
+                  <ul className="mt-4 space-y-2 text-left">
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      All features included
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Spending analytics & insights</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0" />{" "}
-                      30 receipt scans + 90 recipe imports / month
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Basket Vibe (food-category breakdown)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Price Watch (price-change alerts)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Recipes & Meal Planning</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Video & web recipe imports</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Shopping List Generator</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700">Household sharing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">30 receipt scans / month</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-slate-700 font-semibold">90 recipe imports / month</span>
                     </li>
                   </ul>
                 </CardContent>
