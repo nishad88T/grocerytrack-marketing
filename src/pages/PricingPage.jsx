@@ -38,6 +38,9 @@ export default function PricingPage() {
           <p className="text-slate-600 mt-4 italic">
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans include exactly the same features. The only difference is your monthly receipt-scan and recipe-import allowances.
           </p>
+          <p className="text-slate-700 mt-4 font-medium">
+            In everyday terms: 12 receipt scans is about 3 shops a week — ideal for smaller households — while 30 covers roughly a shop a day for busier or shared homes.
+          </p>
         </motion.div>
 
         {/* Pricing Cards */}
