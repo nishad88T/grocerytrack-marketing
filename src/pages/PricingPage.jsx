@@ -39,7 +39,7 @@ export default function PricingPage() {
             At GroceryIntel™, we believe everyone deserves full financial clarity over their groceries. That's why both our plans include exactly the same features. The only difference is your monthly receipt-scan and recipe-import allowances.
           </p>
           <p className="text-slate-700 mt-4 font-medium">
-            In everyday terms: 12 receipt scans is about 3 shops a week — ideal for smaller households — while 30 covers roughly a shop a day for busier or shared homes.
+            In everyday terms: 16 receipt scans is about 4 shops a week — ideal for smaller households — while 32 covers around 8 shops a week for busier or shared homes.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700 font-semibold">12 receipt scans / month</span>
+                      <span className="text-slate-700 font-semibold">16 receipt scans / month <span className="text-tangerine-600">(4 shops/week)</span></span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
@@ -181,7 +181,7 @@ export default function PricingPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700 font-semibold">30 receipt scans / month</span>
+                      <span className="text-slate-700 font-semibold">32 receipt scans / month <span className="text-tangerine-600">(8 shops/week)</span></span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-tangerine-600 flex-shrink-0 mt-0.5" />

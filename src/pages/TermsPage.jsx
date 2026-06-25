@@ -115,14 +115,17 @@ const TermsPage = () => {
               </p>
               <p>GroceryIntel offers two plans:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 12 receipt scans and 45 recipe imports per month.</li>
-                <li><strong>Plus Plan:</strong> £59.99/year or £5.99/month, includes 30 receipt scans and 90 recipe imports per month.</li>
+                <li><strong>Standard Plan:</strong> £35.99/year or £3.59/month, includes 16 receipt scans and 45 recipe imports per month.</li>
+                <li><strong>Plus Plan:</strong> £59.99/year or £5.99/month, includes 32 receipt scans and 90 recipe imports per month.</li>
               </ul>
               <p>
                 Both plans include the same features, including household sharing, with no tier bias. The only difference is your monthly receipt-scan and recipe-import allowances.
               </p>
               <p>
                 Unused monthly scans do not roll over to the next month. Subscriptions renew automatically unless cancelled before the next billing cycle. You can cancel anytime via your account settings.
+              </p>
+              <p>
+                <strong>Failed Scans.</strong> If a receipt scan fails to process due to a system or technical error on our side, that scan is automatically credited back to your monthly scan allowance — a scan credit only, not a monetary refund — so it does not count towards your limit. This automatic credit applies to processing failures on our side; receipts that are processed but contain errors can be reviewed and corrected by you without using an additional scan.
               </p>
               <p>
                 <strong>14-Day Right to Cancel.</strong> If you are a consumer in the UK, you have the right to cancel a new subscription within 14 days of purchase under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013. By starting to use the paid Service during this period, you acknowledge that you may lose this right once the service has been fully performed, and that any refund may be reduced to reflect the use you have already made of the Service. To exercise this right, contact us at <a href="mailto:support@groceryintel.com" className="text-slate-700 hover:underline font-semibold">support@groceryintel.com</a>.
@@ -171,7 +174,7 @@ const TermsPage = () => {
             </div>
             <div className="text-slate-700 leading-relaxed space-y-4">
               <p>
-                All analytics are based on user-submitted receipts and OCR outputs. While we aim for accuracy, variations in receipt quality may lead to occasional errors, particularly in identifying shrinkflation or unit sizes.
+                All analytics are based on user-submitted receipts and automated OCR/AI outputs. Scan accuracy depends on the image you provide — including lighting, focus, glare, creasing, fading, and the length, layout, and print quality of the receipt — as well as the store and receipt format. GroceryIntel works with a wide and growing range of receipts, but we do not support, and cannot guarantee accurate processing of, every store, retailer, region, or receipt format, and receipts from sources we have had limited exposure to may be read less accurately. We do not guarantee that every item, price, or quantity is captured correctly, and occasional errors may occur (for example in identifying shrinkflation or unit sizes).
               </p>
               <p>
                 Insights depend on the accuracy of OCR outputs and user review. Users are encouraged to verify and correct scanned data; if data is incorrect, insights will reflect those inaccuracies.
