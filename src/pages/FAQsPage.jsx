@@ -52,7 +52,7 @@ const FAQsPage = () => {
     },
     {
       question: "How accurate is the receipt scanning?",
-      answer: "Our advanced OCR technology is highly accurate. However, receipt quality can vary. We allow you to easily review and correct any scanned data to ensure your insights are always precise."
+      answer: "Our scanning uses OCR and AI and performs well on clear receipts, but accuracy depends on the receipt itself — lighting, focus, glare, creasing, fading, and the store's receipt format all play a part, and receipts from stores we've had less exposure to may be read less accurately. You can always review and correct any scanned item, so your insights stay accurate."
     },
     {
       question: "How do I import recipes?",
@@ -85,7 +85,7 @@ const FAQsPage = () => {
     },
     {
       question: "What are the subscription plans?",
-      answer: "We offer two plans: Standard (12 receipt scans and 45 recipe imports per month, £35.99/year or £3.59/month) and Plus (30 receipt scans and 90 recipe imports per month, £59.99/year or £5.99/month). Both plans include exactly the same features — analytics, Basket Vibe, Price Watch, recipes & meal planning, video & web recipe imports, and household sharing. The only difference is your monthly receipt-scan and recipe-import allowances. Visit our Pricing page for full details."
+      answer: "We offer two plans: Standard (16 receipt scans/month — about 4 shops a week — plus 45 recipe imports, £35.99/year or £3.59/month) and Plus (32 receipt scans/month — about 8 shops a week — plus 90 recipe imports, £59.99/year or £5.99/month). Both plans include exactly the same features — analytics, Basket Vibe, Price Watch, recipes & meal planning, video & web recipe imports, and household sharing. The only difference is your monthly receipt-scan and recipe-import allowances. Visit our Pricing page for full details."
     },
     {
       question: "What payment methods do you accept?",
@@ -93,7 +93,7 @@ const FAQsPage = () => {
     },
     {
       question: "What if I exceed my monthly scan limit?",
-      answer: "If you reach your monthly scan limit (12 for Standard, 30 for Plus), you'll be notified. You can either wait until the next month when your limit resets, or upgrade to the Plus plan for a higher limit."
+      answer: "If you reach your monthly scan limit (16 for Standard, 32 for Plus), you'll be notified. You can either wait until the next month when your limit resets, or upgrade to the Plus plan for a higher limit."
     },
     {
       question: "Can I cancel my subscription anytime?",
